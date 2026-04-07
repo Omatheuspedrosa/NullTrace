@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Nível Intermediário | NullTrace</title>
+    <meta name="description" content="Guia intermediário de privacidade digital: DNS privado, navegador seguro e separação de identidade." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/intermediario.css">
+</head>
+<body class="selection:bg-primary-container selection:text-white bg-[#0e1322] text-slate-50 min-h-screen flex flex-col">
+
+    <!-- TopNavBar -->
+    <nav class="w-full z-50 bg-[#0e1322]/60 backdrop-blur-xl border-b border-white/10">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto gap-16">
+            <a class="text-2xl font-bold tracking-tighter text-white pr-8" href="index.html">NullTrace</a>
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-bold uppercase tracking-widest">
+                    <span class="material-symbols-outlined text-sm">shield</span> Intermediário
+                </span>
+                <a href="comece-agora.html" class="text-slate-400 hover:text-white flex items-center gap-2 text-sm font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-base">arrow_back</span> Voltar ao checklist
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <section class="relative py-20 px-8 overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-secondary/5 rounded-full blur-[120px]"></div>
+            </div>
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-bold uppercase tracking-widest mb-8">
+                    <span class="mr-2 flex h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
+                    Nível Intermediário Desbloqueado
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    Eleve sua <span class="text-gradient-secondary">defesa digital</span> ao próximo nível
+                </h1>
+                <p class="text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-10">
+                    Você completou a fundação. Agora é hora de proteger sua conexão, blindar seu navegador e isolar suas identidades online.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#roadmap" class="bg-secondary/10 hover:bg-secondary/20 border border-secondary/20 text-secondary px-6 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
+                        <span class="material-symbols-outlined">map</span> Ver Roadmap
+                    </a>
+                    <a href="#modulo-1" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
+                        <span class="material-symbols-outlined">play_arrow</span> Começar agora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Visual -->
+        <section class="py-16 px-8" id="roadmap">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Sua Jornada</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Roadmap Intermediário</h2>
+                    <p class="text-on-surface-variant mt-3 max-w-xl mx-auto">Três módulos estratégicos que se complementam para criar uma camada robusta de proteção.</p>
+                </div>
+
+                <!-- Roadmap Timeline -->
+                <div class="roadmap-timeline relative">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-8 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary/60 via-primary/40 to-tertiary/30 hidden sm:block"></div>
+
+                    <!-- Module 1 -->
+                    <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-16 group" data-module="1">
+                        <div class="md:w-1/2 md:text-right md:pr-12 order-2 md:order-1">
+                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-secondary/40 transition-all duration-500 cursor-pointer" onclick="scrollToModule('modulo-1')">
+                                <div class="flex items-center gap-3 mb-3 md:justify-end">
+                                    <span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary text-[10px] font-bold uppercase tracking-widest">Semana 1</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">DNS Privado</h3>
+                                <p class="text-on-surface-variant text-sm">Criptografe suas consultas DNS para impedir que seu provedor veja cada site que você acessa.</p>
+                                <div class="flex items-center gap-2 mt-4 md:justify-end text-secondary text-sm font-semibold">
+                                    <span>Explorar módulo</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-8 md:left-1/2 -translate-x-1/2 order-1 md:order-2 z-10">
+                            <div class="roadmap-dot w-10 h-10 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center text-secondary font-bold text-sm shadow-lg shadow-secondary/20">
+                                <span class="material-symbols-outlined text-lg">dns</span>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-3 hidden md:block"></div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-16 group" data-module="2">
+                        <div class="md:w-1/2 md:pr-12 order-2 md:order-1 hidden md:block"></div>
+                        <div class="absolute left-8 md:left-1/2 -translate-x-1/2 order-1 md:order-2 z-10">
+                            <div class="roadmap-dot w-10 h-10 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center text-primary font-bold text-sm shadow-lg shadow-primary/20">
+                                <span class="material-symbols-outlined text-lg">shield</span>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-2 md:order-3">
+                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 cursor-pointer" onclick="scrollToModule('modulo-2')">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="px-2 py-0.5 rounded-full bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-widest">Semana 2</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Navegador Seguro</h3>
+                                <p class="text-on-surface-variant text-sm">Configure um navegador blindado contra fingerprinting, trackers e scripts maliciosos.</p>
+                                <div class="flex items-center gap-2 mt-4 text-primary text-sm font-semibold">
+                                    <span>Explorar módulo</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-module="3">
+                        <div class="md:w-1/2 md:text-right md:pr-12 order-2 md:order-1">
+                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-tertiary/40 transition-all duration-500 cursor-pointer" onclick="scrollToModule('modulo-3')">
+                                <div class="flex items-center gap-3 mb-3 md:justify-end">
+                                    <span class="px-2 py-0.5 rounded-full bg-tertiary/15 text-tertiary text-[10px] font-bold uppercase tracking-widest">Semana 3</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Separação de Identidade</h3>
+                                <p class="text-on-surface-variant text-sm">Isole suas atividades online em perfis separados para que ninguém conecte os pontos.</p>
+                                <div class="flex items-center gap-2 mt-4 md:justify-end text-tertiary text-sm font-semibold">
+                                    <span>Explorar módulo</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-8 md:left-1/2 -translate-x-1/2 order-1 md:order-2 z-10">
+                            <div class="roadmap-dot w-10 h-10 rounded-full bg-tertiary/20 border-2 border-tertiary flex items-center justify-center text-tertiary font-bold text-sm shadow-lg shadow-tertiary/20">
+                                <span class="material-symbols-outlined text-lg">supervised_user_circle</span>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-3 hidden md:block"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Tracker -->
+        <section class="px-8 pb-16">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary">trending_up</span>
+                            <span class="text-white font-bold text-sm">Progresso Intermediário</span>
+                        </div>
+                        <span id="int-progress-pct" class="text-secondary font-bold text-lg">0%</span>
+                    </div>
+                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                        <div id="int-progress-bar" class="bg-gradient-to-r from-secondary to-primary h-full rounded-full transition-all duration-700 ease-out w-0 relative">
+                            <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
+                        </div>
+                    </div>
+                    <p id="int-progress-msg" class="text-on-surface-variant text-xs mt-3">Complete os módulos abaixo para avançar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ MODULE 1: DNS Privado ═══ -->
+        <section class="py-16 px-8" id="modulo-1">
+            <div class="max-w-4xl mx-auto">
+                <!-- Module Header -->
+                <div class="flex items-start gap-6 mb-10">
+                    <div class="w-14 h-14 rounded-2xl bg-secondary/15 border border-secondary/25 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-secondary text-2xl">dns</span>
+                    </div>
+                    <div>
+                        <span class="text-secondary text-xs font-bold uppercase tracking-widest">Módulo 01</span>
+                        <h2 class="text-3xl font-bold text-white mt-1">DNS Privado</h2>
+                        <p class="text-on-surface-variant mt-2 max-w-2xl">Cada vez que você digita um endereço no navegador, uma consulta DNS traduz esse nome para um IP. Sem proteção, seu provedor de internet vê <strong class="text-white">cada site que você acessa</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Interactive Before/After -->
+                <div class="grid md:grid-cols-2 gap-6 mb-10">
+                    <div class="dns-card bg-error/5 rounded-2xl p-6 border border-error/20 relative overflow-hidden">
+                        <div class="absolute top-3 right-3">
+                            <span class="px-2 py-0.5 rounded-full bg-error/15 text-error text-[10px] font-bold uppercase tracking-widest">Sem proteção</span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-4 mt-4">
+                            <span class="material-symbols-outlined text-error text-xl">warning</span>
+                            <h4 class="text-white font-bold">DNS Padrão</h4>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start gap-2 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-error/70 text-base mt-0.5">close</span>
+                                <span>Seu provedor registra todo site visitado</span>
+                            </div>
+                            <div class="flex items-start gap-2 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-error/70 text-base mt-0.5">close</span>
+                                <span>Consultas enviadas em texto puro (sem criptografia)</span>
+                            </div>
+                            <div class="flex items-start gap-2 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-error/70 text-base mt-0.5">close</span>
+                                <span>Vulnerável a ataques DNS spoofing</span>
+                            </div>
+                        </div>
+                        <div class="mt-5 p-3 rounded-xl bg-black/30 font-mono text-xs text-error/80">
+                            <span class="text-on-surface-variant">ISP Log:</span> nulltrace.io → 185.199.108.153 <span class="text-error animate-pulse">● VISÍVEL</span>
+                        </div>
+                    </div>
+                    <div class="dns-card bg-success/5 rounded-2xl p-6 border border-success/20 relative overflow-hidden">
+                        <div class="absolute top-3 right-3">
+                            <span class="px-2 py-0.5 rounded-full bg-success/15 text-success text-[10px] font-bold uppercase tracking-widest">Com proteção</span>
+                        </div>
+                        <div class="flex items-center gap-3 mb-4 mt-4">
+                            <span class="material-symbols-outlined text-success text-xl">verified_user</span>
+                            <h4 class="text-white font-bold">DNS Criptografado</h4>
+                        </div>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-start gap-2 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-success/70 text-base mt-0.5">check</span>
+                                <span>Consultas encriptadas via DoH / DoT</span>
+                            </div>
+                            <div class="flex items-start gap-2 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-success/70 text-base mt-0.5">check</span>
+                                <span>Proteção anti-malware e anti-phishing integrada</span>
+                            </div>
+                            <div class="flex items-start gap-2 text-on-surface-variant">
+                                <span class="material-symbols-outlined text-success/70 text-base mt-0.5">check</span>
+                                <span>Resolução DNS sem logs de atividade</span>
+                            </div>
+                        </div>
+                        <div class="mt-5 p-3 rounded-xl bg-black/30 font-mono text-xs text-success/80">
+                            <span class="text-on-surface-variant">ISP Log:</span> ████████████ <span class="text-success">● CRIPTOGRAFADO</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mockup Image -->
+                <div class="mb-10 rounded-2xl overflow-hidden border border-outline-variant/10 flex justify-center bg-black/20">
+                    <img src="images/dns-mockup.png" alt="Diagrama de DNS criptografado mostrando o fluxo de consultas seguras" class="max-w-full h-auto block mx-auto" loading="lazy">
+                </div>
+
+                <!-- DNS Providers Comparison -->
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-10">
+                    <h4 class="text-white font-bold mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary text-lg">compare</span> Provedores DNS Recomendados
+                    </h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-outline-variant/10">
+                                    <th class="text-left text-on-surface-variant font-semibold py-3 px-4">Provedor</th>
+                                    <th class="text-center text-on-surface-variant font-semibold py-3 px-4">Anti-Malware</th>
+                                    <th class="text-center text-on-surface-variant font-semibold py-3 px-4">Zero Logs</th>
+                                    <th class="text-center text-on-surface-variant font-semibold py-3 px-4">DoH / DoT</th>
+                                    <th class="text-left text-on-surface-variant font-semibold py-3 px-4">Endereço</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-outline-variant/5 hover:bg-white/[0.02] transition-colors">
+                                    <td class="py-3 px-4 text-white font-semibold">Quad9</td>
+                                    <td class="py-3 px-4 text-center"><span class="material-symbols-outlined text-success text-base">check_circle</span></td>
+                                    <td class="py-3 px-4 text-center"><span class="material-symbols-outlined text-success text-base">check_circle</span></td>
+                                    <td class="py-3 px-4 text-center"><span class="material-symbols-outlined text-success text-base">check_circle</span></td>
+                                    <td class="py-3 px-4 font-mono text-on-surface-variant text-xs">9.9.9.9</td>
+                                </tr>
+                                <tr class="border-b border-outline-variant/5 hover:bg-white/[0.02] transition-colors">
+                                    <td class="py-3 px-4 text-white font-semibold">Mullvad DNS</td>
+                                    <td class="py-3 px-4 text-center"><span class="material-symbols-outlined text-success text-base">check_circle</span></td>
+                                    <td class="py-3 px-4 text-center"><span class="material-symbols-outlined text-success text-base">check_circle</span></td>
+                                    <td class="py-3 px-4 text-center"><span class="material-symbols-outlined text-success text-base">check_circle</span></td>
+                                    <td class="py-3 px-4 font-mono text-on-surface-variant text-xs">194.242.2.2</td>
+                                </tr>
+                                <tr class="hover:bg-white/[0.02] transition-colors">
+                                    <td class="py-3 px-4 text-white font-semibold">NextDNS</td>
+                                    <td class="py-3 px-4 text-center"><span class="material-symbols-outlined text-success text-base">check_circle</span></td>
+                                    <td class="py-3 px-4 text-center"><span class="material-symbols-outlined text-warning text-base">info</span></td>
+                                    <td class="py-3 px-4 text-center"><span class="material-symbols-outlined text-success text-base">check_circle</span></td>
+                                    <td class="py-3 px-4 font-mono text-on-surface-variant text-xs">Personalizado</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Step by Step -->
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-6">
+                    <h4 class="text-white font-bold mb-5 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary text-lg">checklist</span> Como Configurar (Passo a Passo)
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="int-step flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-transparent hover:border-secondary/20 transition-all">
+                            <div class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center text-secondary text-sm font-bold flex-shrink-0 mt-0.5">1</div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Abra as configurações de rede do seu sistema</p>
+                                <p class="text-on-surface-variant text-xs mt-1">Windows: Configurações → Rede → Propriedades do Adaptador → DNS<br>macOS: Preferências do Sistema → Rede → DNS</p>
+                            </div>
+                        </div>
+                        <div class="int-step flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-transparent hover:border-secondary/20 transition-all">
+                            <div class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center text-secondary text-sm font-bold flex-shrink-0 mt-0.5">2</div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Substitua os servidores DNS padrão</p>
+                                <p class="text-on-surface-variant text-xs mt-1">Troque para <code class="bg-white/5 px-1.5 py-0.5 rounded text-secondary font-mono">9.9.9.9</code> (Quad9) ou <code class="bg-white/5 px-1.5 py-0.5 rounded text-secondary font-mono">194.242.2.2</code> (Mullvad).</p>
+                            </div>
+                        </div>
+                        <div class="int-step flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-transparent hover:border-secondary/20 transition-all">
+                            <div class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center text-secondary text-sm font-bold flex-shrink-0 mt-0.5">3</div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Ative DNS over HTTPS (DoH) no navegador</p>
+                                <p class="text-on-surface-variant text-xs mt-1">Firefox: Configurações → Privacidade → DNS over HTTPS → Ativar proteção máxima.</p>
+                            </div>
+                        </div>
+                        <div class="int-step flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-transparent hover:border-secondary/20 transition-all">
+                            <div class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center text-secondary text-sm font-bold flex-shrink-0 mt-0.5">4</div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Verifique o funcionamento</p>
+                                <p class="text-on-surface-variant text-xs mt-1">Acesse <a href="https://dnsleaktest.com" target="_blank" class="text-secondary hover:underline">dnsleaktest.com</a> para confirmar que seu DNS está protegido.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Module Complete Button -->
+                <div class="text-center">
+                    <button class="module-complete-btn px-8 py-3 bg-secondary hover:bg-secondary/80 text-[#0d1117] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="0" onclick="toggleModule(0)">
+                        <span class="material-symbols-outlined text-lg">task_alt</span>
+                        <span class="btn-text">Marcar módulo concluído</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="max-w-4xl mx-auto px-8"><div class="h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div></div>
+
+        <!-- ═══ MODULE 2: Navegador Seguro ═══ -->
+        <section class="py-16 px-8" id="modulo-2">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-start gap-6 mb-10">
+                    <div class="w-14 h-14 rounded-2xl bg-primary/15 border border-primary/25 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-primary text-2xl">shield</span>
+                    </div>
+                    <div>
+                        <span class="text-primary text-xs font-bold uppercase tracking-widest">Módulo 02</span>
+                        <h2 class="text-3xl font-bold text-white mt-1">Navegador Seguro</h2>
+                        <p class="text-on-surface-variant mt-2 max-w-2xl">Seu navegador é a janela para a internet — e a principal superfície de ataque. Cada extensão, cookie e configuração padrão pode expor sua identidade.</p>
+                    </div>
+                </div>
+
+                <!-- Browser Comparison Cards -->
+                <div class="grid md:grid-cols-3 gap-4 mb-10">
+                    <div class="browser-card bg-surface-container rounded-2xl p-5 border border-outline-variant/10 hover:border-primary/30 transition-all group cursor-default">
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="https://cdn.simpleicons.org/firefoxbrowser/b4c5ff" alt="Firefox" class="w-7 h-7">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Firefox</h4>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-widest">Recomendado</span>
+                            </div>
+                            <span class="ml-auto px-2 py-0.5 rounded-full bg-success/15 text-success text-[10px] font-bold">★ IDEAL</span>
+                        </div>
+                        <p class="text-on-surface-variant text-xs mb-3">Open-source, altamente configurável, suporta extensões de privacidade e containers.</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-[10px] text-on-surface-variant">Containers</span>
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-[10px] text-on-surface-variant">uBlock</span>
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-[10px] text-on-surface-variant">DoH</span>
+                        </div>
+                    </div>
+                    <div class="browser-card bg-surface-container rounded-2xl p-5 border border-outline-variant/10 hover:border-primary/30 transition-all group cursor-default">
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="https://cdn.simpleicons.org/brave/b4c5ff" alt="Brave" class="w-7 h-7">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Brave</h4>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-widest">Alternativa</span>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant text-xs mb-3">Bloqueador nativo, baseado em Chromium. Bom equilíbrio entre privacidade e compatibilidade.</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-[10px] text-on-surface-variant">Ad-Block</span>
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-[10px] text-on-surface-variant">Tor Tab</span>
+                        </div>
+                    </div>
+                    <div class="browser-card bg-surface-container rounded-2xl p-5 border border-outline-variant/10 hover:border-primary/30 transition-all group cursor-default">
+                        <div class="flex items-center gap-3 mb-4">
+                            <img src="https://cdn.simpleicons.org/torbrowser/b4c5ff" alt="Tor" class="w-7 h-7">
+                            <div>
+                                <h4 class="text-white font-bold text-sm">Tor Browser</h4>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-widest">Máximo anonimato</span>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant text-xs mb-3">Anonimato absoluto com roteamento em camadas. Ideal para pesquisas sensíveis e whistleblowing.</p>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-[10px] text-on-surface-variant">Onion</span>
+                            <span class="px-2 py-0.5 rounded bg-white/5 text-[10px] text-on-surface-variant">Anti-FP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mockup -->
+                <div class="mb-10 rounded-2xl overflow-hidden border border-outline-variant/10 flex justify-center bg-black/20">
+                    <img src="images/firefox-privacy-mockup.png" alt="Configurações de privacidade do Firefox com proteção aprimorada" class="max-w-full h-auto block mx-auto" loading="lazy">
+                </div>
+
+                <!-- Firefox Hardening Checklist -->
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-6">
+                    <h4 class="text-white font-bold mb-5 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-lg">tune</span> Hardening do Firefox (Configurações Essenciais)
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="hardening-item flex items-center gap-4 p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] transition-colors cursor-pointer" onclick="this.classList.toggle('done')">
+                            <div class="w-6 h-6 rounded-full border-2 border-primary/40 flex items-center justify-center flex-shrink-0 hardening-check">
+                                <span class="material-symbols-outlined text-primary text-sm opacity-0 transition-opacity">check</span>
+                            </div>
+                            <div class="flex-grow">
+                                <p class="text-white text-sm font-medium">Enhanced Tracking Protection → <strong>Rigoroso</strong></p>
+                            </div>
+                        </div>
+                        <div class="hardening-item flex items-center gap-4 p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] transition-colors cursor-pointer" onclick="this.classList.toggle('done')">
+                            <div class="w-6 h-6 rounded-full border-2 border-primary/40 flex items-center justify-center flex-shrink-0 hardening-check">
+                                <span class="material-symbols-outlined text-primary text-sm opacity-0 transition-opacity">check</span>
+                            </div>
+                            <div class="flex-grow">
+                                <p class="text-white text-sm font-medium">HTTPS-Only Mode → <strong>Ativar em todas as janelas</strong></p>
+                            </div>
+                        </div>
+                        <div class="hardening-item flex items-center gap-4 p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] transition-colors cursor-pointer" onclick="this.classList.toggle('done')">
+                            <div class="w-6 h-6 rounded-full border-2 border-primary/40 flex items-center justify-center flex-shrink-0 hardening-check">
+                                <span class="material-symbols-outlined text-primary text-sm opacity-0 transition-opacity">check</span>
+                            </div>
+                            <div class="flex-grow">
+                                <p class="text-white text-sm font-medium">Cookies → <strong>Excluir ao fechar o navegador</strong></p>
+                            </div>
+                        </div>
+                        <div class="hardening-item flex items-center gap-4 p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] transition-colors cursor-pointer" onclick="this.classList.toggle('done')">
+                            <div class="w-6 h-6 rounded-full border-2 border-primary/40 flex items-center justify-center flex-shrink-0 hardening-check">
+                                <span class="material-symbols-outlined text-primary text-sm opacity-0 transition-opacity">check</span>
+                            </div>
+                            <div class="flex-grow">
+                                <p class="text-white text-sm font-medium">Instalar extensão <strong>uBlock Origin</strong></p>
+                            </div>
+                        </div>
+                        <div class="hardening-item flex items-center gap-4 p-3 rounded-xl bg-white/[0.02] hover:bg-white/[0.04] transition-colors cursor-pointer" onclick="this.classList.toggle('done')">
+                            <div class="w-6 h-6 rounded-full border-2 border-primary/40 flex items-center justify-center flex-shrink-0 hardening-check">
+                                <span class="material-symbols-outlined text-primary text-sm opacity-0 transition-opacity">check</span>
+                            </div>
+                            <div class="flex-grow">
+                                <p class="text-white text-sm font-medium">Desativar <strong>telemetria</strong> em about:preferences#privacy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="module-complete-btn px-8 py-3 bg-primary hover:bg-primary/80 text-[#0d1117] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="1" onclick="toggleModule(1)">
+                        <span class="material-symbols-outlined text-lg">task_alt</span>
+                        <span class="btn-text">Marcar módulo concluído</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="max-w-4xl mx-auto px-8"><div class="h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div></div>
+
+        <!-- ═══ MODULE 3: Separação de Identidade ═══ -->
+        <section class="py-16 px-8" id="modulo-3">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-start gap-6 mb-10">
+                    <div class="w-14 h-14 rounded-2xl bg-tertiary/15 border border-tertiary/25 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-tertiary text-2xl">supervised_user_circle</span>
+                    </div>
+                    <div>
+                        <span class="text-tertiary text-xs font-bold uppercase tracking-widest">Módulo 03</span>
+                        <h2 class="text-3xl font-bold text-white mt-1">Separação de Identidade</h2>
+                        <p class="text-on-surface-variant mt-2 max-w-2xl">A compartimentalização impede que alguém conecte suas atividades entre si. Email pessoal, trabalho e finanças devem viver em <strong class="text-white">mundos separados</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Mockup -->
+                <div class="mb-10 rounded-2xl overflow-hidden border border-outline-variant/10 flex justify-center bg-black/20">
+                    <img src="images/browser-compartments-mockup.png" alt="Visualização de perfis de navegador isolados: Pessoal, Trabalho e Finanças" class="max-w-full h-auto block mx-auto" loading="lazy">
+                </div>
+
+                <!-- Identity Compartments Interactive -->
+                <div class="grid md:grid-cols-3 gap-4 mb-10">
+                    <div class="identity-card bg-surface-container rounded-2xl p-5 border-l-4 border-secondary border-t border-r border-b border-t-outline-variant/10 border-r-outline-variant/10 border-b-outline-variant/10 hover:shadow-lg hover:shadow-secondary/5 transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary text-base">person</span>
+                            </div>
+                            <h4 class="text-white font-bold text-sm">Pessoal</h4>
+                        </div>
+                        <ul class="space-y-2 text-xs text-on-surface-variant">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-secondary">mail</span> Email pessoal (ProtonMail)</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-secondary">forum</span> Redes sociais</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-secondary">shopping_bag</span> Compras online</li>
+                        </ul>
+                    </div>
+                    <div class="identity-card bg-surface-container rounded-2xl p-5 border-l-4 border-success border-t border-r border-b border-t-outline-variant/10 border-r-outline-variant/10 border-b-outline-variant/10 hover:shadow-lg hover:shadow-success/5 transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded-full bg-success/15 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-success text-base">work</span>
+                            </div>
+                            <h4 class="text-white font-bold text-sm">Trabalho</h4>
+                        </div>
+                        <ul class="space-y-2 text-xs text-on-surface-variant">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-success">mail</span> Email corporativo</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-success">cloud</span> Serviços da empresa</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-success">group</span> Comunicação profissional</li>
+                        </ul>
+                    </div>
+                    <div class="identity-card bg-surface-container rounded-2xl p-5 border-l-4 border-warning border-t border-r border-b border-t-outline-variant/10 border-r-outline-variant/10 border-b-outline-variant/10 hover:shadow-lg hover:shadow-warning/5 transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-8 h-8 rounded-full bg-warning/15 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-warning text-base">account_balance</span>
+                            </div>
+                            <h4 class="text-white font-bold text-sm">Finanças</h4>
+                        </div>
+                        <ul class="space-y-2 text-xs text-on-surface-variant">
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-warning">credit_card</span> Banco e pagamentos</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-warning">lock</span> Investimentos</li>
+                            <li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-warning">receipt_long</span> Impostos e docs oficiais</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tools for Compartmentalization -->
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-10">
+                    <h4 class="text-white font-bold mb-5 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-tertiary text-lg">build</span> Ferramentas para Compartimentalizar
+                    </h4>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02]">
+                            <div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-tertiary">tab_group</span>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-semibold text-sm">Firefox Multi-Account Containers</h5>
+                                <p class="text-on-surface-variant text-xs mt-1">Crie containers isolados dentro do Firefox. Cada container tem seus próprios cookies, sem cruzamento.</p>
+                                <a href="https://addons.mozilla.org/firefox/addon/multi-account-containers/" target="_blank" class="text-tertiary text-xs font-bold mt-2 inline-flex items-center gap-1 hover:underline">
+                                    Instalar extensão <span class="material-symbols-outlined text-xs">open_in_new</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02]">
+                            <div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-tertiary">alternate_email</span>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-semibold text-sm">SimpleLogin (Email Aliases)</h5>
+                                <p class="text-on-surface-variant text-xs mt-1">Gere aliases de e-mail para cada serviço. Se um vazar, desative o alias sem afetar o resto.</p>
+                                <a href="https://simplelogin.io" target="_blank" class="text-tertiary text-xs font-bold mt-2 inline-flex items-center gap-1 hover:underline">
+                                    Criar conta <span class="material-symbols-outlined text-xs">open_in_new</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02]">
+                            <div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-tertiary">smartphone</span>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-semibold text-sm">Perfis de Navegador Separados</h5>
+                                <p class="text-on-surface-variant text-xs mt-1">Crie perfis diferentes (Pessoal, Trabalho, Finanças) no Firefox ou Brave com configurações isoladas.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02]">
+                            <div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-tertiary">vpn_key</span>
+                            </div>
+                            <div>
+                                <h5 class="text-white font-semibold text-sm">Senhas Únicas por Contexto</h5>
+                                <p class="text-on-surface-variant text-xs mt-1">Use pastas/coleções no Bitwarden para organizar senhas de cada identidade de forma isolada.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="module-complete-btn px-8 py-3 bg-tertiary hover:bg-tertiary/80 text-[#0d1117] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="2" onclick="toggleModule(2)">
+                        <span class="material-symbols-outlined text-lg">task_alt</span>
+                        <span class="btn-text">Marcar módulo concluído</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-20 px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <div id="final-banner" class="bg-surface-container rounded-3xl p-10 border border-outline-variant/10 relative overflow-hidden">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-secondary/5 rounded-full blur-[80px] pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-secondary text-5xl mb-4 block">security</span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Continue Evoluindo</h2>
+                        <p class="text-on-surface-variant mb-8 max-w-lg mx-auto">Você está construindo uma defesa digital sólida. Completar esses módulos te coloca à frente de 95% dos usuários da internet.</p>
+                        <a href="comece-agora.html" class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-3 rounded-xl font-bold transition-all">
+                            <span class="material-symbols-outlined">arrow_back</span> Voltar ao Checklist Principal
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0e1322] w-full py-12 border-t border-white/5 mt-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-8">
+            <div class="text-lg font-bold text-slate-200">NullTrace</div>
+            <div class="flex gap-8">
+                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]" href="#">Privacidade</a>
+                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]" href="#">Termos</a>
+            </div>
+            <div class="text-slate-500 text-sm">© 2024 NullTrace – A Sentinela Digital.</div>
+        </div>
+    </footer>
+
+    <script src="js/intermediario.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* ═══════════════════════════════════════════════════════════════
+   NullTrace — Intermediário Page Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Gradient Text ────────────────────────────────────────────── */
+.text-gradient-secondary {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #ae87ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Roadmap Timeline ─────────────────────────────────────────── */
+.roadmap-card {
+  transition: all var(--transition-base);
+}
+.roadmap-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.roadmap-dot {
+  transition: all var(--transition-base);
+}
+.roadmap-node:hover .roadmap-dot {
+  transform: scale(1.15);
+}
+
+/* Animate roadmap nodes on scroll */
+.roadmap-node {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.roadmap-node.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── DNS Before/After Cards ───────────────────────────────────── */
+.dns-card {
+  transition: all var(--transition-base);
+}
+.dns-card:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Browser Cards ────────────────────────────────────────────── */
+.browser-card {
+  transition: all var(--transition-base);
+}
+.browser-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Identity Cards ───────────────────────────────────────────── */
+.identity-card {
+  transition: all var(--transition-base);
+}
+.identity-card:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Hardening Checklist ──────────────────────────────────────── */
+.hardening-item {
+  transition: all var(--transition-fast);
+}
+.hardening-item.done {
+  opacity: 0.5;
+}
+.hardening-item.done .hardening-check {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.hardening-item.done .hardening-check .material-symbols-outlined {
+  opacity: 1;
+  color: var(--color-bg) !important;
+}
+.hardening-item.done p {
+  text-decoration: line-through;
+  text-decoration-color: var(--color-accent);
+}
+
+/* ── Module Complete Buttons ──────────────────────────────────── */
+.module-complete-btn {
+  transition: all var(--transition-base);
+}
+.module-complete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.module-complete-btn.completed {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text-secondary) !important;
+  border: 1px solid var(--color-border-strong);
+}
+
+/* ── Int Step Items ───────────────────────────────────────────── */
+.int-step {
+  transition: all var(--transition-fast);
+}
+.int-step:hover {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* ── Scroll reveal animation ──────────────────────────────────── */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Progress bar shimmer ─────────────────────────────────────── */
+@keyframes int-shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+#int-progress-bar.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
+  animation: int-shimmer 0.65s ease forwards;
+}
+
+/* ── Mobile adjustments ───────────────────────────────────────── */
+@media (max-width: 768px) {
+  .roadmap-node {
+    padding-left: 4rem;
+  }
+  .roadmap-node .roadmap-card {
+    text-align: left !important;
+  }
+  .roadmap-node .md\:justify-end {
+    justify-content: flex-start !important;
+  }
+}
+
+/* ── Pulse glow on completed module ───────────────────────────── */
+@keyframes module-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(90, 200, 250, 0); }
+  50%      { box-shadow: 0 0 20px 4px rgba(90, 200, 250, 0.12); }
+}
+.module-complete-btn.just-completed {
+  animation: module-glow 0.6s ease;
+}

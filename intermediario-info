@@ -1,0 +1,190 @@
+# 🔐 Guia de Proteção na Internet (Nível Intermediário)
+
+## 📌 Visão geral
+
+Este guia cobre três pilares complementares de segurança e privacidade, assumindo que você já configurou:
+
+* Buscador privado
+* Gerenciador de senhas
+* Autenticação em dois fatores (2FA)
+* E-mail privado
+* VPN
+* Bloqueio de rastreadores
+
+Agora vamos avançar para um nível mais robusto:
+
+---
+
+# 1️⃣ DNS Privado
+
+## 🧠 O que é?
+
+O DNS (Sistema de Nomes de Domínio) traduz endereços da web em IPs. Um DNS privado criptografa essas consultas, impedindo interceptação e manipulação.
+
+## 🎯 Objetivo
+
+* Evitar monitoramento por provedores
+* Proteger contra ataques de redirecionamento
+* Adicionar uma camada extra de privacidade
+
+---
+
+## ⚙️ Configuração
+
+### 📱 Android (9+)
+
+1. Acesse **Configurações → Rede e Internet**
+2. Toque em **DNS Privado**
+3. Selecione **Nome do host do provedor**
+4. Insira:
+
+   * `dns.google` ou
+   * `1dot1dot1dot1.cloudflare-dns.com`
+
+---
+
+### 🍎 iPhone (iOS)
+
+1. Instale um app de DNS seguro (ex: Cloudflare 1.1.1.1)
+2. Ative a proteção dentro do aplicativo
+
+---
+
+### 💻 Windows
+
+1. Vá em **Configurações de Rede**
+2. Acesse o adaptador ativo → **Propriedades**
+3. Edite **IPv4**
+4. Defina:
+
+   * DNS primário: `1.1.1.1`
+   * DNS secundário: `8.8.8.8`
+
+---
+
+### 🐧 Linux (Ubuntu)
+
+Edite:
+
+```bash
+sudo nano /etc/systemd/resolved.conf
+```
+
+Adicione:
+
+```
+DNS=1.1.1.1 8.8.8.8
+```
+
+Reinicie:
+
+```bash
+sudo systemctl restart systemd-resolved
+```
+
+---
+
+## 🔒 Recomendação
+
+Sempre que possível, utilize DNS com criptografia:
+
+* DoH (DNS over HTTPS)
+* DoT (DNS over TLS)
+
+---
+
+# 2️⃣ Navegador Seguro (Configuração Avançada)
+
+## 🧠 Objetivo
+
+Reduzir superfícies de ataque e impedir técnicas avançadas de rastreamento.
+
+---
+
+## ⚙️ Configuração recomendada
+
+### 🌐 Firefox (foco em privacidade)
+
+1. Vá em **Configurações → Privacidade e Segurança**
+2. Ajuste:
+
+   * Proteção contra rastreamento → **Rigorosa**
+   * Cookies → bloquear terceiros
+3. Desative:
+
+   * Telemetria
+   * Estudos e coleta de dados
+
+---
+
+## 🔐 Boas práticas adicionais
+
+* Utilize **perfis separados** no navegador
+* Evite instalar extensões desnecessárias
+* Revise permissões de sites regularmente
+* Limpe dados de navegação periodicamente
+
+---
+
+# 3️⃣ Separação de Identidade (Isolamento de Atividades)
+
+## 🧠 Objetivo
+
+Evitar correlação entre suas atividades digitais.
+
+---
+
+## 🧩 Estratégia prática
+
+### 🌐 Isolamento por ambiente
+
+* Use navegadores diferentes para contextos distintos
+* Ou perfis separados no mesmo navegador
+
+---
+
+### 🧱 Segmentação de uso
+
+Organize sua navegação em categorias:
+
+* Trabalho
+* Uso pessoal
+* Contas descartáveis
+
+---
+
+### 🧑‍💻 Contêineres (Firefox)
+
+Utilize a extensão **Multi-Account Containers**:
+
+* Cada aba opera isoladamente
+* Impede rastreamento cruzado entre serviços
+
+---
+
+## ⚠️ Pontos de atenção
+
+* Não misturar contas em um mesmo ambiente
+* Evitar abrir links pessoais em ambientes profissionais
+* Sempre encerrar sessões quando trocar contexto
+
+---
+
+# ✅ Checklist final
+
+* [ ] DNS privado ativo
+* [ ] Navegador com configurações reforçadas
+* [ ] Perfis ou ambientes separados
+* [ ] Isolamento de atividades implementado
+
+---
+
+## 🧠 Conclusão
+
+Com essas três camadas, você reduz significativamente:
+
+* Vazamento de dados
+* Rastreamento avançado
+* Correlação de identidade
+
+Esse nível já oferece uma proteção sólida para uso cotidiano com foco em privacidade real.
