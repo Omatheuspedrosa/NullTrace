@@ -5,6 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Nível Intermediário | NullTrace</title>
     <meta name="description" content="Guia intermediário de privacidade digital: DNS privado, navegador seguro e separação de identidade." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="favicon-32.png" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
@@ -171,27 +173,60 @@
             </div>
         </section>
 
-        <!-- Progress Tracker -->
-        <section class="px-8 pb-16 bg-[#1a2235]">
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-secondary">trending_up</span>
-                            <span class="text-white font-bold text-sm">Progresso Intermediário</span>
-                        </div>
-                        <span id="int-progress-pct" class="text-secondary font-bold text-lg">0%</span>
-                    </div>
-                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
-                        <div id="int-progress-bar" class="bg-gradient-to-r from-secondary to-primary h-full rounded-full transition-all duration-700 ease-out w-0 relative">
-                            <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
-                        </div>
-                    </div>
-                    <p id="int-progress-msg" class="text-on-surface-variant text-xs mt-3">Complete os módulos abaixo para avançar.</p>
-                </div>
-            </div>
-        </section>
+        <section class="intermediate-workspace bg-[#1a2235]" id="intermediate-workspace">
+            <div class="intermediate-workspace__inner max-w-7xl mx-auto px-8" id="intermediate-workspace-inner">
+                <div class="intermediate-progress-trigger" id="intermediate-progress-trigger" aria-hidden="true"></div>
 
+                <section class="intermediate-progress-inline-shell" id="intermediate-progress-inline-shell" aria-label="Progresso do nível intermediário">
+                    <div class="intermediate-progress-inline-stage">
+                        <div class="intermediate-progress-card intermediate-progress-card--inline bg-surface-container rounded-2xl p-6 border border-outline-variant/10" id="intermediate-progress-inline-card">
+                            <div class="flex items-center justify-between gap-4 mb-4">
+                                <div class="flex items-center gap-3 min-w-0">
+                                    <span class="material-symbols-outlined text-secondary">trending_up</span>
+                                    <span class="text-white font-bold text-sm">Progresso Intermediário</span>
+                                </div>
+                                <span id="int-progress-pct-inline" class="text-secondary font-bold text-lg flex-shrink-0">0%</span>
+                            </div>
+                            <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                                <div id="int-progress-bar-inline" class="bg-gradient-to-r from-secondary to-primary h-full rounded-full transition-all duration-700 ease-out w-0 relative">
+                                    <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
+                                </div>
+                            </div>
+                            <p id="int-progress-msg-inline" class="text-on-surface-variant text-xs mt-3">Complete os módulos abaixo para avançar.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="intermediate-progress-layout" id="intermediate-progress-layout">
+                    <aside class="intermediate-progress-rail" id="intermediate-progress-rail" aria-label="Sidebar de progresso do nível intermediário">
+                        <div class="intermediate-progress-docked-stage" id="intermediate-progress-docked-stage">
+                            <div class="intermediate-progress-card intermediate-progress-card--docked bg-surface-container rounded-[28px] border border-outline-variant/10" id="intermediate-progress-docked-card">
+                                <div class="intermediate-progress-docked-top">
+                                    <div class="intermediate-progress-icon-wrap">
+                                        <span class="material-symbols-outlined text-secondary">trending_up</span>
+                                    </div>
+                                    <div class="intermediate-progress-title-wrap">
+                                        <span class="intermediate-progress-kicker">NÍVEL</span>
+                                        <h3 class="intermediate-progress-title">Intermediário</h3>
+                                    </div>
+                                </div>
+
+                                <div class="intermediate-progress-docked-meter">
+                                    <div class="intermediate-progress-docked-bar-track">
+                                        <div class="intermediate-progress-docked-bar-fill" id="int-progress-bar-docked"></div>
+                                    </div>
+                                    <div class="intermediate-progress-docked-copy">
+                                        <span id="int-progress-pct-docked" class="intermediate-progress-docked-pct">0%</span>
+                                        <span class="intermediate-progress-docked-caption">progresso</span>
+                                    </div>
+                                </div>
+
+                                <p id="int-progress-msg-docked" class="intermediate-progress-docked-msg">0/3 módulos.</p>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="intermediate-progress-main" id="intermediate-progress-main">
         <!-- ═══ MODULE 1: DNS Privado ═══ -->
         <section class="py-16 px-8 bg-gradient-to-b from-[#1a2235] to-[#090c15]" id="modulo-1">
             <div class="max-w-4xl mx-auto">
@@ -265,7 +300,7 @@
 
                 <!-- Mockup Image -->
                 <div class="mb-10 rounded-2xl overflow-hidden border border-outline-variant/10 flex justify-center bg-black/20">
-                    <img src="images/dns-mockup.png" alt="Diagrama de DNS criptografado mostrando o fluxo de consultas seguras" class="max-w-full h-auto block mx-auto" loading="lazy">
+                    <img src="images/dns-mockup-refined-v2.png" alt="Diagrama de DNS criptografado mostrando o fluxo de consultas seguras" class="max-w-full h-auto block mx-auto" loading="lazy">
                 </div>
 
                 <!-- DNS Providers Comparison -->
@@ -610,6 +645,11 @@
             </div>
         </section>
 
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Final CTA -->
         <section class="py-20 px-8 bg-gradient-to-b from-[#090c15] to-[#0e1322]">
             <div class="max-w-3xl mx-auto text-center">
@@ -637,7 +677,7 @@
                 <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]" href="#">Privacidade</a>
                 <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]" href="#">Termos</a>
             </div>
-            <div class="text-slate-500 text-sm">© 2024 NullTrace – A Sentinela Digital.</div>
+            <div class="text-slate-500 text-sm">© 2026 NullTrace – A Sentinela Digital.</div>
         </div>
     </footer>
 

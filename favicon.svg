@@ -1,0 +1,31 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">NullTrace favicon</title>
+  <desc id="desc">Favicon do NullTrace com escudo minimalista e trilha luminosa interna.</desc>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="20" x2="236" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#141C2C"/>
+      <stop offset="1" stop-color="#0A101A"/>
+    </linearGradient>
+    <linearGradient id="stroke" x1="64" y1="46" x2="190" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5AC8FA"/>
+      <stop offset="1" stop-color="#7C90FF"/>
+    </linearGradient>
+    <linearGradient id="trace" x1="92" y1="78" x2="164" y2="176" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8DE7FF"/>
+      <stop offset="1" stop-color="#9AAEFF"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#5AC8FA" flood-opacity="0.26"/>
+    </filter>
+  </defs>
+
+  <rect x="20" y="20" width="216" height="216" rx="52" fill="url(#bg)"/>
+  <rect x="20" y="20" width="216" height="216" rx="52" fill="none" stroke="#273247" stroke-width="2"/>
+
+  <g filter="url(#glow)">
+    <path d="M128 48L186 72V118C186 157 163 193 128 208C93 193 70 157 70 118V72L128 48Z" fill="#111827" stroke="url(#stroke)" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M96 84V164L128 122L160 164V84" fill="none" stroke="url(#trace)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="96" cy="84" r="6" fill="#8DE7FF"/>
+    <circle cx="160" cy="164" r="6" fill="#9AAEFF"/>
+  </g>
+</svg>

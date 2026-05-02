@@ -5,6 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Nível Avançado | NullTrace</title>
     <meta name="description" content="Guia avançado de privacidade digital: Tor, Compartimentalização Extrema e OPSEC Básica." />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="alternate icon" type="image/png" href="favicon-32.png" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
@@ -171,27 +173,60 @@
             </div>
         </section>
 
-        <!-- Progress Tracker -->
-        <section class="px-8 pb-16 bg-[#1a2235]">
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="material-symbols-outlined text-error">trending_up</span>
-                            <span class="text-white font-bold text-sm">Progresso Avançado</span>
-                        </div>
-                        <span id="adv-progress-pct" class="text-error font-bold text-lg">0%</span>
-                    </div>
-                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
-                        <div id="adv-progress-bar" class="bg-gradient-to-r from-error to-red-500 h-full rounded-full transition-all duration-700 ease-out w-0 relative">
-                            <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
-                        </div>
-                    </div>
-                    <p id="adv-progress-msg" class="text-on-surface-variant text-xs mt-3">Complete os módulos abaixo para avançar.</p>
-                </div>
-            </div>
-        </section>
+        <section class="advanced-workspace bg-[#1a2235]" id="advanced-workspace">
+            <div class="advanced-workspace__inner max-w-7xl mx-auto px-8" id="advanced-workspace-inner">
+                <div class="advanced-progress-trigger" id="advanced-progress-trigger" aria-hidden="true"></div>
 
+                <section class="advanced-progress-inline-shell" id="advanced-progress-inline-shell" aria-label="Progresso do nível avançado">
+                    <div class="advanced-progress-inline-stage">
+                        <div class="advanced-progress-card advanced-progress-card--inline bg-surface-container rounded-2xl p-6 border border-outline-variant/10" id="advanced-progress-inline-card">
+                            <div class="flex items-center justify-between gap-4 mb-4">
+                                <div class="flex items-center gap-3 min-w-0">
+                                    <span class="material-symbols-outlined text-error">trending_up</span>
+                                    <span class="text-white font-bold text-sm">Progresso Avançado</span>
+                                </div>
+                                <span id="adv-progress-pct-inline" class="text-error font-bold text-lg flex-shrink-0">0%</span>
+                            </div>
+                            <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                                <div id="adv-progress-bar-inline" class="bg-gradient-to-r from-error to-red-500 h-full rounded-full transition-all duration-700 ease-out w-0 relative">
+                                    <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
+                                </div>
+                            </div>
+                            <p id="adv-progress-msg-inline" class="text-on-surface-variant text-xs mt-3">Complete os módulos abaixo para avançar.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="advanced-progress-layout" id="advanced-progress-layout">
+                    <aside class="advanced-progress-rail" id="advanced-progress-rail" aria-label="Sidebar de progresso do nível avançado">
+                        <div class="advanced-progress-docked-stage" id="advanced-progress-docked-stage">
+                            <div class="advanced-progress-card advanced-progress-card--docked bg-surface-container rounded-[28px] border border-outline-variant/10" id="advanced-progress-docked-card">
+                                <div class="advanced-progress-docked-top">
+                                    <div class="advanced-progress-icon-wrap">
+                                        <span class="material-symbols-outlined text-error">trending_up</span>
+                                    </div>
+                                    <div class="advanced-progress-title-wrap">
+                                        <span class="advanced-progress-kicker">NÍVEL</span>
+                                        <h3 class="advanced-progress-title">Avançado</h3>
+                                    </div>
+                                </div>
+
+                                <div class="advanced-progress-docked-meter">
+                                    <div class="advanced-progress-docked-bar-track">
+                                        <div class="advanced-progress-docked-bar-fill" id="adv-progress-bar-docked"></div>
+                                    </div>
+                                    <div class="advanced-progress-docked-copy">
+                                        <span id="adv-progress-pct-docked" class="advanced-progress-docked-pct">0%</span>
+                                        <span class="advanced-progress-docked-caption">progresso</span>
+                                    </div>
+                                </div>
+
+                                <p id="adv-progress-msg-docked" class="advanced-progress-docked-msg">0/3 módulos.</p>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <div class="advanced-progress-main" id="advanced-progress-main">
         <!-- ═══ MODULE 1: Tor Absoluto ═══ -->
         <section class="py-16 px-8 bg-gradient-to-b from-[#1a2235] to-[#090c15]" id="modulo-1">
             <div class="max-w-4xl mx-auto">
@@ -427,6 +462,10 @@
                 </div>
             </div>
         </section>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
 
@@ -438,7 +477,7 @@
                 <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]" href="#">Privacidade</a>
                 <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]" href="#">Termos</a>
             </div>
-            <div class="text-slate-500 text-sm">© 2024 NullTrace – A Sentinela Digital.</div>
+            <div class="text-slate-500 text-sm">© 2026 NullTrace – A Sentinela Digital.</div>
         </div>
     </footer>
 
