@@ -63,7 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressBarDocked = document.getElementById('int-progress-bar-docked');
     const progressPctDocked = document.getElementById('int-progress-pct-docked');
     const progressMsgDocked = document.getElementById('int-progress-msg-docked');
+    const inlineActiveLabel = document.getElementById('int-inline-active-label');
+    const inlineCompletedLabel = document.getElementById('int-inline-completed-label');
     const moduleBtns  = document.querySelectorAll('.module-complete-btn');
+    const moduleSections = Array.from(document.querySelectorAll('[data-module-section]'));
+    const moduleNavLinks = Array.from(document.querySelectorAll('[data-module-nav]'));
+    const moduleMarkers = Array.from(document.querySelectorAll('[data-module-marker]'));
+    const roadmapCards = Array.from(document.querySelectorAll('[data-roadmap-card]'));
+    const roadmapDots = Array.from(document.querySelectorAll('[data-roadmap-dot]'));
+    const roadmapStatusPills = Array.from(document.querySelectorAll('[id^="roadmap-status-"]'));
     const progressWorkspace = document.getElementById('intermediate-workspace');
     const progressTrigger = document.getElementById('intermediate-progress-trigger');
     const progressInlineShell = document.getElementById('intermediate-progress-inline-shell');
@@ -73,6 +81,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let isDocked = false;
     let dockCheckRaf = null;
+    let activeModuleIndex = 0;
+
+    function syncModuleNavigation() {
+        moduleNavLinks.forEach((link, index) => {
+            const step = link.querySelector('.intermediate-progress-module-step');
+            const stateLabel = link.querySelector('.intermediate-progress-module-state');
+            const completed = state.modules[index];
+            const active = index === activeModuleIndex;
+
+            link.classList.toggle('is-completed', completed);
+            link.classList.toggle('is-active', active);
+            link.setAttribute('aria-current', active ? 'step' : 'false');
+
+            if (step) {
+                step.textContent = String(index + 1).padStart(2, '0');
+            }
+            if (stateLabel) {
+                stateLabel.textContent = completed ? '✓' : active ? 'ATUAL' : '•';
+            }
+        });
+
+        moduleMarkers.forEach((marker, index) => {
+            marker.classList.toggle('is-completed', !!state.modules[index]);
+            marker.classList.toggle('is-active', index === activeModuleIndex && !state.modules[index]);
+        });
+
+        roadmapCards.forEach((card, index) => {
+            card.classList.toggle('is-completed', !!state.modules[index]);
+            card.classList.toggle('is-active', index === activeModuleIndex);
+        });
+
+        roadmapDots.forEach((dot, index) => {
+            dot.classList.toggle('is-completed', !!state.modules[index]);
+            dot.classList.toggle('is-active', index === activeModuleIndex);
+        });
+
+        roadmapStatusPills.forEach((pill, index) => {
+            const completed = state.modules[index];
+            const active = index === activeModuleIndex;
+            pill.classList.toggle('is-completed', completed);
+            pill.classList.toggle('is-active', active);
+            pill.textContent = completed ? 'Concluído ✓' : active ? 'Módulo atual' : index < activeModuleIndex ? 'Revisar' : 'Próximo';
+        });
+    }
 
     function getStickyTopOffset() {
         const nav = document.querySelector('nav');
@@ -148,6 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (progressPctInline) progressPctInline.textContent = pct + '%';
         if (progressBarDocked) progressBarDocked.style.height = pct + '%';
         if (progressPctDocked) progressPctDocked.textContent = pct + '%';
+        if (inlineActiveLabel) {
+            inlineActiveLabel.textContent = `Módulo atual: ${String(activeModuleIndex + 1).padStart(2, '0')}`;
+        }
+        if (inlineCompletedLabel) {
+            inlineCompletedLabel.textContent = `${done}/${TOTAL_MODULES} concluídos`;
+        }
 
         // Shimmer effect
         if (progressBarInline) {
@@ -158,16 +216,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let nextMessage = 'Complete os módulos abaixo para avançar.';
-        let nextDockedMessage = 'Siga pelos módulos para avançar.';
+        let nextDockedMessage = `${done}/${TOTAL_MODULES} módulos concluídos`;
         if (pct === 0) {
             nextMessage = 'Complete os módulos abaixo para avançar.';
-            nextDockedMessage = 'Siga pelos módulos para avançar.';
+            nextDockedMessage = `0/${TOTAL_MODULES} módulos concluídos`;
         } else if (pct < 100) {
             nextMessage = `${done} de ${TOTAL_MODULES} módulos completos — continue!`;
-            nextDockedMessage = `${done}/${TOTAL_MODULES} módulos concluídos.`;
+            nextDockedMessage = `${done}/${TOTAL_MODULES} módulos concluídos`;
         } else {
             nextMessage = 'Todos os módulos concluídos. Nível intermediário completo.';
-            nextDockedMessage = 'Nível intermediário concluído.';
+            nextDockedMessage = `${TOTAL_MODULES}/${TOTAL_MODULES} módulos concluídos`;
         }
 
         if (progressMsgInline) {
@@ -179,6 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
             progressMsgDocked.style.color = pct === 100 ? 'var(--color-secondary)' : '';
         }
 
+        syncModuleNavigation();
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     }
 
@@ -190,9 +249,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (state.modules[idx]) {
                 btn.classList.add('completed');
                 textEl.textContent = 'Concluído ✓';
+                btn.setAttribute('aria-pressed', 'true');
             } else {
                 btn.classList.remove('completed');
-                textEl.textContent = 'Marcar módulo concluído';
+                textEl.textContent = 'Marcar módulo como concluído';
+                btn.setAttribute('aria-pressed', 'false');
             }
         });
     }
@@ -246,8 +307,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => observer.observe(el));
 
+    const moduleObserver = new IntersectionObserver((entries) => {
+        const visibleEntries = entries
+            .filter(entry => entry.isIntersecting)
+            .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleEntries.length === 0) return;
+
+        const nextIndex = parseInt(visibleEntries[0].target.dataset.moduleSection, 10);
+        if (!Number.isNaN(nextIndex) && nextIndex !== activeModuleIndex) {
+            activeModuleIndex = nextIndex;
+            updateProgress();
+        }
+    }, {
+        threshold: [0.2, 0.35, 0.55],
+        rootMargin: '-20% 0px -45% 0px'
+    });
+
+    moduleSections.forEach(section => moduleObserver.observe(section));
+
     // ── Init ─────────────────────────────────────────────────────
     syncButtons();
+    syncModuleNavigation();
     updateProgress();
     syncStickyOffset();
 

@@ -61,19 +61,19 @@
     <main class="flex-grow">
 
         <!-- Hero Section -->
-        <section class="relative py-20 px-8 overflow-hidden">
+        <section class="relative py-16 md:py-18 px-8 overflow-hidden">
             <div class="absolute inset-0 pointer-events-none">
                 <div class="parallax-shape absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-secondary/5 rounded-full blur-[120px]"></div>
             </div>
             <div class="max-w-4xl mx-auto text-center relative z-10">
-                <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-bold uppercase tracking-widest mb-8">
+                <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-bold uppercase tracking-widest mb-6">
                     <span class="mr-2 flex h-2 w-2 rounded-full bg-secondary animate-pulse"></span>
                     Nível Intermediário Desbloqueado
                 </div>
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-5 leading-tight">
                     Eleve sua <span class="text-gradient-secondary">defesa digital</span> ao próximo nível
                 </h1>
-                <p class="text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-10">
+                <p class="text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-8">
                     Você completou a fundação. Agora é hora de proteger sua conexão, blindar seu navegador e isolar suas identidades online.
                 </p>
                 <div class="flex flex-wrap justify-center gap-4">
@@ -88,12 +88,12 @@
         </section>
 
         <!-- Roadmap Visual -->
-        <section class="py-16 px-8 bg-gradient-to-b from-[#0e1322] to-[#1a2235]" id="roadmap">
+        <section class="py-14 md:py-16 px-8 bg-gradient-to-b from-[#0e1322] to-[#1a2235]" id="roadmap">
             <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-16">
+                <div class="text-center mb-12">
                     <span class="text-secondary font-bold uppercase tracking-[0.2em] text-sm">Sua Jornada</span>
                     <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Roadmap Intermediário</h2>
-                    <p class="text-on-surface-variant mt-3 max-w-xl mx-auto">Três módulos estratégicos que se complementam para criar uma camada robusta de proteção.</p>
+                    <p class="text-on-surface-variant roadmap-intro mt-3 max-w-xl mx-auto">Três módulos estratégicos que se complementam para criar uma camada robusta de proteção.</p>
                 </div>
 
                 <!-- Roadmap Timeline -->
@@ -102,22 +102,26 @@
                     <div class="absolute left-8 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary via-primary to-tertiary hidden sm:block shadow-[0_0_10px_rgba(90,200,250,0.6)]"></div>
 
                     <!-- Module 1 -->
-                    <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-16 group" data-module="1">
+                    <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-12 group" data-module="1">
                         <div class="md:w-1/2 md:text-right md:pr-12 order-2 md:order-1">
-                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-secondary/40 transition-all duration-500 cursor-pointer" onclick="scrollToModule('modulo-1')">
+                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-secondary/40 transition-all duration-500 cursor-pointer" data-roadmap-card data-module-target="0" onclick="scrollToModule('modulo-1')">
                                 <div class="flex items-center gap-3 mb-3 md:justify-end">
                                     <span class="px-2 py-0.5 rounded-full bg-secondary/15 text-secondary text-[10px] font-bold uppercase tracking-widest">Semana 1</span>
+                                    <span class="roadmap-meta-pill">18 min</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2">DNS Privado</h3>
                                 <p class="text-on-surface-variant text-sm">Criptografe suas consultas DNS para impedir que seu provedor veja cada site que você acessa.</p>
-                                <div class="flex items-center gap-2 mt-4 md:justify-end text-secondary text-sm font-semibold">
-                                    <span>Explorar módulo</span>
-                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                <div class="flex items-center justify-between gap-3 mt-4">
+                                    <span class="roadmap-status-pill" id="roadmap-status-0">Próximo</span>
+                                    <div class="flex items-center gap-2 md:justify-end text-secondary text-sm font-semibold">
+                                        <span>Ir para o módulo</span>
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="absolute left-8 md:left-1/2 -translate-x-1/2 order-1 md:order-2 z-10">
-                            <div class="roadmap-dot w-10 h-10 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center text-secondary font-bold text-sm shadow-lg shadow-secondary/20">
+                            <div class="roadmap-dot w-10 h-10 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center text-secondary font-bold text-sm shadow-lg shadow-secondary/20" data-roadmap-dot="0">
                                 <span class="material-symbols-outlined text-lg">dns</span>
                             </div>
                         </div>
@@ -125,23 +129,27 @@
                     </div>
 
                     <!-- Module 2 -->
-                    <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-16 group" data-module="2">
+                    <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-12 group" data-module="2">
                         <div class="md:w-1/2 md:pr-12 order-2 md:order-1 hidden md:block"></div>
                         <div class="absolute left-8 md:left-1/2 -translate-x-1/2 order-1 md:order-2 z-10">
-                            <div class="roadmap-dot w-10 h-10 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center text-primary font-bold text-sm shadow-lg shadow-primary/20">
+                            <div class="roadmap-dot w-10 h-10 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center text-primary font-bold text-sm shadow-lg shadow-primary/20" data-roadmap-dot="1">
                                 <span class="material-symbols-outlined text-lg">shield</span>
                             </div>
                         </div>
                         <div class="md:w-1/2 md:pl-12 order-2 md:order-3">
-                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 cursor-pointer" onclick="scrollToModule('modulo-2')">
+                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-primary/40 transition-all duration-500 cursor-pointer" data-roadmap-card data-module-target="1" onclick="scrollToModule('modulo-2')">
                                 <div class="flex items-center gap-3 mb-3">
                                     <span class="px-2 py-0.5 rounded-full bg-primary/15 text-primary text-[10px] font-bold uppercase tracking-widest">Semana 2</span>
+                                    <span class="roadmap-meta-pill">22 min</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2">Navegador Seguro</h3>
                                 <p class="text-on-surface-variant text-sm">Configure um navegador blindado contra fingerprinting, trackers e scripts maliciosos.</p>
-                                <div class="flex items-center gap-2 mt-4 text-primary text-sm font-semibold">
-                                    <span>Explorar módulo</span>
-                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                <div class="flex items-center justify-between gap-3 mt-4">
+                                    <span class="roadmap-status-pill" id="roadmap-status-1">Na fila</span>
+                                    <div class="flex items-center gap-2 text-primary text-sm font-semibold">
+                                        <span>Ir para o módulo</span>
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -150,20 +158,24 @@
                     <!-- Module 3 -->
                     <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-module="3">
                         <div class="md:w-1/2 md:text-right md:pr-12 order-2 md:order-1">
-                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-tertiary/40 transition-all duration-500 cursor-pointer" onclick="scrollToModule('modulo-3')">
+                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-tertiary/40 transition-all duration-500 cursor-pointer" data-roadmap-card data-module-target="2" onclick="scrollToModule('modulo-3')">
                                 <div class="flex items-center gap-3 mb-3 md:justify-end">
                                     <span class="px-2 py-0.5 rounded-full bg-tertiary/15 text-tertiary text-[10px] font-bold uppercase tracking-widest">Semana 3</span>
+                                    <span class="roadmap-meta-pill">16 min</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2">Separação de Identidade</h3>
                                 <p class="text-on-surface-variant text-sm">Isole suas atividades online em perfis separados para que ninguém conecte os pontos.</p>
-                                <div class="flex items-center gap-2 mt-4 md:justify-end text-tertiary text-sm font-semibold">
-                                    <span>Explorar módulo</span>
-                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                <div class="flex items-center justify-between gap-3 mt-4">
+                                    <span class="roadmap-status-pill" id="roadmap-status-2">Último módulo</span>
+                                    <div class="flex items-center gap-2 md:justify-end text-tertiary text-sm font-semibold">
+                                        <span>Ir para o módulo</span>
+                                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="absolute left-8 md:left-1/2 -translate-x-1/2 order-1 md:order-2 z-10">
-                            <div class="roadmap-dot w-10 h-10 rounded-full bg-tertiary/20 border-2 border-tertiary flex items-center justify-center text-tertiary font-bold text-sm shadow-lg shadow-tertiary/20">
+                            <div class="roadmap-dot w-10 h-10 rounded-full bg-tertiary/20 border-2 border-tertiary flex items-center justify-center text-tertiary font-bold text-sm shadow-lg shadow-tertiary/20" data-roadmap-dot="2">
                                 <span class="material-symbols-outlined text-lg">supervised_user_circle</span>
                             </div>
                         </div>
@@ -192,7 +204,13 @@
                                     <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
                                 </div>
                             </div>
-                            <p id="int-progress-msg-inline" class="text-on-surface-variant text-xs mt-3">Complete os módulos abaixo para avançar.</p>
+                            <div class="intermediate-inline-meta">
+                                <p id="int-progress-msg-inline" class="text-on-surface-variant text-xs mt-3">Complete os módulos abaixo para avançar.</p>
+                                <div class="intermediate-inline-pills">
+                                    <span class="intermediate-inline-pill" id="int-inline-active-label">Módulo atual: 01</span>
+                                    <span class="intermediate-inline-pill" id="int-inline-completed-label">0/3 concluídos</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -211,14 +229,37 @@
                                     </div>
                                 </div>
 
-                                <div class="intermediate-progress-docked-meter">
-                                    <div class="intermediate-progress-docked-bar-track">
-                                        <div class="intermediate-progress-docked-bar-fill" id="int-progress-bar-docked"></div>
+                                <div class="intermediate-progress-docked-summary">
+                                    <span id="int-progress-pct-docked" class="intermediate-progress-docked-pct">0%</span>
+                                    <span class="intermediate-progress-docked-caption">PROGRESSO</span>
+                                </div>
+
+                                <div class="intermediate-progress-docked-cluster">
+                                    <div class="intermediate-progress-docked-visual" aria-hidden="true">
+                                        <div class="intermediate-progress-docked-bar-track">
+                                            <div class="intermediate-progress-docked-bar-fill" id="int-progress-bar-docked"></div>
+                                        </div>
+                                        <div class="intermediate-progress-docked-milestones">
+                                            <span class="intermediate-progress-docked-milestone" data-module-marker="0"></span>
+                                            <span class="intermediate-progress-docked-milestone" data-module-marker="1"></span>
+                                            <span class="intermediate-progress-docked-milestone" data-module-marker="2"></span>
+                                        </div>
                                     </div>
-                                    <div class="intermediate-progress-docked-copy">
-                                        <span id="int-progress-pct-docked" class="intermediate-progress-docked-pct">0%</span>
-                                        <span class="intermediate-progress-docked-caption">progresso</span>
-                                    </div>
+
+                                    <nav class="intermediate-progress-module-nav" aria-label="Navegação dos módulos do nível intermediário">
+                                        <button type="button" class="intermediate-progress-module-link" data-module-nav="0" onclick="scrollToModule('modulo-1')">
+                                            <span class="intermediate-progress-module-step">01</span>
+                                            <span class="intermediate-progress-module-state">•</span>
+                                        </button>
+                                        <button type="button" class="intermediate-progress-module-link" data-module-nav="1" onclick="scrollToModule('modulo-2')">
+                                            <span class="intermediate-progress-module-step">02</span>
+                                            <span class="intermediate-progress-module-state">•</span>
+                                        </button>
+                                        <button type="button" class="intermediate-progress-module-link" data-module-nav="2" onclick="scrollToModule('modulo-3')">
+                                            <span class="intermediate-progress-module-step">03</span>
+                                            <span class="intermediate-progress-module-state">•</span>
+                                        </button>
+                                    </nav>
                                 </div>
 
                                 <p id="int-progress-msg-docked" class="intermediate-progress-docked-msg">0/3 módulos.</p>
@@ -228,10 +269,13 @@
 
                     <div class="intermediate-progress-main" id="intermediate-progress-main">
         <!-- ═══ MODULE 1: DNS Privado ═══ -->
-        <section class="py-16 px-8 bg-gradient-to-b from-[#1a2235] to-[#090c15]" id="modulo-1">
-            <div class="max-w-4xl mx-auto">
+        <section class="module-section py-14 px-8 bg-gradient-to-b from-[#1a2235] to-[#090c15]" id="modulo-1" data-module-section="0">
+            <div class="max-w-4xl mx-auto module-content-shell">
+                <div class="module-divider-label">
+                    <span class="module-divider-chip module-divider-chip--secondary">Módulo 01 • DNS Privado</span>
+                </div>
                 <!-- Module Header -->
-                <div class="flex items-start gap-6 mb-10">
+                <div class="flex items-start gap-6 mb-8">
                     <div class="w-14 h-14 rounded-2xl bg-secondary/15 border border-secondary/25 flex items-center justify-center flex-shrink-0">
                         <span class="material-symbols-outlined text-secondary text-2xl">dns</span>
                     </div>
@@ -243,7 +287,7 @@
                 </div>
 
                 <!-- Interactive Before/After -->
-                <div class="grid md:grid-cols-2 gap-6 mb-10">
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
                     <div class="dns-card bg-error/5 rounded-2xl p-6 border border-error/20 relative overflow-hidden">
                         <div class="absolute top-3 right-3">
                             <span class="px-2 py-0.5 rounded-full bg-error/15 text-error text-[10px] font-bold uppercase tracking-widest">Sem proteção</span>
@@ -299,12 +343,13 @@
                 </div>
 
                 <!-- Mockup Image -->
-                <div class="mb-10 rounded-2xl overflow-hidden border border-outline-variant/10 flex justify-center bg-black/20">
-                    <img src="images/dns-mockup-refined-v2.png" alt="Diagrama de DNS criptografado mostrando o fluxo de consultas seguras" class="max-w-full h-auto block mx-auto" loading="lazy">
-                </div>
+                <figure class="module-visual-shell mb-8">
+                    <img src="images/dns-mockup-refined-v2.png" alt="Diagrama de DNS criptografado mostrando o fluxo de consultas seguras" class="module-visual-image max-w-full h-auto block mx-auto" loading="lazy">
+                    <figcaption class="module-visual-caption">Fluxo de resolução DNS protegida com criptografia, filtragem e validação segura.</figcaption>
+                </figure>
 
                 <!-- DNS Providers Comparison -->
-                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-10">
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-8 content-block content-block--medium">
                     <h4 class="text-white font-bold mb-4 flex items-center gap-2">
                         <span class="material-symbols-outlined text-secondary text-lg">compare</span> Provedores DNS Recomendados
                     </h4>
@@ -347,7 +392,7 @@
                 </div>
 
                 <!-- Step by Step -->
-                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-6">
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-6 content-block content-block--medium">
                     <h4 class="text-white font-bold mb-5 flex items-center gap-2">
                         <span class="material-symbols-outlined text-secondary text-lg">checklist</span> Como Configurar (Passo a Passo)
                     </h4>
@@ -385,21 +430,24 @@
 
                 <!-- Module Complete Button -->
                 <div class="text-center">
-                    <button class="module-complete-btn px-8 py-3 bg-secondary hover:bg-secondary/80 text-[#0d1117] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="0" onclick="toggleModule(0)">
+                    <button class="module-complete-btn px-8 py-3 bg-secondary hover:bg-secondary/80 text-[#0d1117] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="0" onclick="toggleModule(0)" aria-label="Marcar módulo 1 como concluído">
                         <span class="material-symbols-outlined text-lg">task_alt</span>
-                        <span class="btn-text">Marcar módulo concluído</span>
+                        <span class="btn-text">Marcar módulo como concluído</span>
                     </button>
                 </div>
             </div>
         </section>
 
         <!-- Divider -->
-        <div class="max-w-4xl mx-auto px-8"><div class="h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div></div>
+        <div class="module-separator max-w-4xl mx-auto px-8"><div class="module-separator-line"></div></div>
 
         <!-- ═══ MODULE 2: Navegador Seguro ═══ -->
-        <section class="py-16 px-8 bg-gradient-to-b from-[#090c15] to-[#1a2235]" id="modulo-2">
-            <div class="max-w-4xl mx-auto">
-                <div class="flex items-start gap-6 mb-10">
+        <section class="module-section py-14 px-8 bg-gradient-to-b from-[#090c15] to-[#1a2235]" id="modulo-2" data-module-section="1">
+            <div class="max-w-4xl mx-auto module-content-shell">
+                <div class="module-divider-label">
+                    <span class="module-divider-chip module-divider-chip--primary">Módulo 02 • Navegador Seguro</span>
+                </div>
+                <div class="flex items-start gap-6 mb-8">
                     <div class="w-14 h-14 rounded-2xl bg-primary/15 border border-primary/25 flex items-center justify-center flex-shrink-0">
                         <span class="material-symbols-outlined text-primary text-2xl">shield</span>
                     </div>
@@ -411,7 +459,7 @@
                 </div>
 
                 <!-- Browser Comparison Cards -->
-                <div class="grid md:grid-cols-3 gap-4 mb-10">
+                <div class="grid md:grid-cols-3 gap-4 mb-8 content-block content-block--wide">
                     <div class="browser-card bg-surface-container rounded-2xl p-5 border border-outline-variant/10 hover:border-primary/30 transition-all group cursor-default">
                         <div class="flex items-center gap-3 mb-4">
                             <img src="https://cdn.simpleicons.org/firefoxbrowser/b4c5ff" alt="Firefox" class="w-7 h-7">
@@ -459,12 +507,13 @@
                 </div>
 
                 <!-- Mockup -->
-                <div class="mb-10 rounded-2xl overflow-hidden border border-outline-variant/10 flex justify-center bg-black/20">
-                    <img src="images/firefox-privacy-mockup.png" alt="Configurações de privacidade do Firefox com proteção aprimorada" class="max-w-full h-auto block mx-auto" loading="lazy">
-                </div>
+                <figure class="module-visual-shell mb-8">
+                    <img src="images/firefox-privacy-mockup.png" alt="Configurações de privacidade do Firefox com proteção aprimorada" class="module-visual-image max-w-full h-auto block mx-auto" loading="lazy">
+                    <figcaption class="module-visual-caption">Checklist visual de hardening para um navegador pronto para uso diário com menor rastreabilidade.</figcaption>
+                </figure>
 
                 <!-- Firefox Hardening Checklist -->
-                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-6">
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-6 content-block content-block--medium">
                     <h4 class="text-white font-bold mb-5 flex items-center gap-2">
                         <span class="material-symbols-outlined text-primary text-lg">tune</span> Hardening do Firefox (Configurações Essenciais)
                     </h4>
@@ -513,20 +562,23 @@
                 </div>
 
                 <div class="text-center">
-                    <button class="module-complete-btn px-8 py-3 bg-primary hover:bg-primary/80 text-[#0d1117] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="1" onclick="toggleModule(1)">
+                    <button class="module-complete-btn px-8 py-3 bg-primary hover:bg-primary/80 text-[#0d1117] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="1" onclick="toggleModule(1)" aria-label="Marcar módulo 2 como concluído">
                         <span class="material-symbols-outlined text-lg">task_alt</span>
-                        <span class="btn-text">Marcar módulo concluído</span>
+                        <span class="btn-text">Marcar módulo como concluído</span>
                     </button>
                 </div>
             </div>
         </section>
 
-        <div class="max-w-4xl mx-auto px-8"><div class="h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div></div>
+        <div class="module-separator max-w-4xl mx-auto px-8"><div class="module-separator-line"></div></div>
 
         <!-- ═══ MODULE 3: Separação de Identidade ═══ -->
-        <section class="py-16 px-8 bg-gradient-to-b from-[#1a2235] to-[#090c15]" id="modulo-3">
-            <div class="max-w-4xl mx-auto">
-                <div class="flex items-start gap-6 mb-10">
+        <section class="module-section py-14 px-8 bg-gradient-to-b from-[#1a2235] to-[#090c15]" id="modulo-3" data-module-section="2">
+            <div class="max-w-4xl mx-auto module-content-shell">
+                <div class="module-divider-label">
+                    <span class="module-divider-chip module-divider-chip--tertiary">Módulo 03 • Separação de Identidade</span>
+                </div>
+                <div class="flex items-start gap-6 mb-8">
                     <div class="w-14 h-14 rounded-2xl bg-tertiary/15 border border-tertiary/25 flex items-center justify-center flex-shrink-0">
                         <span class="material-symbols-outlined text-tertiary text-2xl">supervised_user_circle</span>
                     </div>
@@ -538,12 +590,13 @@
                 </div>
 
                 <!-- Mockup -->
-                <div class="mb-10 rounded-2xl overflow-hidden border border-outline-variant/10 flex justify-center bg-black/20">
-                    <img src="images/browser-compartments-mockup.png" alt="Visualização de perfis de navegador isolados: Pessoal, Trabalho e Finanças" class="max-w-full h-auto block mx-auto" loading="lazy">
-                </div>
+                <figure class="module-visual-shell mb-8">
+                    <img src="images/browser-compartments-mockup.png" alt="Visualização de perfis de navegador isolados: Pessoal, Trabalho e Finanças" class="module-visual-image max-w-full h-auto block mx-auto" loading="lazy">
+                    <figcaption class="module-visual-caption">Perfis compartimentalizados reduzem cruzamento de cookies, sessões e sinais de identidade.</figcaption>
+                </figure>
 
                 <!-- Identity Compartments Interactive -->
-                <div class="grid md:grid-cols-3 gap-4 mb-10">
+                <div class="grid md:grid-cols-3 gap-4 mb-8 content-block content-block--wide">
                     <div class="identity-card bg-surface-container rounded-2xl p-5 border-l-4 border-secondary border-t border-r border-b border-t-outline-variant/10 border-r-outline-variant/10 border-b-outline-variant/10 hover:shadow-lg hover:shadow-secondary/5 transition-all">
                         <div class="flex items-center gap-3 mb-3">
                             <div class="w-8 h-8 rounded-full bg-secondary/15 flex items-center justify-center">
@@ -586,7 +639,7 @@
                 </div>
 
                 <!-- Tools for Compartmentalization -->
-                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-10">
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-8 content-block content-block--medium">
                     <h4 class="text-white font-bold mb-5 flex items-center gap-2">
                         <span class="material-symbols-outlined text-tertiary text-lg">build</span> Ferramentas para Compartimentalizar
                     </h4>
@@ -637,9 +690,9 @@
                 </div>
 
                 <div class="text-center">
-                    <button class="module-complete-btn px-8 py-3 bg-tertiary hover:bg-tertiary/80 text-[#0d1117] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="2" onclick="toggleModule(2)">
+                    <button class="module-complete-btn px-8 py-3 bg-tertiary hover:bg-tertiary/80 text-[#0d1117] rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="2" onclick="toggleModule(2)" aria-label="Marcar módulo 3 como concluído">
                         <span class="material-symbols-outlined text-lg">task_alt</span>
-                        <span class="btn-text">Marcar módulo concluído</span>
+                        <span class="btn-text">Marcar módulo como concluído</span>
                     </button>
                 </div>
             </div>
