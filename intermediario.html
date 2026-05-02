@@ -19,9 +19,35 @@
         <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto gap-16">
             <a class="text-2xl font-bold tracking-tighter text-white pr-8" href="index.html">NullTrace</a>
             <div class="flex items-center gap-4">
-                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-bold uppercase tracking-widest">
-                    <span class="material-symbols-outlined text-sm">shield</span> Intermediário
-                </span>
+                <div class="relative group py-2">
+                    <button class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 hover:bg-secondary/20 text-secondary text-xs font-bold uppercase tracking-widest cursor-pointer transition-colors">
+                        <span class="material-symbols-outlined text-sm">shield</span> Intermediário
+                        <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="bg-[#141925]/95 backdrop-blur-xl border border-outline-variant/20 rounded-2xl p-2 shadow-2xl flex flex-col gap-1">
+
+                            <a href="intermediario.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-secondary/10 border border-secondary/20 transition-colors group/item">
+                                <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
+                                    <span class="material-symbols-outlined text-sm">shield</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-secondary font-bold text-sm">Intermediário</span>
+                                    <span class="text-secondary/70 text-[10px] uppercase tracking-wider">Nível Atual</span>
+                                </div>
+                            </a>
+                            <a href="avancado.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <div class="w-8 h-8 rounded-full bg-error/10 flex items-center justify-center text-error">
+                                    <span class="material-symbols-outlined text-sm">local_fire_department</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-white font-bold text-sm">Avançado</span>
+                                    <span class="text-on-surface-variant text-[10px] uppercase tracking-wider group-hover/item:text-error transition-colors">Modo Extremo</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <a href="comece-agora.html" class="text-slate-400 hover:text-white flex items-center gap-2 text-sm font-semibold transition-colors">
                     <span class="material-symbols-outlined text-base">arrow_back</span> Voltar ao checklist
                 </a>
@@ -71,7 +97,7 @@
                 <!-- Roadmap Timeline -->
                 <div class="roadmap-timeline relative">
                     <!-- Vertical Line -->
-                    <div class="absolute left-8 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary/60 via-primary/40 to-tertiary/30 hidden sm:block"></div>
+                    <div class="absolute left-8 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary via-primary to-tertiary hidden sm:block shadow-[0_0_10px_rgba(90,200,250,0.6)]"></div>
 
                     <!-- Module 1 -->
                     <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-16 group" data-module="1">

@@ -26,17 +26,154 @@
         class="fixed top-0 w-full z-50 bg-[#0e1322]/60 backdrop-blur-xl transition-all duration-300 shadow-[0_20px_50px_rgba(37,99,235,0.08)]">
         <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto gap-12">
             <a class="smooth-scroll text-2xl font-bold tracking-tighter text-white dark:text-slate-50" href="#">NullTrace</a>
-            <div class="hidden md:flex items-center space-x-12 mx-8">
-                <a class="nav-link text-blue-500 font-semibold border-b-2 border-blue-600 pb-1 text-sm uppercase tracking-widest transition-colors"
-                    href="#por-que-importa">Por que importa</a>
-                <a class="nav-link text-slate-400 hover:text-white border-b-2 border-transparent pb-1 text-sm uppercase tracking-widest transition-colors"
-                    href="#primeiros-passos">Primeiros Passos</a>
-                <a class="nav-link text-slate-400 hover:text-white border-b-2 border-transparent pb-1 text-sm uppercase tracking-widest transition-colors"
-                    href="#ferramentas">Ferramentas</a>
-                <a class="nav-link text-slate-400 hover:text-white border-b-2 border-transparent pb-1 text-sm uppercase tracking-widest transition-colors"
-                    href="#prevencao">Prevenção</a>
-                <a class="nav-link text-slate-400 hover:text-white border-b-2 border-transparent pb-1 text-sm uppercase tracking-widest transition-colors"
-                    href="#recursos">Recursos</a>
+            <div class="hidden md:flex items-center space-x-8 lg:space-x-12 mx-4 lg:mx-8">
+                <!-- Por que importa -->
+                <div class="relative group py-4">
+                    <a class="nav-link text-blue-500 font-semibold text-sm uppercase tracking-widest transition-colors flex items-center gap-1"
+                        href="#por-que-importa">
+                        Por que importa <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="bg-[#141925]/95 backdrop-blur-xl border border-outline-variant/20 rounded-2xl p-2 shadow-2xl">
+                            <a href="#por-que-importa" class="smooth-scroll flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">Registros Vazados</span>
+                                <span class="text-on-surface-variant text-xs group-hover/item:text-primary transition-colors">O tamanho do problema em 2023</span>
+                            </a>
+                            <a href="#por-que-importa" class="smooth-scroll flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">Mercado Negro</span>
+                                <span class="text-on-surface-variant text-xs group-hover/item:text-primary transition-colors">O valor dos seus dados</span>
+                            </a>
+                            <a href="#por-que-importa" class="smooth-scroll flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">Falha Humana</span>
+                                <span class="text-on-surface-variant text-xs group-hover/item:text-primary transition-colors">Senhas repetidas e vetores de ataque</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Primeiros Passos -->
+                <div class="relative group py-4">
+                    <a class="nav-link text-slate-400 hover:text-white text-sm uppercase tracking-widest transition-colors flex items-center gap-1"
+                        href="#primeiros-passos">
+                        Primeiros Passos <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full w-72 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="bg-[#141925]/95 backdrop-blur-xl border border-outline-variant/20 rounded-2xl p-2 shadow-2xl grid grid-cols-2 gap-1">
+                            <a href="#primeiros-passos" class="smooth-scroll flex flex-col px-3 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">01. Buscador</span>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-wider group-hover/item:text-primary transition-colors mt-1">DuckDuckGo</span>
+                            </a>
+                            <a href="#primeiros-passos" class="smooth-scroll flex flex-col px-3 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">02. Senhas</span>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-wider group-hover/item:text-primary transition-colors mt-1">Bitwarden</span>
+                            </a>
+                            <a href="#primeiros-passos" class="smooth-scroll flex flex-col px-3 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">03. 2FA (MFA)</span>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-wider group-hover/item:text-primary transition-colors mt-1">Autenticador</span>
+                            </a>
+                            <a href="#primeiros-passos" class="smooth-scroll flex flex-col px-3 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">04. E-mail</span>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-wider group-hover/item:text-primary transition-colors mt-1">Proton Mail</span>
+                            </a>
+                            <a href="#primeiros-passos" class="smooth-scroll flex flex-col px-3 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">05. VPN</span>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-wider group-hover/item:text-primary transition-colors mt-1">Mullvad</span>
+                            </a>
+                            <a href="#primeiros-passos" class="smooth-scroll flex flex-col px-3 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">06. Trackers</span>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-wider group-hover/item:text-primary transition-colors mt-1">uBlock Origin</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ferramentas -->
+                <div class="relative group py-4">
+                    <a class="nav-link text-slate-400 hover:text-white text-sm uppercase tracking-widest transition-colors flex items-center gap-1"
+                        href="#ferramentas">
+                        Ferramentas <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="bg-[#141925]/95 backdrop-blur-xl border border-outline-variant/20 rounded-2xl p-2 shadow-2xl">
+                            <a href="#ferramentas" class="smooth-scroll flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <img src="https://cdn.simpleicons.org/protonmail/b4c5ff" class="w-5 h-5 opacity-70 group-hover/item:opacity-100 transition-opacity">
+                                <span class="text-white font-bold text-sm">Proton Mail</span>
+                            </a>
+                            <a href="#ferramentas" class="smooth-scroll flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <img src="https://cdn.simpleicons.org/signal/b4c5ff" class="w-5 h-5 opacity-70 group-hover/item:opacity-100 transition-opacity">
+                                <span class="text-white font-bold text-sm">Signal</span>
+                            </a>
+                            <a href="#ferramentas" class="smooth-scroll flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <img src="https://cdn.simpleicons.org/bitwarden/b4c5ff" class="w-5 h-5 opacity-70 group-hover/item:opacity-100 transition-opacity">
+                                <span class="text-white font-bold text-sm">Bitwarden</span>
+                            </a>
+                            <a href="#ferramentas" class="smooth-scroll flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <img src="https://cdn.simpleicons.org/mullvad/b4c5ff" class="w-5 h-5 opacity-70 group-hover/item:opacity-100 transition-opacity">
+                                <span class="text-white font-bold text-sm">Mullvad VPN</span>
+                            </a>
+                            <a href="#ferramentas" class="smooth-scroll flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <img src="https://cdn.simpleicons.org/torbrowser/b4c5ff" class="w-5 h-5 opacity-70 group-hover/item:opacity-100 transition-opacity">
+                                <span class="text-white font-bold text-sm">Tor Browser</span>
+                            </a>
+                            <a href="#ferramentas" class="smooth-scroll flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <img src="https://cdn.simpleicons.org/duckduckgo/b4c5ff" class="w-5 h-5 opacity-70 group-hover/item:opacity-100 transition-opacity">
+                                <span class="text-white font-bold text-sm">DuckDuckGo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prevenção -->
+                <div class="relative group py-4">
+                    <a class="nav-link text-slate-400 hover:text-white text-sm uppercase tracking-widest transition-colors flex items-center gap-1"
+                        href="#prevencao">
+                        Prevenção <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div class="absolute left-1/2 -translate-x-1/2 top-full w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="bg-[#141925]/95 backdrop-blur-xl border border-outline-variant/20 rounded-2xl p-2 shadow-2xl">
+                            <a href="#prevencao" class="smooth-scroll flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">Have I Been Pwned</span>
+                                <span class="text-on-surface-variant text-xs group-hover/item:text-primary transition-colors">Verifique vazamentos no seu e-mail</span>
+                            </a>
+                            <a href="#prevencao" class="smooth-scroll flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">Alertas e Senhas</span>
+                                <span class="text-on-surface-variant text-xs group-hover/item:text-primary transition-colors">O que fazer após um vazamento</span>
+                            </a>
+                            <a href="#prevencao" class="smooth-scroll flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">Isolamento (Alias)</span>
+                                <span class="text-on-surface-variant text-xs group-hover/item:text-primary transition-colors">Proteja seu endereço de e-mail real</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recursos -->
+                <div class="relative group py-4">
+                    <a class="nav-link text-slate-400 hover:text-white text-sm uppercase tracking-widest transition-colors flex items-center gap-1"
+                        href="#recursos">
+                        Recursos <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                    </a>
+                    <div class="absolute right-0 top-full w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="bg-[#141925]/95 backdrop-blur-xl border border-outline-variant/20 rounded-2xl p-2 shadow-2xl">
+                            <a href="#recursos" class="smooth-scroll flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">Fóruns</span>
+                                <span class="text-on-surface-variant text-xs group-hover/item:text-primary transition-colors">Reddit e Comunidades</span>
+                            </a>
+                            <a href="#recursos" class="smooth-scroll flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">Canais Especializados</span>
+                                <span class="text-on-surface-variant text-xs group-hover/item:text-primary transition-colors">YouTube e Podcasts</span>
+                            </a>
+                            <a href="#recursos" class="smooth-scroll flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">Guias Oficiais</span>
+                                <span class="text-on-surface-variant text-xs group-hover/item:text-primary transition-colors">PrivacyGuides e EFF</span>
+                            </a>
+                            <a href="#recursos" class="smooth-scroll flex flex-col px-4 py-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <span class="text-white font-bold text-sm">Documentação</span>
+                                <span class="text-on-surface-variant text-xs group-hover/item:text-primary transition-colors">Manuais de ferramentas essenciais</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
             <a href="comece-agora.html"
                 class="bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-container px-6 py-2.5 rounded-xl font-semibold scale-95 duration-200 active:opacity-80 transition-all hover:shadow-[0_0_20px_rgba(37,99,235,0.3)] inline-block text-center whitespace-nowrap ml-4">
@@ -92,33 +229,83 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div
-                    class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(37,99,235,0.1)] transition-all duration-300">
-                    <span class="material-symbols-outlined text-secondary text-4xl mb-6">database</span>
-                    <h3 class="text-4xl font-bold text-white mb-2 stat-counter" data-target="10" data-suffix=" Bilhões">
-                        0 Bilhões</h3>
-                    <p class="text-primary font-semibold mb-4">Registros vazados em 2023</p>
-                    <p class="text-on-surface-variant text-sm leading-relaxed">Milhões de identidades são expostas
-                        anualmente devido a falhas em grandes corporações. Você pode ser o próximo.</p>
+                <div class="group h-full min-h-[340px] perspective-1000 cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('rotate-y-180')">
+                    <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+                        <!-- Frente -->
+                        <div class="absolute inset-0 backface-hidden bg-surface-container p-8 rounded-xl border border-outline-variant/10 transition-all duration-300 flex flex-col justify-start">
+                            <span class="material-symbols-outlined text-secondary text-4xl mb-6">database</span>
+                            <h3 class="text-4xl font-bold text-white mb-2 stat-counter" data-target="10" data-suffix=" Bilhões">
+                                0 Bilhões</h3>
+                            <p class="text-primary font-semibold mb-4">Registros vazados em 2023</p>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Milhões de identidades são expostas
+                                anualmente devido a falhas em grandes corporações. Você pode ser o próximo.</p>
+                            <div class="mt-auto flex justify-end text-outline-variant opacity-70 transition-opacity">
+                                <span class="material-symbols-outlined text-sm animate-bounce">ads_click</span>
+                            </div>
+                        </div>
+                        <!-- Verso -->
+                        <div class="absolute inset-0 backface-hidden rotate-y-180 bg-[#141925] p-8 rounded-xl border border-secondary/30 transition-all duration-300 flex flex-col justify-center items-center text-center shadow-[0_0_30px_rgba(90,200,250,0.1)]">
+                            <span class="material-symbols-outlined text-secondary text-4xl mb-4">policy</span>
+                            <h4 class="text-xl font-bold text-white mb-3">A Solução</h4>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Sua senha, e-mail e CPF provavelmente já estão em alguma base pública. Utilize um Gerenciador de Senhas e verifique no Have I Been Pwned se você já foi afetado.</p>
+                            <div class="mt-auto flex justify-center text-secondary opacity-70">
+                                <span class="material-symbols-outlined text-sm">undo</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <!-- Card 2 -->
-                <div
-                    class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(37,99,235,0.1)] transition-all duration-300">
-                    <span class="material-symbols-outlined text-secondary text-4xl mb-6">shopping_cart</span>
-                    <h3 class="text-4xl font-bold text-white mb-2 stat-counter" data-target="0.10" data-prefix="~$"
-                        data-decimals="2">~$0,00</h3>
-                    <p class="text-primary font-semibold mb-4">Seu e-mail no mercado negro</p>
-                    <p class="text-on-surface-variant text-sm leading-relaxed">Para os corretores de dados, você é
-                        apenas um produto. Seus hábitos e contatos são vendidos por centavos.</p>
+                <div class="group h-full min-h-[340px] perspective-1000 cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('rotate-y-180')">
+                    <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+                        <!-- Frente -->
+                        <div class="absolute inset-0 backface-hidden bg-surface-container p-8 rounded-xl border border-outline-variant/10 transition-all duration-300 flex flex-col justify-start">
+                            <span class="material-symbols-outlined text-secondary text-4xl mb-6">shopping_cart</span>
+                            <h3 class="text-4xl font-bold text-white mb-2 stat-counter" data-target="0.10" data-prefix="~$"
+                                data-decimals="2">~$0,00</h3>
+                            <p class="text-primary font-semibold mb-4">Seu e-mail no mercado negro</p>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Para os corretores de dados, você é
+                                apenas um produto. Seus hábitos e contatos são vendidos por centavos.</p>
+                            <div class="mt-auto flex justify-end text-outline-variant opacity-70 transition-opacity">
+                                <span class="material-symbols-outlined text-sm animate-bounce">ads_click</span>
+                            </div>
+                        </div>
+                        <!-- Verso -->
+                        <div class="absolute inset-0 backface-hidden rotate-y-180 bg-[#141925] p-8 rounded-xl border border-primary/30 transition-all duration-300 flex flex-col justify-center items-center text-center shadow-[0_0_30px_rgba(124,144,255,0.1)]">
+                            <span class="material-symbols-outlined text-primary text-4xl mb-4">visibility_off</span>
+                            <h4 class="text-xl font-bold text-white mb-3">O Contra-ataque</h4>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Corretores lucram montando seu perfil psicológico e financeiro. Adote serviços com criptografia de ponta a ponta e bloqueadores de rastreadores para secar essa fonte.</p>
+                            <div class="mt-auto flex justify-center text-primary opacity-70">
+                                <span class="material-symbols-outlined text-sm">undo</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <!-- Card 3 -->
-                <div
-                    class="bg-surface-container p-8 rounded-xl border border-outline-variant/10 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(37,99,235,0.1)] transition-all duration-300">
-                    <span class="material-symbols-outlined text-secondary text-4xl mb-6">password</span>
-                    <h3 class="text-4xl font-bold text-white mb-2 stat-counter" data-target="83" data-suffix="%">0%</h3>
-                    <p class="text-primary font-semibold mb-4">Reutilizam a mesma senha</p>
-                    <p class="text-on-surface-variant text-sm leading-relaxed">O erro humano ainda é o maior vetor de
-                        ataque. Uma única senha comprometida pode derrubar toda sua vida digital.</p>
+                <div class="group h-full min-h-[340px] perspective-1000 cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('rotate-y-180')">
+                    <div class="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d">
+                        <!-- Frente -->
+                        <div class="absolute inset-0 backface-hidden bg-surface-container p-8 rounded-xl border border-outline-variant/10 transition-all duration-300 flex flex-col justify-start">
+                            <span class="material-symbols-outlined text-secondary text-4xl mb-6">password</span>
+                            <h3 class="text-4xl font-bold text-white mb-2 stat-counter" data-target="83" data-suffix="%">0%</h3>
+                            <p class="text-primary font-semibold mb-4">Reutilizam a mesma senha</p>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">O erro humano ainda é o maior vetor de
+                                ataque. Uma única senha comprometida pode derrubar toda sua vida digital.</p>
+                            <div class="mt-auto flex justify-end text-outline-variant opacity-70 transition-opacity">
+                                <span class="material-symbols-outlined text-sm animate-bounce">ads_click</span>
+                            </div>
+                        </div>
+                        <!-- Verso -->
+                        <div class="absolute inset-0 backface-hidden rotate-y-180 bg-[#141925] p-8 rounded-xl border border-tertiary/30 transition-all duration-300 flex flex-col justify-center items-center text-center shadow-[0_0_30px_rgba(157,114,255,0.1)]">
+                            <span class="material-symbols-outlined text-tertiary text-4xl mb-4">key</span>
+                            <h4 class="text-xl font-bold text-white mb-3">A Defesa</h4>
+                            <p class="text-on-surface-variant text-sm leading-relaxed">Comece gerando senhas únicas e extensas. Um Gerenciador de Senhas faz o trabalho pesado de criá-las. Por fim, ative a Autenticação de 2 Fatores (2FA) para proteção extra.</p>
+                            <div class="mt-auto flex justify-center text-tertiary opacity-70">
+                                <span class="material-symbols-outlined text-sm">undo</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
