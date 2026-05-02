@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Nível Avançado | NullTrace</title>
+    <meta name="description" content="Guia avançado de privacidade digital: Tor, Compartimentalização Extrema e OPSEC Básica." />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script src="js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/avancado.css">
+</head>
+<body class="selection:bg-error-container selection:text-white bg-[#0e1322] text-slate-50 min-h-screen flex flex-col">
+
+    <!-- TopNavBar -->
+    <nav class="w-full z-50 bg-[#0e1322]/60 backdrop-blur-xl border-b border-white/10">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto gap-16">
+            <a class="text-2xl font-bold tracking-tighter text-white pr-8" href="index.html">NullTrace</a>
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-error/10 border border-error/20 text-error text-xs font-bold uppercase tracking-widest">
+                    <span class="material-symbols-outlined text-sm">local_fire_department</span> Avançado
+                </span>
+                <a href="comece-agora.html" class="text-slate-400 hover:text-white flex items-center gap-2 text-sm font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-base">arrow_back</span> Voltar ao checklist
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <section class="relative py-20 px-8 overflow-hidden">
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-error/5 rounded-full blur-[120px]"></div>
+            </div>
+            <div class="max-w-4xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-error/10 border border-error/20 text-error text-xs font-bold uppercase tracking-widest mb-8">
+                    <span class="mr-2 flex h-2 w-2 rounded-full bg-error animate-pulse"></span>
+                    Nível Avançado Desbloqueado
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    Domine e opere nas <span class="text-gradient-error">sombras</span>
+                </h1>
+                <p class="text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed mb-10">
+                    Sua defesa passiva atingiu o teto. Chegou a hora de entender a rede Tor, separação de hardware e a mentalidade por trás da OPSEC.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#roadmap" class="bg-error/10 hover:bg-error/20 border border-error/20 text-error px-6 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
+                        <span class="material-symbols-outlined">map</span> Ver Roadmap
+                    </a>
+                    <a href="#modulo-1" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
+                        <span class="material-symbols-outlined">play_arrow</span> Começar agora
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap Visual -->
+        <section class="py-16 px-8" id="roadmap">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-error font-bold uppercase tracking-[0.2em] text-sm">Sua Jornada</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mt-2">Roadmap Avançado</h2>
+                    <p class="text-on-surface-variant mt-3 max-w-xl mx-auto">Estas técnicas são densas, mas indispensáveis para o anonimato à prova de adversários extremos.</p>
+                </div>
+
+                <!-- Roadmap Timeline -->
+                <div class="roadmap-timeline relative">
+                    <!-- Vertical Line -->
+                    <div class="absolute left-8 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-error/60 via-red-500/40 to-orange-500/30 hidden sm:block"></div>
+
+                    <!-- Module 1 -->
+                    <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-16 group" data-module="1">
+                        <div class="md:w-1/2 md:text-right md:pr-12 order-2 md:order-1">
+                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-error/40 transition-all duration-500 cursor-pointer" onclick="scrollToModule('modulo-1')">
+                                <div class="flex items-center gap-3 mb-3 md:justify-end">
+                                    <span class="px-2 py-0.5 rounded-full bg-error/15 text-error text-[10px] font-bold uppercase tracking-widest">Semana 1</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Rede Tor Profunda</h3>
+                                <p class="text-on-surface-variant text-sm">Compreenda a fundo como o roteamento cebola funciona e como dominar o Tor Browser contra censura severa.</p>
+                                <div class="flex items-center gap-2 mt-4 md:justify-end text-error text-sm font-semibold">
+                                    <span>Explorar módulo</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-8 md:left-1/2 -translate-x-1/2 order-1 md:order-2 z-10">
+                            <div class="roadmap-dot w-10 h-10 rounded-full bg-error/20 border-2 border-error flex items-center justify-center text-error font-bold text-sm shadow-lg shadow-error/20">
+                                <span class="material-symbols-outlined text-lg">public_off</span>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-3 hidden md:block"></div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 mb-16 group" data-module="2">
+                        <div class="md:w-1/2 md:pr-12 order-2 md:order-1 hidden md:block"></div>
+                        <div class="absolute left-8 md:left-1/2 -translate-x-1/2 order-1 md:order-2 z-10">
+                            <div class="roadmap-dot w-10 h-10 rounded-full bg-red-500/20 border-2 border-red-500 flex items-center justify-center text-red-500 font-bold text-sm shadow-lg shadow-red-500/20">
+                                <span class="material-symbols-outlined text-lg">folder_zip</span>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-2 md:order-3">
+                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-red-500/40 transition-all duration-500 cursor-pointer" onclick="scrollToModule('modulo-2')">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <span class="px-2 py-0.5 rounded-full bg-red-500/15 text-red-500 text-[10px] font-bold uppercase tracking-widest">Semana 2</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Compartimentalização Extrema</h3>
+                                <p class="text-on-surface-variant text-sm">Por que perfis de navegador não são suficientes? O poder do SO live (Tails) e hypervisors (Qubes).</p>
+                                <div class="flex items-center gap-2 mt-4 text-red-500 text-sm font-semibold">
+                                    <span>Explorar módulo</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="roadmap-node relative flex flex-col md:flex-row items-start md:items-center gap-6 group" data-module="3">
+                        <div class="md:w-1/2 md:text-right md:pr-12 order-2 md:order-1">
+                            <div class="roadmap-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 hover:border-orange-500/40 transition-all duration-500 cursor-pointer" onclick="scrollToModule('modulo-3')">
+                                <div class="flex items-center gap-3 mb-3 md:justify-end">
+                                    <span class="px-2 py-0.5 rounded-full bg-orange-500/15 text-orange-500 text-[10px] font-bold uppercase tracking-widest">Semana 3</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2">Fundamentos de OPSEC</h3>
+                                <p class="text-on-surface-variant text-sm">A sua tecnologia de nada serve se seu comportamento te entregar. Entenda hábitos e modelagem de ameaças.</p>
+                                <div class="flex items-center gap-2 mt-4 md:justify-end text-orange-500 text-sm font-semibold">
+                                    <span>Explorar módulo</span>
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute left-8 md:left-1/2 -translate-x-1/2 order-1 md:order-2 z-10">
+                            <div class="roadmap-dot w-10 h-10 rounded-full bg-orange-500/20 border-2 border-orange-500 flex items-center justify-center text-orange-500 font-bold text-sm shadow-lg shadow-orange-500/20">
+                                <span class="material-symbols-outlined text-lg">military_tech</span>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-3 hidden md:block"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progress Tracker -->
+        <section class="px-8 pb-16">
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-error">trending_up</span>
+                            <span class="text-white font-bold text-sm">Progresso Avançado</span>
+                        </div>
+                        <span id="adv-progress-pct" class="text-error font-bold text-lg">0%</span>
+                    </div>
+                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                        <div id="adv-progress-bar" class="bg-gradient-to-r from-error to-red-500 h-full rounded-full transition-all duration-700 ease-out w-0 relative">
+                            <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
+                        </div>
+                    </div>
+                    <p id="adv-progress-msg" class="text-on-surface-variant text-xs mt-3">Complete os módulos abaixo para avançar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ MODULE 1: Tor Absoluto ═══ -->
+        <section class="py-16 px-8" id="modulo-1">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-start gap-6 mb-10">
+                    <div class="w-14 h-14 rounded-2xl bg-error/15 border border-error/25 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-error text-2xl">public_off</span>
+                    </div>
+                    <div>
+                        <span class="text-error text-xs font-bold uppercase tracking-widest">Módulo 01</span>
+                        <h2 class="text-3xl font-bold text-white mt-1">A Rede Tor (Deeper Dive)</h2>
+                        <p class="text-on-surface-variant mt-2 max-w-2xl">O Tor não é apenas sobre entrar na Deep Web; é sobre ofuscar seu rastro saltando entre repetidores ao redor do mundo. É o <strong class="text-white font-bold">último refúgio do anonimato prático</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Tor Explanation Cards -->
+                <div class="grid md:grid-cols-2 gap-6 mb-10">
+                    <div class="info-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 relative overflow-hidden">
+                        <div class="flex items-center gap-3 mb-4 mt-2">
+                            <span class="material-symbols-outlined text-white text-xl">account_tree</span>
+                            <h4 class="text-white font-bold">Roteamento Cebola</h4>
+                        </div>
+                        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">
+                            No Tor, o tráfego é criptografado em três camadas. Ele passa por três nós (Entrada, Meio, Saída).
+                            Cada nó remove uma camada, conhecendo apenas o nó imediatamente anterior e o sucessor.
+                            <br><br>
+                            Resultado: <span class="text-error font-medium">Nenhum nó isolado sabe de onde você veio E para onde você vai.</span>
+                        </p>
+                    </div>
+                    <div class="info-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 relative overflow-hidden">
+                        <div class="flex items-center gap-3 mb-4 mt-2">
+                            <span class="material-symbols-outlined text-white text-xl">sensor_door</span>
+                            <h4 class="text-white font-bold">Riscos do Nó de Saída</h4>
+                        </div>
+                        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">
+                            O último nó (de saída) descriptografa a conexão para despachá-la à web normal na última milha. Se a conexão for HTTP, quem rodar esse nó pode bisbilhotar o trânsito livre.
+                            <br><br>
+                            Regra de ouro: <span class="text-error font-medium">O Tor sozinho não protege senhas, sempre force HTTPS mesmo via Tor!</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step by Step -->
+                <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10 mb-6">
+                    <h4 class="text-white font-bold mb-5 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-error text-lg">hardware</span> Práticas Avançadas de Tor
+                    </h4>
+                    <div class="space-y-4">
+                        <div class="adv-step flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-transparent hover:border-error/20 transition-all">
+                            <div class="w-8 h-8 rounded-full bg-error/15 flex items-center justify-center text-error text-sm font-bold flex-shrink-0 mt-0.5">1</div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Não altere o tamanho da janela</p>
+                                <p class="text-on-surface-variant text-xs mt-1">Maximizar o Tor Browser entrega as dimensões do seu monitor. Isso é um forte identificador de Fingerprinting para os trackers. Deixe no tamanho padrão em que abriu.</p>
+                            </div>
+                        </div>
+                        <div class="adv-step flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-transparent hover:border-error/20 transition-all">
+                            <div class="w-8 h-8 rounded-full bg-error/15 flex items-center justify-center text-error text-sm font-bold flex-shrink-0 mt-0.5">2</div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Bridges & OBFS4</p>
+                                <p class="text-on-surface-variant text-xs mt-1">Se o seu ISP ou governo pune tráfego do Tor, altere as configurações e use <code class="bg-white/5 px-1 rounded text-error font-mono">Bridges</code> para ofuscar o tráfego, fazendo o Tor parecer apenas ruído HTTP.</p>
+                            </div>
+                        </div>
+                        <div class="adv-step flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-transparent hover:border-error/20 transition-all">
+                            <div class="w-8 h-8 rounded-full bg-error/15 flex items-center justify-center text-error text-sm font-bold flex-shrink-0 mt-0.5">3</div>
+                            <div>
+                                <p class="text-white font-semibold text-sm">Preferência ao .Onion</p>
+                                <p class="text-on-surface-variant text-xs mt-1">Muitos provedores essenciais tem links em ".onion" (como o Proton Mail). Ao utilizá-los e não sair do ecossistema, o tráfego nunca toca os nós de saída. Segurança absoluta garantida via End-to-End.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="module-complete-btn px-8 py-3 bg-error hover:bg-error/80 text-white rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="0" onclick="toggleModule(0)">
+                        <span class="material-symbols-outlined text-lg">task_alt</span>
+                        <span class="btn-text">Marcar módulo concluído</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="max-w-4xl mx-auto px-8"><div class="h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div></div>
+
+        <!-- ═══ MODULE 2: Compartimentalização OS ═══ -->
+        <section class="py-16 px-8" id="modulo-2">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-start gap-6 mb-10">
+                    <div class="w-14 h-14 rounded-2xl bg-red-500/15 border border-red-500/25 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-red-500 text-2xl">folder_zip</span>
+                    </div>
+                    <div>
+                        <span class="text-red-500 text-xs font-bold uppercase tracking-widest">Módulo 02</span>
+                        <h2 class="text-3xl font-bold text-white mt-1">Isolamento via SO (VMs & Sandboxing)</h2>
+                        <p class="text-on-surface-variant mt-2 max-w-2xl">Não basta separar as abas do navegador. O malware que invadir seu navegador pessoal não deve ter qualquer caminho para ler dados do trabalho. Para neutralizar ameaças no ambiente físico, precisamos isolar.</p>
+                    </div>
+                </div>
+
+                <!-- OS Cards -->
+                <div class="grid md:grid-cols-2 gap-4 mb-10">
+                    <div class="info-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 group cursor-default">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-white flex items-center justify-center rounded-xl">
+                                <img src="https://cdn.simpleicons.org/linux/000" alt="Tails" class="w-8 h-8">
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Tails OS</h4>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-widest">Amnésico & Anônimo</span>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">
+                            Um sistema inteiro num pendrive. Ele não salva nada no disco da máquina que se conecta, forçando todo conteúdo pela rede Tor e sendo apagado sumariamente assim que é desplugado. Literalmente não deixa rastros.
+                        </p>
+                        <a href="https://tails.boum.org/" target="_blank" class="text-red-500 font-bold text-sm inline-flex items-center hover:underline gap-1">Conhecer o Tails <span class="material-symbols-outlined text-[16px]">open_in_new</span></a>
+                    </div>
+                    <div class="info-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 group cursor-default">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-[#2D31A6] flex items-center justify-center rounded-xl">
+                                <span class="material-symbols-outlined text-white text-3xl">view_quilt</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Qubes OS</h4>
+                                <span class="text-on-surface-variant text-[10px] uppercase tracking-widest">Máquinas Virtuais Isoladas</span>
+                            </div>
+                        </div>
+                        <p class="text-on-surface-variant text-sm mb-4 leading-relaxed">
+                            A compartimentalização em seu clímax. Ele isola tudo em domínios virtuais no nível do hypervisor. Se um anexo malicioso corromper um domínio pessoal, seu domínio bancário permanece fisicamente intocado num sistema blindado.
+                        </p>
+                        <a href="https://www.qubes-os.org/" target="_blank" class="text-red-500 font-bold text-sm inline-flex items-center hover:underline gap-1">Conhecer o Qubes <span class="material-symbols-outlined text-[16px]">open_in_new</span></a>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="module-complete-btn px-8 py-3 bg-red-500 hover:bg-red-500/80 text-white rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="1" onclick="toggleModule(1)">
+                        <span class="material-symbols-outlined text-lg">task_alt</span>
+                        <span class="btn-text">Marcar módulo concluído</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="max-w-4xl mx-auto px-8"><div class="h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div></div>
+
+        <!-- ═══ MODULE 3: OPSEC ═══ -->
+        <section class="py-16 px-8" id="modulo-3">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-start gap-6 mb-10">
+                    <div class="w-14 h-14 rounded-2xl bg-orange-500/15 border border-orange-500/25 flex items-center justify-center flex-shrink-0">
+                        <span class="material-symbols-outlined text-orange-500 text-2xl">military_tech</span>
+                    </div>
+                    <div>
+                        <span class="text-orange-500 text-xs font-bold uppercase tracking-widest">Módulo 03</span>
+                        <h2 class="text-3xl font-bold text-white mt-1">Fundamentos de OPSEC</h2>
+                        <p class="text-on-surface-variant mt-2 max-w-2xl">Segurança Operacional (OPSEC) diz respeito àquilo que não tem código aberto: você. É a disciplina constante e ininterrupta em relação sobre o que você não compartilha.</p>
+                    </div>
+                </div>
+
+                <!-- Threat Modeling -->
+                <div class="bg-surface-container rounded-2xl p-8 border-l-4 border-orange-500 border-t border-r border-b border-t-outline-variant/10 border-r-outline-variant/10 border-b-outline-variant/10 mb-10">
+                    <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-orange-500 text-2xl">radar</span> Modelagem de Ameaças (Threat Model)
+                    </h3>
+                    <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">
+                        Em vez de se proteger irracionalmente de tudo, faça estas 5 perguntas fundamentais sobre si mesmo:
+                    </p>
+                    <ul class="space-y-4 text-sm font-medium mb-6">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-orange-500/80 mt-0.5">looks_one</span>
+                            <span class="text-white">O que você está tentando proteger? <span class="block text-xs font-normal text-on-surface-variant mt-1">Seu e-mail, dinheiro, anonimato do fórum ou conversas íntimas?</span></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-orange-500/80 mt-0.5">looks_two</span>
+                            <span class="text-white">De quem você está se escondendo? <span class="block text-xs font-normal text-on-surface-variant mt-1">Anunciantes, stalkers com habilidades de hackers ou um Estado-Nação?</span></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-orange-500/80 mt-0.5">looks_3</span>
+                            <span class="text-white">Qual a probabilidade deles agirem contra você?</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-orange-500/80 mt-0.5">looks_4</span>
+                            <span class="text-white">Quais as consequências se você falhar?</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-orange-500/80 mt-0.5">looks_5</span>
+                            <span class="text-white">O quanto você está disposto a incomodar sua rotina em troca disso? <span class="block text-xs font-normal text-on-surface-variant mt-1">Você está disposto a sacrificar agilidade no Chrome por uma lentidão massiva segura no Tor?</span></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Habits and Metadata -->
+                 <div class="grid md:grid-cols-2 gap-6 mb-10">
+                    <div class="info-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 relative overflow-hidden">
+                        <div class="flex items-center gap-3 mb-4 mt-2">
+                            <span class="material-symbols-outlined text-white text-xl">camera</span>
+                            <h4 class="text-white font-bold">Limpeza de Metadados</h4>
+                        </div>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">
+                            A foto que você compartilha exibe o seu rosto, mas os metadados EXIF ocultos relatam o modelo da câmera, coordenadas de GPS exatas, horário e software de edição usado. A OPSEC exige ferramentas como <code class="bg-white/5 px-1 py-0.5 font-mono text-xs rounded text-orange-500">ExifTool</code>  ou usar chats criptografados que limpem o conteúdo em imagens e documentos antes do upload à rede.
+                        </p>
+                    </div>
+                    <div class="info-card bg-surface-container rounded-2xl p-6 border border-outline-variant/10 relative overflow-hidden">
+                        <div class="flex items-center gap-3 mb-4 mt-2">
+                            <span class="material-symbols-outlined text-white text-xl">person_off</span>
+                            <h4 class="text-white font-bold">Psicologia do OPSEC</h4>
+                        </div>
+                        <p class="text-on-surface-variant text-sm leading-relaxed">
+                            O silêncio é sua melhor defesa, já o ego seu inimigo natural. Nunca cometa o erro de logar numa VPN impenetrável e gabar de suas ações no fórum com um login real associado a e-mails triviais no mesmo momento e no fuso local. Cross-contaminação dos seus hábitos online entre contas quebras todas as suas muralhas técnicas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="module-complete-btn px-8 py-3 bg-orange-500 hover:bg-orange-500/80 text-white rounded-xl font-bold transition-all flex items-center gap-2 mx-auto" data-module="2" onclick="toggleModule(2)">
+                        <span class="material-symbols-outlined text-lg">task_alt</span>
+                        <span class="btn-text">Marcar módulo concluído</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-20 px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <div id="final-banner" class="bg-surface-container rounded-3xl p-10 border border-outline-variant/10 relative overflow-hidden">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-error/5 rounded-full blur-[80px] pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <span class="material-symbols-outlined text-error text-5xl mb-4 block">diamond</span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Você é Invulnerável.</h2>
+                        <p class="text-on-surface-variant mb-8 max-w-lg mx-auto">Sua fundação, seu limite técnico e sua inteligência reestruturam você no patamar da privacidade total. Você concluiu o guia de Sentinela Digital.</p>
+                        <a href="index.html" class="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-6 py-3 rounded-xl font-bold transition-all">
+                            <span class="material-symbols-outlined">home</span> Voltar à Base
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0e1322] w-full py-12 border-t border-white/5 mt-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-8">
+            <div class="text-lg font-bold text-slate-200">NullTrace</div>
+            <div class="flex gap-8">
+                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]" href="#">Privacidade</a>
+                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]" href="#">Termos</a>
+            </div>
+            <div class="text-slate-500 text-sm">© 2024 NullTrace – A Sentinela Digital.</div>
+        </div>
+    </footer>
+
+    <script src="js/avancado.js"></script>
+</body>
+</html>

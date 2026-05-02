@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html class="dark" lang="pt-BR">
+
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Comece Agora | NullTrace</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script src="js/tailwind-config.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="selection:bg-primary-container selection:text-white bg-[#0e1322] text-slate-50 min-h-screen flex flex-col">
     <!-- TopNavBar -->
     <nav class="w-full z-50 bg-[#0e1322]/60 backdrop-blur-xl border-b border-white/10">
@@ -17,11 +21,14 @@
             <a class="text-2xl font-bold tracking-tighter text-white pr-8" href="index.html">NullTrace</a>
             <div class="flex items-center gap-4">
                 <!-- Modo Rápido Toggle -->
-                <button id="quick-mode-btn" onclick="toggleQuickMode()" class="flex items-center gap-2 px-4 py-2 rounded-xl border border-outline-variant/20 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-sm font-bold transition-all duration-300 select-none" title="Alternar Modo Rápido">
+                <button id="quick-mode-btn" onclick="toggleQuickMode()"
+                    class="flex items-center gap-2 px-4 py-2 rounded-xl border border-outline-variant/20 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white text-sm font-bold transition-all duration-300 select-none"
+                    title="Alternar Modo Rápido">
                     <span class="material-symbols-outlined text-base" id="quick-mode-icon">bolt</span>
                     <span id="quick-mode-label">Modo rápido</span>
                 </button>
-                <a href="index.html" class="text-slate-400 hover:text-white flex items-center gap-2 text-sm font-semibold transition-colors">
+                <a href="index.html"
+                    class="text-slate-400 hover:text-white flex items-center gap-2 text-sm font-semibold transition-colors">
                     <span class="material-symbols-outlined text-base">arrow_back</span> Voltar ao início
                 </a>
             </div>
@@ -32,20 +39,27 @@
     <main class="flex-grow py-20 px-8">
         <div class="max-w-3xl mx-auto">
             <div class="mb-16 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Comece sua proteção digital em poucos minutos</h1>
-                <p class="text-xl text-on-surface-variant mb-6">Siga este guia simples e reduza sua exposição online passo a passo.</p>
-                
-                <div class="w-full max-w-lg mx-auto mt-8 bg-surface-container p-6 rounded-3xl border border-outline-variant/10 shadow-sm">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Comece sua proteção digital em poucos minutos
+                </h1>
+                <p class="text-xl text-on-surface-variant mb-6">Siga este guia simples e reduza sua exposição online
+                    passo a passo.</p>
+
+                <div
+                    class="w-full max-w-lg mx-auto mt-8 bg-surface-container p-6 rounded-3xl border border-outline-variant/10 shadow-sm">
                     <div class="mb-5 flex flex-col items-center justify-center">
-                        <p class="text-sm font-bold uppercase tracking-wider text-on-surface-variant mb-1">Seu nível de proteção: <span id="protection-level-text" class="text-white text-base">0%</span></p>
-                        <p id="protection-message" class="text-sm font-semibold transition-colors duration-300 text-error">Você ainda está vulnerável</p>
+                        <p class="text-sm font-bold uppercase tracking-wider text-on-surface-variant mb-1">Seu nível de
+                            proteção: <span id="protection-level-text" class="text-white text-base">0%</span></p>
+                        <p id="protection-message"
+                            class="text-sm font-semibold transition-colors duration-300 text-error">Você ainda está
+                            vulnerável</p>
                     </div>
-                    
+
                     <div class="flex justify-between items-center text-xs font-bold text-on-surface-variant mb-2 px-1">
                         <span id="progress-text">0 de 6 passos</span>
                     </div>
                     <div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
-                        <div id="progress-bar" class="bg-gradient-to-r from-primary-container to-secondary-container h-full rounded-full transition-all duration-500 ease-out w-0 relative">
+                        <div id="progress-bar"
+                            class="bg-gradient-to-r from-primary-container to-secondary-container h-full rounded-full transition-all duration-500 ease-out w-0 relative">
                             <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
                         </div>
                     </div>
@@ -54,105 +68,151 @@
 
             <!-- Completion Banner (hidden by default) -->
             <div id="completion-banner" class="hidden mb-8">
-                <div class="relative overflow-hidden flex items-center gap-4 px-6 py-5 rounded-2xl bg-gradient-to-r from-primary-container/20 via-secondary-container/15 to-primary-container/20 border border-primary-container/40">
+                <div
+                    class="relative overflow-hidden flex items-center gap-4 px-6 py-5 rounded-2xl bg-gradient-to-r from-primary-container/20 via-secondary-container/15 to-primary-container/20 border border-primary-container/40">
                     <!-- left glow orb -->
-                    <div class="absolute -left-6 top-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-primary-container/20 blur-2xl pointer-events-none"></div>
-                    <div class="flex-shrink-0 w-11 h-11 rounded-full bg-primary-container/30 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary check-icon-filled" style="font-size:22px">verified</span>
+                    <div
+                        class="absolute -left-6 top-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-primary-container/20 blur-2xl pointer-events-none">
+                    </div>
+                    <div
+                        class="flex-shrink-0 w-11 h-11 rounded-full bg-primary-container/30 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary check-icon-filled"
+                            style="font-size:22px">verified</span>
                     </div>
                     <div class="flex-grow">
                         <p class="text-white font-bold text-sm mb-0.5">Fundação completa!</p>
-                        <p class="text-on-surface-variant text-xs">Todos os 6 passos concluídos &mdash; você desbloqueou os níveis avançados.</p>
+                        <p class="text-on-surface-variant text-xs">Todos os 6 passos concluídos &mdash; você desbloqueou
+                            os níveis avançados.</p>
                     </div>
-                    <span class="material-symbols-outlined text-primary/60 flex-shrink-0" style="font-size:20px">arrow_downward</span>
+                    <span class="material-symbols-outlined text-primary/60 flex-shrink-0"
+                        style="font-size:20px">arrow_downward</span>
                 </div>
             </div>
 
             <!-- Quick Mode Panel -->
             <div id="quick-mode-panel" class="hidden mb-8">
-                <div class="bg-surface-container rounded-3xl border border-primary-container/30 overflow-hidden shadow-lg shadow-primary-container/10">
+                <div
+                    class="bg-surface-container rounded-3xl border border-primary-container/30 overflow-hidden shadow-lg shadow-primary-container/10">
                     <!-- Header -->
-                    <div class="flex items-center gap-3 px-6 py-4 border-b border-outline-variant/10 bg-primary-container/5">
+                    <div
+                        class="flex items-center gap-3 px-6 py-4 border-b border-outline-variant/10 bg-primary-container/5">
                         <span class="material-symbols-outlined text-primary" style="font-size:20px">bolt</span>
                         <span class="text-white font-bold text-sm uppercase tracking-wider">Modo Rápido</span>
-                        <span class="ml-auto text-xs text-on-surface-variant font-medium">Links diretos · Instruções mínimas</span>
+                        <span class="ml-auto text-xs text-on-surface-variant font-medium">Links diretos · Instruções
+                            mínimas</span>
                     </div>
                     <!-- Steps list -->
                     <div class="divide-y divide-outline-variant/10">
 
                         <!-- QM Step 1 -->
-                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">1</div>
+                        <div
+                            class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">
+                                1</div>
                             <div class="flex-grow">
                                 <p class="text-white font-semibold text-sm mb-1">Trocar buscador</p>
-                                <p class="text-on-surface-variant text-xs mb-2">Configure o DuckDuckGo como padrão no seu navegador.</p>
-                                <a href="https://duckduckgo.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
-                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>duckduckgo.com
+                                <p class="text-on-surface-variant text-xs mb-2">Configure o DuckDuckGo como padrão no
+                                    seu navegador.</p>
+                                <a href="https://duckduckgo.com" target="_blank" rel="noopener"
+                                    class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined"
+                                        style="font-size:14px">open_in_new</span>duckduckgo.com
                                 </a>
                             </div>
                             <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="0"></div>
                         </div>
 
                         <!-- QM Step 2 -->
-                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">2</div>
+                        <div
+                            class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">
+                                2</div>
                             <div class="flex-grow">
                                 <p class="text-white font-semibold text-sm mb-1">Gerenciador de senhas</p>
-                                <p class="text-on-surface-variant text-xs mb-2">Crie conta no Bitwarden e instale a extensão no navegador.</p>
-                                <a href="https://bitwarden.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
-                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>bitwarden.com
+                                <p class="text-on-surface-variant text-xs mb-2">Crie conta no Bitwarden e instale a
+                                    extensão no navegador.</p>
+                                <a href="https://bitwarden.com" target="_blank" rel="noopener"
+                                    class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined"
+                                        style="font-size:14px">open_in_new</span>bitwarden.com
                                 </a>
                             </div>
                             <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="1"></div>
                         </div>
 
                         <!-- QM Step 3 -->
-                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">3</div>
+                        <div
+                            class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">
+                                3</div>
                             <div class="flex-grow">
                                 <p class="text-white font-semibold text-sm mb-1">Ativar 2FA</p>
-                                <p class="text-on-surface-variant text-xs mb-2">Instale Aegis no celular e ative verificação em duas etapas nas suas contas.</p>
-                                <a href="https://getaegis.app" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
-                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>getaegis.app
+                                <p class="text-on-surface-variant text-xs mb-2">Instale Aegis no celular e ative
+                                    verificação em duas etapas nas suas contas.</p>
+                                <a href="https://getaegis.app" target="_blank" rel="noopener"
+                                    class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined"
+                                        style="font-size:14px">open_in_new</span>getaegis.app
                                 </a>
                             </div>
                             <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="2"></div>
                         </div>
 
                         <!-- QM Step 4 -->
-                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">4</div>
+                        <div
+                            class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">
+                                4</div>
                             <div class="flex-grow">
                                 <p class="text-white font-semibold text-sm mb-1">E-mail privado</p>
-                                <p class="text-on-surface-variant text-xs mb-2">Crie uma conta no Proton Mail e use para contas importantes.</p>
-                                <a href="https://proton.me/mail" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
-                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>proton.me/mail
+                                <p class="text-on-surface-variant text-xs mb-2">Crie uma conta no Proton Mail e use para
+                                    contas importantes.</p>
+                                <a href="https://proton.me/mail" target="_blank" rel="noopener"
+                                    class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined"
+                                        style="font-size:14px">open_in_new</span>proton.me/mail
                                 </a>
                             </div>
                             <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="3"></div>
                         </div>
 
                         <!-- QM Step 5 -->
-                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">5</div>
+                        <div
+                            class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">
+                                5</div>
                             <div class="flex-grow">
                                 <p class="text-white font-semibold text-sm mb-1">Usar VPN</p>
-                                <p class="text-on-surface-variant text-xs mb-2">Assine e ative o Mullvad antes de qualquer Wi-Fi público.</p>
-                                <a href="https://mullvad.net" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
-                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>mullvad.net
+                                <p class="text-on-surface-variant text-xs mb-2">Assine e ative o Mullvad antes de
+                                    qualquer Wi-Fi público.</p>
+                                <a href="https://mullvad.net" target="_blank" rel="noopener"
+                                    class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined"
+                                        style="font-size:14px">open_in_new</span>mullvad.net
                                 </a>
                             </div>
                             <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="4"></div>
                         </div>
 
                         <!-- QM Step 6 -->
-                        <div class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">6</div>
+                        <div
+                            class="qm-step flex items-start gap-4 px-6 py-4 hover:bg-white/3 transition-colors group/qm">
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-container/20 flex items-center justify-center text-primary text-sm font-bold mt-0.5">
+                                6</div>
                             <div class="flex-grow">
                                 <p class="text-white font-semibold text-sm mb-1">Bloquear rastreadores</p>
-                                <p class="text-on-surface-variant text-xs mb-2">Instale uBlock Origin nas extensões do seu navegador.</p>
-                                <a href="https://ublockorigin.com" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
-                                    <span class="material-symbols-outlined" style="font-size:14px">open_in_new</span>ublockorigin.com
+                                <p class="text-on-surface-variant text-xs mb-2">Instale uBlock Origin nas extensões do
+                                    seu navegador.</p>
+                                <a href="https://ublockorigin.com" target="_blank" rel="noopener"
+                                    class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-container transition-colors">
+                                    <span class="material-symbols-outlined"
+                                        style="font-size:14px">open_in_new</span>ublockorigin.com
                                 </a>
                             </div>
                             <div class="qm-check-wrapper flex-shrink-0 mt-1" data-step-index="5"></div>
@@ -164,47 +224,65 @@
 
             <div class="space-y-6" id="checklist-container">
                 <!-- Step 1 -->
-                <div class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
+                <div
+                    class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
                     <input type="checkbox" class="step-checkbox hidden" />
-                    
+
                     <!-- Header (Clickable) -->
-                    <div class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
-                        <div class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
+                    <div
+                        class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
+                        <div
+                            class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
                             <span class="step-number">1</span>
-                            <span class="material-symbols-outlined hidden check-icon" style="font-size: 24px;">check</span>
+                            <span class="material-symbols-outlined hidden check-icon"
+                                style="font-size: 24px;">check</span>
                         </div>
                         <div class="flex-grow flex justify-between items-center w-full gap-4">
                             <div>
-                                <h3 class="text-xl font-bold text-white mb-1 transition-all step-title">Trocar buscador</h3>
-                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">Proteja suas buscas diárias contra rastreamento corporativo.</p>
+                                <h3 class="text-xl font-bold text-white mb-1 transition-all step-title">Trocar buscador
+                                </h3>
+                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">Proteja
+                                    suas buscas diárias contra rastreamento corporativo.</p>
                             </div>
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                                <span class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Expanded Content -->
-                    <div class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
+                    <div
+                        class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
                         <div class="overflow-hidden">
                             <div class="pb-6 pt-2 border-t border-outline-variant/5">
                                 <h4 class="text-primary-container font-semibold mb-2 flex items-center gap-2">
                                     <span class="material-symbols-outlined text-base">info</span> Por que isso importa?
                                 </h4>
-                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Mecanismos de busca convencionais registram o que você pesquisa, criando um perfil íntimo detalhado da sua vida. Buscadores como o DuckDuckGo não fazem isso, você pesquisa de forma neutra e privada.</p>
-                                
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Mecanismos de busca
+                                    convencionais registram o que você pesquisa, criando um perfil íntimo detalhado da
+                                    sua vida. Buscadores como o DuckDuckGo não fazem isso, você pesquisa de forma neutra
+                                    e privada.</p>
+
                                 <h4 class="text-white font-semibold mb-3">Como fazer:</h4>
-                                <ol class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
-                                    <li>Acesse o site <a href="#" class="text-blue-400 hover:underline">duckduckgo.com</a>.</li>
-                                    <li>Vá nas configurações do seu navegador de uso diário (ex: Configurações &gt; Mecanismo de Busca).</li>
+                                <ol
+                                    class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
+                                    <li>Acesse o site <a href="#"
+                                            class="text-blue-400 hover:underline">duckduckgo.com</a>.</li>
+                                    <li>Vá nas configurações do seu navegador de uso diário (ex: Configurações &gt;
+                                        Mecanismo de Busca).</li>
                                     <li>Altere o "Mecanismo de busca padrão" para DuckDuckGo.</li>
                                 </ol>
-                                
+
                                 <div class="flex flex-col sm:flex-row gap-3">
-                                    <button class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
-                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar concluído
+                                    <button
+                                        class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar
+                                        concluído
                                     </button>
-                                    <button class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                    <button
+                                        class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
                                         <span class="material-symbols-outlined text-[20px]">undo</span> Desfazer
                                     </button>
                                 </div>
@@ -214,43 +292,60 @@
                 </div>
 
                 <!-- Step 2 -->
-                <div class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
+                <div
+                    class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
                     <input type="checkbox" class="step-checkbox hidden" />
-                    <div class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
-                        <div class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
+                    <div
+                        class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
+                        <div
+                            class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
                             <span class="step-number">2</span>
-                            <span class="material-symbols-outlined hidden check-icon" style="font-size: 24px;">check</span>
+                            <span class="material-symbols-outlined hidden check-icon"
+                                style="font-size: 24px;">check</span>
                         </div>
                         <div class="flex-grow flex justify-between items-center w-full gap-4">
                             <div>
-                                <h3 class="text-xl font-bold text-white mb-1 transition-all step-title">Usar gerenciador de senhas</h3>
-                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">Pare de memorizar (e repetir) suas senhas.</p>
+                                <h3 class="text-xl font-bold text-white mb-1 transition-all step-title">Usar gerenciador
+                                    de senhas</h3>
+                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">Pare de
+                                    memorizar (e repetir) suas senhas.</p>
                             </div>
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                                <span class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
                             </div>
                         </div>
                     </div>
-                    <div class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
+                    <div
+                        class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
                         <div class="overflow-hidden">
                             <div class="pb-6 pt-2 border-t border-outline-variant/5">
                                 <h4 class="text-primary-container font-semibold mb-2 flex items-center gap-2">
                                     <span class="material-symbols-outlined text-base">info</span> Por que isso importa?
                                 </h4>
-                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">O erro número 1 em cibersegurança é reutilizar senhas. Se a senha vazar de um site pequeno, o hacker testa a mesma no seu banco. Com o Bitwarden, você gera senhas fortes de forma automática para cada conta.</p>
-                                
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">O erro número 1 em
+                                    cibersegurança é reutilizar senhas. Se a senha vazar de um site pequeno, o hacker
+                                    testa a mesma no seu banco. Com o Bitwarden, você gera senhas fortes de forma
+                                    automática para cada conta.</p>
+
                                 <h4 class="text-white font-semibold mb-3">Como fazer:</h4>
-                                <ol class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
-                                    <li>Crie uma conta gratuita em <a href="#" class="text-blue-400 hover:underline">bitwarden.com</a>.</li>
+                                <ol
+                                    class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
+                                    <li>Crie uma conta gratuita em <a href="#"
+                                            class="text-blue-400 hover:underline">bitwarden.com</a>.</li>
                                     <li>Instale a extensão no seu navegador com sua senha mestra.</li>
                                     <li>Passe a alterar senhas antigas enquanto o Bitwarden salva o registro.</li>
                                 </ol>
-                                
+
                                 <div class="flex flex-col sm:flex-row gap-3">
-                                    <button class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
-                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar concluído
+                                    <button
+                                        class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar
+                                        concluído
                                     </button>
-                                    <button class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                    <button
+                                        class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
                                         <span class="material-symbols-outlined text-[20px]">undo</span> Desfazer
                                     </button>
                                 </div>
@@ -260,43 +355,58 @@
                 </div>
 
                 <!-- Step 3 -->
-                <div class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
+                <div
+                    class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
                     <input type="checkbox" class="step-checkbox hidden" />
-                    <div class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
-                        <div class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
+                    <div
+                        class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
+                        <div
+                            class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
                             <span class="step-number">3</span>
-                            <span class="material-symbols-outlined hidden check-icon" style="font-size: 24px;">check</span>
+                            <span class="material-symbols-outlined hidden check-icon"
+                                style="font-size: 24px;">check</span>
                         </div>
                         <div class="flex-grow flex justify-between items-center w-full gap-4">
                             <div>
                                 <h3 class="text-xl font-bold text-white mb-1 transition-all step-title">Ativar 2FA</h3>
-                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">A barreira definitiva contra invasões diretas de conta.</p>
+                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">A
+                                    barreira definitiva contra invasões diretas de conta.</p>
                             </div>
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                                <span class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
                             </div>
                         </div>
                     </div>
-                    <div class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
+                    <div
+                        class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
                         <div class="overflow-hidden">
                             <div class="pb-6 pt-2 border-t border-outline-variant/5">
                                 <h4 class="text-primary-container font-semibold mb-2 flex items-center gap-2">
                                     <span class="material-symbols-outlined text-base">info</span> Por que isso importa?
                                 </h4>
-                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Mesmo se descobrirem a sua senha forte, a Autenticação de 2 Fatores garante que será necessário acesso físico ao seu celular para validar e liberar o login.</p>
-                                
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Mesmo se descobrirem a
+                                    sua senha forte, a Autenticação de 2 Fatores garante que será necessário acesso
+                                    físico ao seu celular para validar e liberar o login.</p>
+
                                 <h4 class="text-white font-semibold mb-3">Como fazer:</h4>
-                                <ol class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
+                                <ol
+                                    class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
                                     <li>Instale um aplicativo Autenticador no celular, como Aegis Authenticator.</li>
                                     <li>Acesse as opções de "Segurança" nas suas redes principais.</li>
-                                    <li>Selecione as opções de ativar "Verificação em duas etapas" lendo o QR Code com o Aegis.</li>
+                                    <li>Selecione as opções de ativar "Verificação em duas etapas" lendo o QR Code com o
+                                        Aegis.</li>
                                 </ol>
-                                
+
                                 <div class="flex flex-col sm:flex-row gap-3">
-                                    <button class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
-                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar concluído
+                                    <button
+                                        class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar
+                                        concluído
                                     </button>
-                                    <button class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                    <button
+                                        class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
                                         <span class="material-symbols-outlined text-[20px]">undo</span> Desfazer
                                     </button>
                                 </div>
@@ -306,43 +416,60 @@
                 </div>
 
                 <!-- Step 4 -->
-                <div class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
+                <div
+                    class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
                     <input type="checkbox" class="step-checkbox hidden" />
-                    <div class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
-                        <div class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
+                    <div
+                        class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
+                        <div
+                            class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
                             <span class="step-number">4</span>
-                            <span class="material-symbols-outlined hidden check-icon" style="font-size: 24px;">check</span>
+                            <span class="material-symbols-outlined hidden check-icon"
+                                style="font-size: 24px;">check</span>
                         </div>
                         <div class="flex-grow flex justify-between items-center w-full gap-4">
                             <div>
-                                <h3 class="text-xl font-bold text-white mb-1 transition-all step-title">Criar e-mail privado</h3>
-                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">Garanta correspondência onde ninguém espiona seus anexos.</p>
+                                <h3 class="text-xl font-bold text-white mb-1 transition-all step-title">Criar e-mail
+                                    privado</h3>
+                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">Garanta
+                                    correspondência onde ninguém espiona seus anexos.</p>
                             </div>
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                                <span class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
                             </div>
                         </div>
                     </div>
-                    <div class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
+                    <div
+                        class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
                         <div class="overflow-hidden">
                             <div class="pb-6 pt-2 border-t border-outline-variant/5">
                                 <h4 class="text-primary-container font-semibold mb-2 flex items-center gap-2">
                                     <span class="material-symbols-outlined text-base">info</span> Por que isso importa?
                                 </h4>
-                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">E-mails típicos são frequentemente analisados ("scanned") para direcionar anúncios usando suas conversas para traçar seu perfil. Serviços com criptografia de ponta a ponta mudam isso.</p>
-                                
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">E-mails típicos são
+                                    frequentemente analisados ("scanned") para direcionar anúncios usando suas conversas
+                                    para traçar seu perfil. Serviços com criptografia de ponta a ponta mudam isso.</p>
+
                                 <h4 class="text-white font-semibold mb-3">Como fazer:</h4>
-                                <ol class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
-                                    <li>Explore provedores baseados fora de alianças corporativas de dados, como o Proton Mail.</li>
-                                    <li>Crie um apelido e instale as chaves criptográficas (feito automaticamente no cadastro).</li>
+                                <ol
+                                    class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
+                                    <li>Explore provedores baseados fora de alianças corporativas de dados, como o
+                                        Proton Mail.</li>
+                                    <li>Crie um apelido e instale as chaves criptográficas (feito automaticamente no
+                                        cadastro).</li>
                                     <li>Passe a usar sua nova conta para registrar-se ou contatar bancos e médicos.</li>
                                 </ol>
-                                
+
                                 <div class="flex flex-col sm:flex-row gap-3">
-                                    <button class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
-                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar concluído
+                                    <button
+                                        class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar
+                                        concluído
                                     </button>
-                                    <button class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                    <button
+                                        class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
                                         <span class="material-symbols-outlined text-[20px]">undo</span> Desfazer
                                     </button>
                                 </div>
@@ -352,43 +479,58 @@
                 </div>
 
                 <!-- Step 5 -->
-                <div class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
+                <div
+                    class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
                     <input type="checkbox" class="step-checkbox hidden" />
-                    <div class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
-                        <div class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
+                    <div
+                        class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
+                        <div
+                            class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
                             <span class="step-number">5</span>
-                            <span class="material-symbols-outlined hidden check-icon" style="font-size: 24px;">check</span>
+                            <span class="material-symbols-outlined hidden check-icon"
+                                style="font-size: 24px;">check</span>
                         </div>
                         <div class="flex-grow flex justify-between items-center w-full gap-4">
                             <div>
                                 <h3 class="text-xl font-bold text-white mb-1 transition-all step-title">Usar VPN</h3>
-                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">Disfarce sua localização de conexões publicas expostas.</p>
+                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">Disfarce
+                                    sua localização de conexões publicas expostas.</p>
                             </div>
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                                <span class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
                             </div>
                         </div>
                     </div>
-                    <div class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
+                    <div
+                        class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
                         <div class="overflow-hidden">
                             <div class="pb-6 pt-2 border-t border-outline-variant/5">
                                 <h4 class="text-primary-container font-semibold mb-2 flex items-center gap-2">
                                     <span class="material-symbols-outlined text-base">info</span> Por que isso importa?
                                 </h4>
-                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Em um Wi-Fi de café ou no aeroporto, a rede inteira pode ser explorada. Uma VPN sólida encripta todo trajeto do computador e desvia o IP, sem salvar logs.</p>
-                                
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Em um Wi-Fi de café ou
+                                    no aeroporto, a rede inteira pode ser explorada. Uma VPN sólida encripta todo
+                                    trajeto do computador e desvia o IP, sem salvar logs.</p>
+
                                 <h4 class="text-white font-semibold mb-3">Como fazer:</h4>
-                                <ol class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
+                                <ol
+                                    class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
                                     <li>Escolha uma companhia elogiada pela transparência (Ex: Mullvad VPN).</li>
                                     <li>Ative o cliente após o download local ou mobilie.</li>
-                                    <li>Sempre ligue ela ao entrar num Wi-Fi público e navegue com segurança oculta.</li>
+                                    <li>Sempre ligue ela ao entrar num Wi-Fi público e navegue com segurança oculta.
+                                    </li>
                                 </ol>
-                                
+
                                 <div class="flex flex-col sm:flex-row gap-3">
-                                    <button class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
-                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar concluído
+                                    <button
+                                        class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar
+                                        concluído
                                     </button>
-                                    <button class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                    <button
+                                        class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
                                         <span class="material-symbols-outlined text-[20px]">undo</span> Desfazer
                                     </button>
                                 </div>
@@ -398,43 +540,60 @@
                 </div>
 
                 <!-- Step 6 -->
-                <div class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
+                <div
+                    class="step-card bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-colors duration-300 relative overflow-hidden group">
                     <input type="checkbox" class="step-checkbox hidden" />
-                    <div class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
-                        <div class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
+                    <div
+                        class="step-header cursor-pointer p-6 flex flex-row gap-6 items-start sm:items-center select-none">
+                        <div
+                            class="check-circle flex-shrink-0 w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary font-bold text-xl transition-all duration-300 mt-1 sm:mt-0">
                             <span class="step-number">6</span>
-                            <span class="material-symbols-outlined hidden check-icon" style="font-size: 24px;">check</span>
+                            <span class="material-symbols-outlined hidden check-icon"
+                                style="font-size: 24px;">check</span>
                         </div>
                         <div class="flex-grow flex justify-between items-center w-full gap-4">
                             <div>
-                                <h3 class="text-xl font-bold text-white mb-1 transition-all step-title">Bloquear rastreadores</h3>
-                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">Chega de anúncios e pixels invisíveis lendo sua tela.</p>
+                                <h3 class="text-xl font-bold text-white mb-1 transition-all step-title">Bloquear
+                                    rastreadores</h3>
+                                <p class="text-on-surface-variant text-sm pr-4 line-clamp-2 md:line-clamp-none">Chega de
+                                    anúncios e pixels invisíveis lendo sua tela.</p>
                             </div>
-                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                                <span class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
+                            <div
+                                class="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                                <span
+                                    class="material-symbols-outlined text-outline-variant transition-transform duration-300 transform chevron-icon">expand_more</span>
                             </div>
                         </div>
                     </div>
-                    <div class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
+                    <div
+                        class="step-content grid grid-rows-[0fr] opacity-0 transition-all duration-300 ease-in-out px-6 sm:pl-[5.5rem] sm:pr-6">
                         <div class="overflow-hidden">
                             <div class="pb-6 pt-2 border-t border-outline-variant/5">
                                 <h4 class="text-primary-container font-semibold mb-2 flex items-center gap-2">
                                     <span class="material-symbols-outlined text-base">info</span> Por que isso importa?
                                 </h4>
-                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Você já ouviu falar de anúncios seguindo suas conversas offlines. Não é o microfone, mas os rastreadores ("Trackers") que te associam a todo comportamento possível no navegador. Bloqueadores impedem sua eficácia.</p>
-                                
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Você já ouviu falar de
+                                    anúncios seguindo suas conversas offlines. Não é o microfone, mas os rastreadores
+                                    ("Trackers") que te associam a todo comportamento possível no navegador.
+                                    Bloqueadores impedem sua eficácia.</p>
+
                                 <h4 class="text-white font-semibold mb-3">Como fazer:</h4>
-                                <ol class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
+                                <ol
+                                    class="list-decimal pl-5 text-sm text-on-surface-variant space-y-2 mb-8 marker:text-primary/70 font-medium">
                                     <li>Abra o link de Extensões / Addons no seu Firefox ou Chrome equivalente.</li>
                                     <li>Pesquise por uma extensão conceituada estilo "uBlock Origin".</li>
-                                    <li>Adicione as permissões e usufrua automaticamente de uma navegação veloz e imune a scripts pesados.</li>
+                                    <li>Adicione as permissões e usufrua automaticamente de uma navegação veloz e imune
+                                        a scripts pesados.</li>
                                 </ol>
-                                
+
                                 <div class="flex flex-col sm:flex-row gap-3">
-                                    <button class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
-                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar concluído
+                                    <button
+                                        class="mark-complete-btn px-6 py-2.5 bg-primary hover:bg-primary-container text-white rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                        <span class="material-symbols-outlined text-[20px]">task_alt</span> Marcar
+                                        concluído
                                     </button>
-                                    <button class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
+                                    <button
+                                        class="unmark-complete-btn hidden px-6 py-2.5 bg-transparent border-2 border-outline-variant/30 hover:border-outline-variant hover:bg-white/5 text-on-surface-variant rounded-xl font-bold transition-colors flex items-center justify-center gap-2">
                                         <span class="material-symbols-outlined text-[20px]">undo</span> Desfazer
                                     </button>
                                 </div>
@@ -444,36 +603,51 @@
                 </div>
 
             </div>
-            
+
             <!-- Próximos níveis -->
             <div class="mt-20">
                 <div class="text-center mb-10" id="next-level-header">
                     <h2 class="text-3xl font-bold text-white mb-2 transition-colors duration-500">Próximos níveis</h2>
-                    <p class="text-on-surface-variant transition-colors duration-500">Complete os passos iniciais para desbloquear os guias avançados.</p>
+                    <p class="text-on-surface-variant transition-colors duration-500">Complete os passos iniciais para
+                        desbloquear os guias avançados.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-6" id="next-levels-container">
                     <!-- Nível Intermediário -->
-                    <div class="locked-level relative bg-surface-container rounded-3xl p-8 border border-outline-variant/10 overflow-hidden flex flex-col items-center text-center">
+                    <div
+                        class="locked-level relative bg-surface-container rounded-3xl p-8 border border-outline-variant/10 overflow-hidden flex flex-col items-center text-center">
                         <!-- Overlay de bloqueio -->
-                        <div class="lock-overlay absolute inset-0 z-10 bg-[#0e1322]/80 backdrop-blur-[2px] flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out cursor-not-allowed">
-                            <div class="w-16 h-16 rounded-full bg-surface mb-3 flex items-center justify-center border border-outline-variant/10">
+                        <div
+                            class="lock-overlay absolute inset-0 z-10 bg-[#0e1322]/80 backdrop-blur-[2px] flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out cursor-not-allowed">
+                            <div
+                                class="w-16 h-16 rounded-full bg-surface mb-3 flex items-center justify-center border border-outline-variant/10">
                                 <span class="material-symbols-outlined text-3xl text-primary font-bold">lock</span>
                             </div>
-                            <span class="text-sm font-bold text-on-surface-variant tracking-widest uppercase">Bloqueado</span>
+                            <span
+                                class="text-sm font-bold text-on-surface-variant tracking-widest uppercase">Bloqueado</span>
                         </div>
-                        
-                        <div class="relative z-0 opacity-30 transition-opacity duration-700 w-full h-full flex flex-col items-center content-layer">
-                            <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-secondary-container/20 text-secondary text-xs font-bold uppercase tracking-widest mb-6 border border-secondary/20">
+
+                        <div
+                            class="relative z-0 opacity-30 transition-opacity duration-700 w-full h-full flex flex-col items-center content-layer">
+                            <div
+                                class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-secondary-container/20 text-secondary text-xs font-bold uppercase tracking-widest mb-6 border border-secondary/20">
                                 Intermediário
                             </div>
                             <ul class="space-y-5 text-white font-medium text-lg w-full">
-                                <li class="flex items-center justify-center gap-3"><span class="material-symbols-outlined text-secondary opacity-70">dns</span> DNS privado</li>
-                                <li class="flex items-center justify-center gap-3"><span class="material-symbols-outlined text-secondary opacity-70">shield</span> Navegador seguro</li>
-                                <li class="flex items-center justify-center gap-3"><span class="material-symbols-outlined text-secondary opacity-70">supervised_user_circle</span> Separação de identidade</li>
+                                <li class="flex items-center justify-center gap-3"><span
+                                        class="material-symbols-outlined text-secondary opacity-70">dns</span> DNS
+                                    privado</li>
+                                <li class="flex items-center justify-center gap-3"><span
+                                        class="material-symbols-outlined text-secondary opacity-70">shield</span>
+                                    Navegador seguro</li>
+                                <li class="flex items-center justify-center gap-3"><span
+                                        class="material-symbols-outlined text-secondary opacity-70">supervised_user_circle</span>
+                                    Separação de identidade</li>
                             </ul>
-                            <div class="mt-auto pt-10 text-center w-full max-h-0 opacity-0 overflow-hidden action-btn transition-all duration-700 ease-out">
-                                <a href="intermediario.html" class="bg-primary/10 hover:bg-primary-container border border-primary/20 text-white font-bold px-6 py-3 rounded-xl w-full flex justify-center items-center gap-2 transition-colors">
+                            <div
+                                class="mt-auto pt-10 text-center w-full max-h-0 opacity-0 overflow-hidden action-btn transition-all duration-700 ease-out">
+                                <a href="intermediario.html"
+                                    class="bg-primary/10 hover:bg-primary-container border border-primary/20 text-white font-bold px-6 py-3 rounded-xl w-full flex justify-center items-center gap-2 transition-colors">
                                     Iniciar <span class="material-symbols-outlined">arrow_forward</span>
                                 </a>
                             </div>
@@ -481,27 +655,41 @@
                     </div>
 
                     <!-- Nível Avançado -->
-                    <div class="locked-level relative bg-surface-container rounded-3xl p-8 border border-outline-variant/10 overflow-hidden flex flex-col items-center text-center">
-                        <div class="lock-overlay absolute inset-0 z-10 bg-[#0e1322]/80 backdrop-blur-[2px] flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out cursor-not-allowed">
-                            <div class="w-16 h-16 rounded-full bg-surface mb-3 flex items-center justify-center border border-outline-variant/10">
+                    <div
+                        class="locked-level relative bg-surface-container rounded-3xl p-8 border border-outline-variant/10 overflow-hidden flex flex-col items-center text-center">
+                        <div
+                            class="lock-overlay absolute inset-0 z-10 bg-[#0e1322]/80 backdrop-blur-[2px] flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out cursor-not-allowed">
+                            <div
+                                class="w-16 h-16 rounded-full bg-surface mb-3 flex items-center justify-center border border-outline-variant/10">
                                 <span class="material-symbols-outlined text-3xl text-error font-bold">lock</span>
                             </div>
-                            <span class="text-sm font-bold text-on-surface-variant tracking-widest uppercase">Bloqueado</span>
+                            <span
+                                class="text-sm font-bold text-on-surface-variant tracking-widest uppercase">Bloqueado</span>
                         </div>
-                        
-                        <div class="relative z-0 opacity-30 transition-opacity duration-700 w-full h-full flex flex-col items-center content-layer">
-                            <div class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-error-container/20 text-error text-xs font-bold uppercase tracking-widest mb-6 border border-error/20">
+
+                        <div
+                            class="relative z-0 opacity-30 transition-opacity duration-700 w-full h-full flex flex-col items-center content-layer">
+                            <div
+                                class="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-error-container/20 text-error text-xs font-bold uppercase tracking-widest mb-6 border border-error/20">
                                 Avançado
                             </div>
                             <ul class="space-y-5 text-white font-medium text-lg w-full">
-                                <li class="flex items-center justify-center gap-3"><span class="material-symbols-outlined text-error opacity-70">public_off</span> Tor</li>
-                                <li class="flex items-center justify-center gap-3"><span class="material-symbols-outlined text-error opacity-70">folder_zip</span> Compartimentalização</li>
-                                <li class="flex items-center justify-center gap-3"><span class="material-symbols-outlined text-error opacity-70">military_tech</span> OPSEC básico</li>
+                                <li class="flex items-center justify-center gap-3"><span
+                                        class="material-symbols-outlined text-error opacity-70">public_off</span> Tor
+                                </li>
+                                <li class="flex items-center justify-center gap-3"><span
+                                        class="material-symbols-outlined text-error opacity-70">folder_zip</span>
+                                    Compartimentalização</li>
+                                <li class="flex items-center justify-center gap-3"><span
+                                        class="material-symbols-outlined text-error opacity-70">military_tech</span>
+                                    OPSEC básico</li>
                             </ul>
-                            <div class="mt-auto pt-10 text-center w-full max-h-0 opacity-0 overflow-hidden action-btn transition-all duration-700 ease-out">
-                                <button class="bg-error/10 hover:bg-error-container border border-error/20 text-white font-bold px-6 py-3 rounded-xl w-full flex justify-center items-center gap-2 transition-colors">
+                            <div
+                                class="mt-auto pt-10 text-center w-full max-h-0 opacity-0 overflow-hidden action-btn transition-all duration-700 ease-out">
+                                <a href="avancado.html"
+                                    class="bg-error/10 hover:bg-error-container border border-error/20 text-white font-bold px-6 py-3 rounded-xl w-full flex justify-center items-center gap-2 transition-colors">
                                     Iniciar <span class="material-symbols-outlined">arrow_forward</span>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -515,8 +703,10 @@
         <div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-8">
             <div class="text-lg font-bold text-slate-200">NullTrace</div>
             <div class="flex gap-8">
-                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]" href="#">Privacidade</a>
-                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]" href="#">Termos</a>
+                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]"
+                    href="#">Privacidade</a>
+                <a class="text-slate-500 hover:text-blue-400 transition-colors text-xs uppercase tracking-[0.1em]"
+                    href="#">Termos</a>
             </div>
             <div class="text-slate-500 text-sm">
                 © 2024 NullTrace – A Sentinela Digital.
@@ -531,14 +721,14 @@
             const progressBar = document.getElementById('progress-bar');
             const protectionLevelText = document.getElementById('protection-level-text');
             const protectionMessage = document.getElementById('protection-message');
-            
+
             const savedState = JSON.parse(localStorage.getItem('nulltrace_checklist')) || {};
-            
+
             function updateProgress() {
                 let completed = 0;
                 const totalSteps = cards.length;
                 const currentState = {};
-                
+
                 cards.forEach((card, index) => {
                     const checkbox = card.querySelector('.step-checkbox');
                     const checkCircle = card.querySelector('.check-circle');
@@ -550,14 +740,14 @@
 
                     if (checkbox.checked) {
                         completed++;
-                        
+
                         // Estilo Card concluído
                         card.classList.add('border-primary/50', 'bg-primary-container/5', 'opacity-75');
-                        
+
                         // Estilo Círculo de check
                         checkCircle.classList.replace('bg-primary-container/20', 'bg-primary');
                         checkCircle.classList.replace('text-primary', 'text-white');
-                        
+
                         // Trocar número por ícone
                         stepNumber.classList.add('hidden');
                         checkIcon.classList.remove('hidden');
@@ -568,15 +758,15 @@
                         // Botões
                         markBtn.classList.add('hidden');
                         unmarkBtn.classList.remove('hidden');
-                        
+
                     } else {
                         // Estilo Card normal
                         card.classList.remove('border-primary/50', 'bg-primary-container/5', 'opacity-75');
-                        
+
                         // Estilo Círculo de check normal
                         checkCircle.classList.replace('bg-primary', 'bg-primary-container/20');
                         checkCircle.classList.replace('text-white', 'text-primary');
-                        
+
                         // Voltar para número
                         stepNumber.classList.remove('hidden');
                         checkIcon.classList.add('hidden');
@@ -588,17 +778,17 @@
                         markBtn.classList.remove('hidden');
                         unmarkBtn.classList.add('hidden');
                     }
-                    
+
                     currentState[index] = checkbox.checked;
                 });
-                
+
                 localStorage.setItem('nulltrace_checklist', JSON.stringify(currentState));
-                
+
                 const percentage = Math.round((completed / totalSteps) * 100);
                 progressText.textContent = `${completed} de ${totalSteps} passos`;
                 progressBar.style.width = `${percentage}%`;
                 protectionLevelText.textContent = `${percentage}%`;
-                
+
                 // Mensagem dinâmica baseada no nível de privacidade
                 if (percentage <= 30) {
                     protectionMessage.textContent = "Você ainda está vulnerável";
@@ -624,7 +814,7 @@
                         el.classList.remove('max-h-0', 'opacity-0');
                         el.classList.add('max-h-20', 'opacity-100');
                     });
-                    
+
                     title.classList.add('text-primary');
                     p.innerHTML = "Parabéns! Você completou a fundação básica e desbloqueou esses novos guias táticos.";
                     p.classList.replace('text-on-surface-variant', 'text-white');
@@ -672,7 +862,7 @@
                     p.style.setProperty('--ty', `${Math.sin(angle) * dist}px`);
                     p.style.background = colors[i % colors.length];
                     p.style.left = `${cx + window.scrollX - 3}px`;
-                    p.style.top  = `${cy + window.scrollY - 3}px`;
+                    p.style.top = `${cy + window.scrollY - 3}px`;
                     document.body.appendChild(p);
                     p.addEventListener('animationend', () => p.remove());
                 }
@@ -787,7 +977,7 @@
 
             // Patch: mostrar banner quando 100%
             const _baseUpdateProgress = updateProgress;
-            updateProgress = function() {
+            updateProgress = function () {
                 _baseUpdateProgress();
                 const total = cards.length;
                 const done = [...cards].filter(c => c.querySelector('.step-checkbox').checked).length;
@@ -846,4 +1036,5 @@
         }
     </script>
 </body>
+
 </html>
