@@ -18,6 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     requestAnimationFrame(raf);
 
+    // Parallax effect for Hero background
+    const heroBg = document.querySelector('.hero-bg-parallax');
+    if (heroBg) {
+        lenis.on('scroll', (e) => {
+            heroBg.style.transform = `translateY(${e.scroll * 0.4}px)`;
+        });
+    }
+
     // Existing Intersection Observer for Nav Highlighting
     const elementsToAnimate = document.querySelectorAll('section, header'); 
     const sectionsToObserve = document.querySelectorAll('section');

@@ -24,6 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         requestAnimationFrame(raf);
 
+        // Parallax effect for blurred background shapes
+        const bgShape = document.querySelector('.parallax-shape');
+        if (bgShape) {
+            lenis.on('scroll', (e) => {
+                bgShape.style.transform = `translate(-50%, ${e.scroll * 0.3}px)`;
+            });
+        }
+
         // Handle smooth click without parallax fade effect
         const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
         smoothScrollLinks.forEach(link => {

@@ -336,7 +336,6 @@ button.bg-surface-container:hover {
 section {
   padding-top: var(--space-24) !important;
   padding-bottom: var(--space-24) !important;
-  background-color: var(--color-bg) !important;
 }
 
 /* Gaps maiores nos grids para "respirar" */
