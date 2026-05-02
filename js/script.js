@@ -53,11 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Setup initial default styles for transition — only transform+opacity (GPU-composited, no repaints)
-    elementsToAnimate.forEach(el => {
-        el.style.willChange = 'transform, opacity';
-        el.style.transition = 'transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.9s ease';
-    });
 
     // Handle smooth nav click with lightweight parallax
     const smoothScrollLinks = document.querySelectorAll('.nav-link, .smooth-scroll');
@@ -73,28 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (targetSection) {
-                // Nudge non-target sections slightly down and fade them
-                elementsToAnimate.forEach(el => {
-                    if (el !== targetSection) {
-                        el.style.transform = 'translateY(30px)';
-                        el.style.opacity = '0.4';
-                    } else {
-                        el.style.transform = 'translateY(-20px)';
-                        el.style.opacity = '1';
-                    }
-                });
-
                 // Scroll via Lenis
                 lenis.scrollTo(targetSection, {
                     duration: 1.6,
-                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                    onComplete: () => {
-                        // Reset all elements
-                        elementsToAnimate.forEach(el => {
-                            el.style.transform = 'translateY(0)';
-                            el.style.opacity = '1';
-                        });
-                    }
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
                 });
             }
         });
