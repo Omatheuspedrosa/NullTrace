@@ -60,11 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle smooth nav click with lightweight parallax
-    navLinks.forEach(link => {
+    const smoothScrollLinks = document.querySelectorAll('.nav-link, .smooth-scroll');
+    smoothScrollLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            let targetSection;
+            if (targetId === '#') {
+                targetSection = document.body;
+            } else {
+                targetSection = document.querySelector(targetId);
+            }
 
             if (targetSection) {
                 // Nudge non-target sections slightly down and fade them

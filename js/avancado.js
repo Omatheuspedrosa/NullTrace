@@ -4,6 +4,67 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ── Lenis Smooth Scroll ───────────────────────────────────────
+    let lenis;
+    if (typeof Lenis !== 'undefined') {
+        lenis = new Lenis({
+            duration: 1.1,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+        requestAnimationFrame(raf);
+
+        // Setup initial default styles for transition
+        const elementsToAnimate = document.querySelectorAll('section, header, main');
+        elementsToAnimate.forEach(el => {
+            el.style.willChange = 'transform, opacity';
+            el.style.transition = 'transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.9s ease';
+        });
+
+        // Handle smooth click with lightweight parallax
+        const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+        smoothScrollLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                if (!targetId || !targetId.startsWith('#')) return;
+
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    elementsToAnimate.forEach(el => {
+                        if (el !== targetSection) {
+                            el.style.transform = 'translateY(30px)';
+                            el.style.opacity = '0.4';
+                        } else {
+                            el.style.transform = 'translateY(-20px)';
+                            el.style.opacity = '1';
+                        }
+                    });
+                    lenis.scrollTo(targetSection, {
+                        duration: 1.6,
+                        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                        onComplete: () => {
+                            elementsToAnimate.forEach(el => {
+                                el.style.transform = 'translateY(0)';
+                                el.style.opacity = '1';
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    }
+
     // ── State ─────────────────────────────────────────────────────
     const STORAGE_KEY = 'nulltrace_avancado';
     const TOTAL_MODULES = 3;
@@ -74,7 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollToModule = function(id) {
         const el = document.getElementById(id);
         if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (lenis) {
+                lenis.scrollTo(el, {
+                    duration: 1.6,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                });
+            } else {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
     };
 
