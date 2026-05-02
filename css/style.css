@@ -1,40 +1,40 @@
-/* ═══════════════════════════════════════════════════════════════
-   NullTrace — Design System
-   Inspiração: Linear App — Minimalista, dark, levemente azulado
-   ═══════════════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   NullTrace â€” Design System
+   InspiraÃ§Ã£o: Linear App â€” Minimalista, dark, levemente azulado
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
-/* ── 1. Design Tokens — Variáveis Globais ─────────────────────── */
+/* â”€â”€ 1. Design Tokens â€” VariÃ¡veis Globais â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
-  /* ─ Cores base ─ */
-  --color-bg:               #0d1117;   /* fundo principal — azul escuro profundo */
+  /* â”€ Cores base â”€ */
+  --color-bg:               #0d1117;   /* fundo principal â€” azul escuro profundo */
   --color-bg-subtle:        #0f1623;   /* fundo levemente mais claro */
-  --color-surface:          #141925;   /* superfície de cards */
+  --color-surface:          #141925;   /* superfÃ­cie de cards */
   --color-surface-raised:   #1a2033;   /* card hover / raised */
   --color-surface-overlay:  #1e2538;   /* overlays, modais */
 
-  /* ─ Cores de borda ─ */
+  /* â”€ Cores de borda â”€ */
   --color-border:           rgba(255, 255, 255, 0.06);
   --color-border-subtle:    rgba(255, 255, 255, 0.04);
   --color-border-strong:    rgba(255, 255, 255, 0.12);
   --color-border-accent:    rgba(124, 144, 255, 0.25);
 
-  /* ─ Cores de texto ─ */
-  --color-text-primary:     #f0f2ff;   /* títulos — quase branco com toque azulado */
-  --color-text-secondary:   #8b91a8;   /* texto suave — cinza azulado médio */
-  --color-text-tertiary:    #525768;   /* text muted — bem discreto */
+  /* â”€ Cores de texto â”€ */
+  --color-text-primary:     #f0f2ff;   /* tÃ­tulos â€” quase branco com toque azulado */
+  --color-text-secondary:   #8b91a8;   /* texto suave â€” cinza azulado mÃ©dio */
+  --color-text-tertiary:    #525768;   /* text muted â€” bem discreto */
   --color-text-inverse:     #0d1117;
 
-  /* ─ Acento — azul Linear ─ */
-  --color-accent:           #7c90ff;   /* azul elétrico suave */
+  /* â”€ Acento â€” azul Linear â”€ */
+  --color-accent:           #7c90ff;   /* azul elÃ©trico suave */
   --color-accent-hover:     #9baeff;
   --color-accent-muted:     rgba(124, 144, 255, 0.12);
   --color-accent-glow:      rgba(124, 144, 255, 0.20);
 
-  /* ─ Acento secundário — azul-ciano ─ */
+  /* â”€ Acento secundÃ¡rio â€” azul-ciano â”€ */
   --color-secondary:        #5ac8fa;
   --color-secondary-muted:  rgba(90, 200, 250, 0.10);
 
-  /* ─ Estados semânticos ─ */
+  /* â”€ Estados semÃ¢nticos â”€ */
   --color-success:          #3ddc84;
   --color-success-muted:    rgba(61, 220, 132, 0.12);
   --color-warning:          #f5a623;
@@ -42,7 +42,7 @@
   --color-error:            #ff6b6b;
   --color-error-muted:      rgba(255, 107, 107, 0.12);
 
-  /* ─ Tipografia ─ */
+  /* â”€ Tipografia â”€ */
   --font-display:   'Space Grotesk', system-ui, sans-serif;
   --font-body:      'Inter', system-ui, sans-serif;
   --font-mono:      'JetBrains Mono', 'Fira Code', monospace;
@@ -79,7 +79,7 @@
   --tracking-wide:    0.04em;
   --tracking-widest:  0.12em;
 
-  /* ─ Espaçamento ─ */
+  /* â”€ EspaÃ§amento â”€ */
   --space-1:   0.25rem;   /*  4px */
   --space-2:   0.5rem;    /*  8px */
   --space-3:   0.75rem;   /* 12px */
@@ -94,7 +94,7 @@
   --space-24:  6rem;      /* 96px */
   --space-32:  8rem;      /* 128px */
 
-  /* ─ Bordas / Radius ─ */
+  /* â”€ Bordas / Radius â”€ */
   --radius-sm:   4px;
   --radius-md:   8px;
   --radius-lg:   12px;
@@ -103,23 +103,23 @@
   --radius-3xl:  28px;
   --radius-full: 9999px;
 
-  /* ─ Sombras ─ */
+  /* â”€ Sombras â”€ */
   --shadow-sm:    0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-md:    0 4px 12px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.25);
   --shadow-lg:    0 12px 32px rgba(0, 0, 0, 0.4), 0 4px 8px rgba(0, 0, 0, 0.3);
   --shadow-accent: 0 0 0 1px var(--color-border-accent), 0 8px 30px var(--color-accent-glow);
 
-  /* ─ Transições ─ */
+  /* â”€ TransiÃ§Ãµes â”€ */
   --transition-fast:   120ms cubic-bezier(0.16, 1, 0.3, 1);
   --transition-base:   220ms cubic-bezier(0.16, 1, 0.3, 1);
   --transition-slow:   380ms cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ─ Blur ─ */
+  /* â”€ Blur â”€ */
   --blur-nav: 20px;
 }
 
 
-/* ── 2. Reset & Base ─────────────────────────────────────────── */
+/* â”€â”€ 2. Reset & Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -140,7 +140,7 @@ body {
   color: var(--color-text-secondary);
 }
 
-/* ─ Hierarquia tipográfica ─ */
+/* â”€ Hierarquia tipogrÃ¡fica â”€ */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: var(--weight-bold);
@@ -165,26 +165,26 @@ a {
 }
 a:hover { color: var(--color-accent-hover); }
 
-/* Seleção de texto */
+/* SeleÃ§Ã£o de texto */
 ::selection {
   background-color: var(--color-accent-muted);
   color: var(--color-text-primary);
 }
 
-/* ── 3. Ícones Material Symbols ──────────────────────────────── */
+/* â”€â”€ 3. Ãcones Material Symbols â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' -25, 'opsz' 24;
   vertical-align: middle;
   user-select: none;
 }
 
-/* ── 4. Navegação ────────────────────────────────────────────── */
+/* â”€â”€ 4. NavegaÃ§Ã£o â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 nav {
   background-color: rgba(13, 17, 23, 0.5) !important; /* Mais transparente */
   border-bottom: 1px solid var(--color-border) !important;
   backdrop-filter: blur(12px) saturate(180%);
   -webkit-backdrop-filter: blur(12px) saturate(180%);
-  height: 64px; /* Fixando altura para consistência */
+  height: 64px; /* Fixando altura para consistÃªncia */
   display: flex;
   align-items: center;
 }
@@ -228,14 +228,14 @@ nav a[href="#"]:first-child {
   background-color: var(--color-accent-muted) !important;
 }
 
-/* Botão "Comece agora" na Nav */
+/* BotÃ£o "Comece agora" na Nav */
 nav a.bg-gradient-to-r {
   font-size: var(--text-xs) !important;
   padding: 8px 16px !important;
   border-radius: var(--radius-md) !important;
 }
 
-/* ── 5. Hero Section ─────────────────────────────────────────── */
+/* â”€â”€ 5. Hero Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 header {
   padding-top: 160px !important; /* Mais respiro no topo */
   padding-bottom: 100px !important;
@@ -257,7 +257,7 @@ header::before {
   background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(124, 144, 255, 0.10) 0%, transparent 65%);
 }
 
-/* Badge "Sua Privacidade é um Direito" */
+/* Badge "Sua Privacidade Ã© um Direito" */
 header .inline-flex.rounded-full {
   background-color: var(--color-accent-muted) !important;
   border-color: var(--color-border-accent) !important;
@@ -266,7 +266,7 @@ header .inline-flex.rounded-full {
   letter-spacing: var(--tracking-widest);
 }
 
-/* Título Hero */
+/* TÃ­tulo Hero */
 header h1 {
   font-size: clamp(2.5rem, 6vw, var(--text-6xl));
   letter-spacing: var(--tracking-tight);
@@ -283,7 +283,7 @@ header h1 .text-secondary {
   background-clip: text;
 }
 
-/* Botão CTA primário */
+/* BotÃ£o CTA primÃ¡rio */
 .bg-gradient-to-r.from-primary-container.to-secondary-container,
 a[href="comece-agora.html"] {
   background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%) !important;
@@ -309,7 +309,7 @@ a[href="comece-agora.html"]:hover {
   filter: brightness(1.1);
 }
 
-/* Botão secundário "Ver ferramentas" */
+/* BotÃ£o secundÃ¡rio "Ver ferramentas" */
 .bg-surface-container.hover\:bg-surface-container-high,
 button.bg-surface-container {
   background-color: var(--color-surface) !important;
@@ -332,11 +332,10 @@ button.bg-surface-container:hover {
   transform: translateY(-2px);
 }
 
-/* ── 6. Seções — Mais espaçamento e clareza ───────────────────── */
+/* â”€â”€ 6. SeÃ§Ãµes â€” Mais espaÃ§amento e clareza â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 section {
   padding-top: var(--space-24) !important;
   padding-bottom: var(--space-24) !important;
-  background-color: var(--color-bg) !important;
 }
 
 /* Gaps maiores nos grids para "respirar" */
@@ -348,12 +347,12 @@ section {
   .gap-x-12 { column-gap: var(--space-12) !important; }
 }
 
-/* Espaçamento extra abaixo dos títulos de seção */
+/* EspaÃ§amento extra abaixo dos tÃ­tulos de seÃ§Ã£o */
 section h2 {
   margin-bottom: var(--space-12) !important;
 }
 
-/* ─ Rótulos de seção (ex: "Contexto Atual") ─ */
+/* â”€ RÃ³tulos de seÃ§Ã£o (ex: "Contexto Atual") â”€ */
 .text-primary.font-bold.uppercase {
   font-size: var(--text-xs);
   letter-spacing: var(--tracking-widest);
@@ -361,7 +360,7 @@ section h2 {
   font-weight: var(--weight-semibold);
 }
 
-/* ── 7. Cards ────────────────────────────────────────────────── */
+/* â”€â”€ 7. Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 /* Cards stat "Por que importa" e Arsenal de Ferramentas */
 .bg-surface-container.rounded-xl,
 .bg-surface-container.flex.flex-col.h-full {
@@ -381,8 +380,8 @@ section h2 {
   box-shadow: var(--shadow-lg);
 }
 
-/* ── 8. Steps — "Primeiros Passos" (index.html) ──────────────── */
-/* Transformando os blocos de passos em cards por padrão */
+/* â”€â”€ 8. Steps â€” "Primeiros Passos" (index.html) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Transformando os blocos de passos em cards por padrÃ£o */
 .group.flex.gap-6.p-6.rounded-xl {
   background-color: var(--color-bg-subtle) !important;
   border: 1px solid var(--color-border) !important;
@@ -397,7 +396,7 @@ section h2 {
   transform: scale(1.02);
 }
 
-/* ── 9. Recursos (index.html) — Transformando colunas em cards ── */
+/* â”€â”€ 9. Recursos (index.html) â€” Transformando colunas em cards â”€â”€ */
 #recursos .grid > div {
   background-color: var(--color-bg-subtle) !important;
   border: 1px solid var(--color-border) !important;
@@ -411,7 +410,7 @@ section h2 {
   background-color: var(--color-surface) !important;
 }
 
-/* Número dos steps */
+/* NÃºmero dos steps */
 .text-primary-container.opacity-50 {
   color: var(--color-accent) !important;
   opacity: 0.25;
@@ -422,14 +421,14 @@ section h2 {
   opacity: 0.8 !important;
 }
 
-/* ── 9. Seção de Prevenção ───────────────────────────────────── */
+/* â”€â”€ 9. SeÃ§Ã£o de PrevenÃ§Ã£o â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .bg-gradient-to-br.from-surface-container.to-surface-container-highest {
   background: linear-gradient(145deg, var(--color-surface) 0%, var(--color-surface-overlay) 100%) !important;
   border-color: var(--color-border-accent) !important;
   border-radius: var(--radius-3xl) !important;
 }
 
-/* Botão "Consultar Have I Been Pwned" */
+/* BotÃ£o "Consultar Have I Been Pwned" */
 .bg-primary-container.text-white {
   background-color: var(--color-accent) !important;
   color: var(--color-bg) !important;
@@ -443,7 +442,7 @@ section h2 {
   box-shadow: 0 8px 24px var(--color-accent-glow);
 }
 
-/* ── 10. Tags / Badges ───────────────────────────────────────── */
+/* â”€â”€ 10. Tags / Badges â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .bg-secondary-container\/20.text-secondary {
   background-color: var(--color-secondary-muted) !important;
   color: var(--color-secondary) !important;
@@ -452,7 +451,7 @@ section h2 {
   border-radius: var(--radius-sm) !important;
 }
 
-/* ── 11. Footer ─────────────────────────────────────────────── */
+/* â”€â”€ 11. Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 footer {
   background-color: var(--color-bg) !important;
   border-top-color: var(--color-border) !important;
@@ -474,10 +473,10 @@ footer .text-slate-500:hover {
   color: var(--color-text-primary) !important;
 }
 
-/* ── 12. Checklist — comece-agora.html ───────────────────────── */
+/* â”€â”€ 12. Checklist â€” comece-agora.html â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 /* ... (existing styles) ... */
 
-/* Animação ao concluir um passo */
+/* AnimaÃ§Ã£o ao concluir um passo */
 @keyframes step-complete-pop {
   0% { transform: scale(1); }
   50% { transform: scale(1.03) translateY(-4px); }
@@ -504,14 +503,14 @@ footer .text-slate-500:hover {
   box-shadow: 0 0 10px var(--color-accent-glow);
 }
 
-/* ── 13. Microinterações Refinadas ────────────────────────────── */
+/* â”€â”€ 13. MicrointeraÃ§Ãµes Refinadas â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-/* Botões com feedback de escala sutil no clique */
+/* BotÃµes com feedback de escala sutil no clique */
 button:active {
   transform: scale(0.96) !important;
 }
 
-/* Removida a transição global '*' para evitar gargalos de performance */
+/* Removida a transiÃ§Ã£o global '*' para evitar gargalos de performance */
 
 /* Feedback visual leve em cards expandidos */
 .step-content {
@@ -530,7 +529,7 @@ button:active {
   background-color: var(--color-surface-raised) !important;
 }
 
-/* Círculo de check */
+/* CÃ­rculo de check */
 .check-circle {
   background-color: var(--color-accent-muted) !important;
   color: var(--color-accent) !important;
@@ -539,7 +538,7 @@ button:active {
   transition: all var(--transition-base) !important;
 }
 
-/* Step concluído */
+/* Step concluÃ­do */
 .step-card.border-primary\/50 {
   border-color: rgba(124, 144, 255, 0.35) !important;
   background-color: rgba(124, 144, 255, 0.04) !important;
@@ -549,7 +548,7 @@ button:active {
   color: var(--color-bg) !important;
 }
 
-/* Título do step */
+/* TÃ­tulo do step */
 .step-title {
   color: var(--color-text-primary) !important;
   font-family: var(--font-display);
@@ -581,7 +580,7 @@ button:active {
   --tw-marker-color: rgba(124, 144, 255, 0.7);
 }
 
-/* Botão "Marcar concluído" */
+/* BotÃ£o "Marcar concluÃ­do" */
 .mark-complete-btn {
   background-color: var(--color-accent) !important;
   color: var(--color-bg) !important;
@@ -597,7 +596,7 @@ button:active {
   box-shadow: 0 6px 20px var(--color-accent-glow);
 }
 
-/* Botão "Desfazer" */
+/* BotÃ£o "Desfazer" */
 .unmark-complete-btn {
   background-color: transparent !important;
   border-color: var(--color-border-strong) !important;
@@ -613,7 +612,7 @@ button:active {
   background-color: var(--color-accent-muted) !important;
 }
 
-/* ── 13. Modo Rápido ─────────────────────────────────────────── */
+/* â”€â”€ 13. Modo RÃ¡pido â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 #quick-mode-btn {
   background-color: rgba(255,255,255,0.04) !important;
   border-color: var(--color-border-strong) !important;
@@ -635,7 +634,7 @@ button:active {
   color: var(--color-accent) !important;
 }
 
-/* Painel do modo rápido */
+/* Painel do modo rÃ¡pido */
 #quick-mode-panel .bg-surface-container {
   background-color: var(--color-surface) !important;
   border-color: var(--color-border-accent) !important;
@@ -658,7 +657,7 @@ button:active {
   color: var(--color-accent) !important;
 }
 
-/* ── 14. Próximos Níveis (Locked) ───────────────────────────── */
+/* â”€â”€ 14. PrÃ³ximos NÃ­veis (Locked) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .locked-level {
   background-color: var(--color-surface) !important;
   border-color: var(--color-border) !important;
@@ -674,20 +673,20 @@ button:active {
   border-color: var(--color-border) !important;
 }
 
-/* Badge Intermediário */
+/* Badge IntermediÃ¡rio */
 .bg-secondary-container\/20.text-secondary.border {
   background-color: var(--color-secondary-muted) !important;
   border-color: rgba(90, 200, 250, 0.20) !important;
   color: var(--color-secondary) !important;
 }
-/* Badge Avançado */
+/* Badge AvanÃ§ado */
 .bg-error-container\/20.text-error.border {
   background-color: var(--color-error-muted) !important;
   border-color: rgba(255, 107, 107, 0.20) !important;
   color: var(--color-error) !important;
 }
 
-/* ── 15. Seção "Recursos" ────────────────────────────────────── */
+/* â”€â”€ 15. SeÃ§Ã£o "Recursos" â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .font-headline {
   font-family: var(--font-display);
 }
@@ -696,7 +695,7 @@ button:active {
   opacity: 0.4;
 }
 
-/* ── 16. Microinterações (preservadas) ──────────────────────── */
+/* â”€â”€ 16. MicrointeraÃ§Ãµes (preservadas) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @keyframes check-pop {
   0%   { transform: scale(1); }
   40%  { transform: scale(1.22); }
@@ -762,15 +761,15 @@ button:active {
   animation: particle-fly 0.6s ease-out forwards;
 }
 
-/* ── 17. Utilitários extras ───────────────────────────────────── */
+/* â”€â”€ 17. UtilitÃ¡rios extras â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
-/* Fundo hero da página index */
+/* Fundo hero da pÃ¡gina index */
 header .absolute.inset-0.opacity-10 {
   opacity: 0.04 !important;
   mix-blend-mode: luminosity;
 }
 
-/* Blur decorativo na seção de prevenção */
+/* Blur decorativo na seÃ§Ã£o de prevenÃ§Ã£o */
 .bg-primary\/5.blur-3xl {
   background-color: rgba(124, 144, 255, 0.06) !important;
 }
@@ -787,7 +786,7 @@ header .absolute.inset-0.opacity-10 {
   transition: color var(--transition-fast);
 }
 
-/* ── 18. Efeito de Digitação (Typing Effect) ─────────────────── */
+/* â”€â”€ 18. Efeito de DigitaÃ§Ã£o (Typing Effect) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .typing-cursor {
   display: inline-block;
   width: 2px;
@@ -804,8 +803,8 @@ header .absolute.inset-0.opacity-10 {
 }
 
 #hero-title {
-  min-height: 2.1em; /* Evita pulos de layout durante a digitação */
-  opacity: 0; /* Começa oculto para o JS iniciar a digitação sem flicker */
+  min-height: 2.1em; /* Evita pulos de layout durante a digitaÃ§Ã£o */
+  opacity: 0; /* ComeÃ§a oculto para o JS iniciar a digitaÃ§Ã£o sem flicker */
 }
 
 /* Scrollbar minimalista */
@@ -819,8 +818,209 @@ header .absolute.inset-0.opacity-10 {
   background: rgba(255,255,255,0.15);
 }
 
-/* ── 18. Responsividade base ─────────────────────────────────── */
+  background-color: var(--color-accent-muted) !important;
+  border-color: var(--color-border-accent) !important;
+  color: var(--color-text-primary) !important;
+}
+/* Ativo */
+#quick-mode-btn.bg-primary\/20 {
+  background-color: var(--color-accent-muted) !important;
+  border-color: var(--color-border-accent) !important;
+  color: var(--color-accent) !important;
+}
+
+/* Painel do modo rÃ¡pido */
+#quick-mode-panel .bg-surface-container {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-border-accent) !important;
+  border-radius: var(--radius-2xl) !important;
+}
+#quick-mode-panel .qm-step {
+  transition: background-color var(--transition-fast);
+}
+#quick-mode-panel .qm-step:hover {
+  background-color: rgba(255,255,255,0.02) !important;
+}
+#quick-mode-panel .border-b {
+  border-bottom-color: var(--color-border) !important;
+}
+#quick-mode-panel .bg-primary-container\/5 {
+  background-color: rgba(124, 144, 255, 0.04) !important;
+}
+#quick-mode-panel .w-8.h-8.rounded-full {
+  background-color: var(--color-accent-muted) !important;
+  color: var(--color-accent) !important;
+}
+
+/* â”€â”€ 14. PrÃ³ximos NÃ­veis (Locked) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.locked-level {
+  background-color: var(--color-surface) !important;
+  border-color: var(--color-border) !important;
+  border-radius: var(--radius-3xl) !important;
+}
+.lock-overlay {
+  background-color: rgba(13, 17, 23, 0.82) !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+.lock-overlay .w-16.h-16.rounded-full {
+  background-color: var(--color-surface-raised) !important;
+  border-color: var(--color-border) !important;
+}
+
+/* Badge IntermediÃ¡rio */
+.bg-secondary-container\/20.text-secondary.border {
+  background-color: var(--color-secondary-muted) !important;
+  border-color: rgba(90, 200, 250, 0.20) !important;
+  color: var(--color-secondary) !important;
+}
+/* Badge AvanÃ§ado */
+.bg-error-container\/20.text-error.border {
+  background-color: var(--color-error-muted) !important;
+  border-color: rgba(255, 107, 107, 0.20) !important;
+  color: var(--color-error) !important;
+}
+
+/* â”€â”€ 15. SeÃ§Ã£o "Recursos" â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.font-headline {
+  font-family: var(--font-display);
+}
+.h-px.bg-primary-container {
+  background-color: var(--color-accent) !important;
+  opacity: 0.4;
+}
+
+/* â”€â”€ 16. MicrointeraÃ§Ãµes (preservadas) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+@keyframes check-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.22); }
+  70%  { transform: scale(0.93); }
+  100% { transform: scale(1); }
+}
+.check-pop { animation: check-pop 0.38s cubic-bezier(.36,.07,.19,.97) both; }
+
+.check-icon-filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-4px); }
+  40%       { transform: translateX(4px); }
+  60%       { transform: translateX(-3px); }
+  80%       { transform: translateX(2px); }
+}
+.shake { animation: shake 0.35s ease both; }
+
+@keyframes shimmer-slide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+.progress-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.28) 50%, transparent 100%);
+  animation: shimmer-slide 0.65s ease forwards;
+}
+
+@keyframes ripple-in {
+  from { opacity: 0; transform: scaleY(0.97); }
+  to   { opacity: 1; transform: scaleY(1); }
+}
+.step-content.expanding { animation: ripple-in 0.25s ease both; transform-origin: top; }
+
+@keyframes banner-in {
+  from { opacity: 0; transform: translateY(-14px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 144, 255, 0); }
+  50%       { box-shadow: 0 0 18px 4px rgba(124, 144, 255, 0.15); }
+}
+#completion-banner {
+  animation: banner-in 0.45s cubic-bezier(.22,1,.36,1) both,
+             glow-pulse 3s ease-in-out 0.5s infinite;
+}
+
+@keyframes particle-fly {
+  0%   { transform: translate(0,0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+}
+.particle {
+  position: absolute;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-fly 0.6s ease-out forwards;
+}
+
+/* â”€â”€ 17. UtilitÃ¡rios extras â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+
+/* Fundo hero da pÃ¡gina index */
+header .absolute.inset-0.opacity-10 {
+  opacity: 0.04 !important;
+  mix-blend-mode: luminosity;
+}
+
+/* Blur decorativo na seÃ§Ã£o de prevenÃ§Ã£o */
+.bg-primary\/5.blur-3xl {
+  background-color: rgba(124, 144, 255, 0.06) !important;
+}
+
+/* Texto "open source" / "gratuito" nos cards de ferramenta */
+.text-primary-fixed-dim {
+  color: var(--color-text-tertiary) !important;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-widest);
+}
+
+/* Links dos cards de ferramenta "Ver site" */
+.group-hover\:text-secondary {
+  transition: color var(--transition-fast);
+}
+
+/* â”€â”€ 18. Efeito de DigitaÃ§Ã£o (Typing Effect) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: var(--color-accent);
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#hero-title {
+  min-height: 2.1em; /* Evita pulos de layout durante a digitaÃ§Ã£o */
+  opacity: 0; /* ComeÃ§a oculto para o JS iniciar a digitaÃ§Ã£o sem flicker */
+}
+
+/* Scrollbar minimalista */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.08);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* â”€â”€ 18. Responsividade base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 640px) {
   h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
   h2 { font-size: clamp(1.5rem, 5vw, var(--text-3xl)); }
 }
+
+/* ─ 3D Flip Card Utilities ─ */
+.perspective-1000 { perspective: 1000px; }
+.transform-style-3d { transform-style: preserve-3d; }
+.backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }

@@ -24,14 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         requestAnimationFrame(raf);
 
-        // Setup initial default styles for transition
-        const elementsToAnimate = document.querySelectorAll('section, header, main');
-        elementsToAnimate.forEach(el => {
-            el.style.willChange = 'transform, opacity';
-            el.style.transition = 'transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.9s ease';
-        });
+        // Parallax effect for blurred background shapes
+        const bgShape = document.querySelector('.parallax-shape');
+        if (bgShape) {
+            lenis.on('scroll', (e) => {
+                bgShape.style.transform = `translate(-50%, ${e.scroll * 0.3}px)`;
+            });
+        }
 
-        // Handle smooth click with lightweight parallax
+        // Handle smooth click without parallax fade effect
         const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
         smoothScrollLinks.forEach(link => {
             link.addEventListener('click', (e) => {
@@ -41,24 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const targetSection = document.querySelector(targetId);
                 if (targetSection) {
-                    elementsToAnimate.forEach(el => {
-                        if (el !== targetSection) {
-                            el.style.transform = 'translateY(30px)';
-                            el.style.opacity = '0.4';
-                        } else {
-                            el.style.transform = 'translateY(-20px)';
-                            el.style.opacity = '1';
-                        }
-                    });
                     lenis.scrollTo(targetSection, {
                         duration: 1.6,
-                        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                        onComplete: () => {
-                            elementsToAnimate.forEach(el => {
-                                el.style.transform = 'translateY(0)';
-                                el.style.opacity = '1';
-                            });
-                        }
+                        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
                     });
                 }
             });

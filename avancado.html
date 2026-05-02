@@ -19,9 +19,35 @@
         <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto gap-16">
             <a class="text-2xl font-bold tracking-tighter text-white pr-8" href="index.html">NullTrace</a>
             <div class="flex items-center gap-4">
-                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-error/10 border border-error/20 text-error text-xs font-bold uppercase tracking-widest">
-                    <span class="material-symbols-outlined text-sm">local_fire_department</span> Avançado
-                </span>
+                <div class="relative group py-2">
+                    <button class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-error/10 border border-error/20 hover:bg-error/20 text-error text-xs font-bold uppercase tracking-widest cursor-pointer transition-colors">
+                        <span class="material-symbols-outlined text-sm">local_fire_department</span> Avançado
+                        <span class="material-symbols-outlined text-[16px] transition-transform duration-300 group-hover:rotate-180">expand_more</span>
+                    </button>
+                    <div class="absolute right-0 top-full mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="bg-[#141925]/95 backdrop-blur-xl border border-outline-variant/20 rounded-2xl p-2 shadow-2xl flex flex-col gap-1">
+
+                            <a href="intermediario.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-colors group/item">
+                                <div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                                    <span class="material-symbols-outlined text-sm">shield</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-white font-bold text-sm">Intermediário</span>
+                                    <span class="text-on-surface-variant text-[10px] uppercase tracking-wider group-hover/item:text-secondary transition-colors">Visão Geral</span>
+                                </div>
+                            </a>
+                            <a href="avancado.html" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-error/10 border border-error/20 transition-colors group/item">
+                                <div class="w-8 h-8 rounded-full bg-error/20 flex items-center justify-center text-error">
+                                    <span class="material-symbols-outlined text-sm">local_fire_department</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-error font-bold text-sm">Avançado</span>
+                                    <span class="text-error/70 text-[10px] uppercase tracking-wider">Nível Atual</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <a href="comece-agora.html" class="text-slate-400 hover:text-white flex items-center gap-2 text-sm font-semibold transition-colors">
                     <span class="material-symbols-outlined text-base">arrow_back</span> Voltar ao checklist
                 </a>
@@ -35,7 +61,7 @@
         <!-- Hero Section -->
         <section class="relative py-20 px-8 overflow-hidden">
             <div class="absolute inset-0 pointer-events-none">
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-error/5 rounded-full blur-[120px]"></div>
+                <div class="parallax-shape absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-error/5 rounded-full blur-[120px]"></div>
             </div>
             <div class="max-w-4xl mx-auto text-center relative z-10">
                 <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-error/10 border border-error/20 text-error text-xs font-bold uppercase tracking-widest mb-8">
@@ -60,7 +86,7 @@
         </section>
 
         <!-- Roadmap Visual -->
-        <section class="py-16 px-8" id="roadmap">
+        <section class="py-16 px-8 bg-gradient-to-b from-[#0e1322] to-[#1a2235]" id="roadmap">
             <div class="max-w-5xl mx-auto">
                 <div class="text-center mb-16">
                     <span class="text-error font-bold uppercase tracking-[0.2em] text-sm">Sua Jornada</span>
@@ -146,7 +172,7 @@
         </section>
 
         <!-- Progress Tracker -->
-        <section class="px-8 pb-16">
+        <section class="px-8 pb-16 bg-[#1a2235]">
             <div class="max-w-3xl mx-auto">
                 <div class="bg-surface-container rounded-2xl p-6 border border-outline-variant/10">
                     <div class="flex items-center justify-between mb-4">
@@ -167,7 +193,7 @@
         </section>
 
         <!-- ═══ MODULE 1: Tor Absoluto ═══ -->
-        <section class="py-16 px-8" id="modulo-1">
+        <section class="py-16 px-8 bg-gradient-to-b from-[#1a2235] to-[#090c15]" id="modulo-1">
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-start gap-6 mb-10">
                     <div class="w-14 h-14 rounded-2xl bg-error/15 border border-error/25 flex items-center justify-center flex-shrink-0">
@@ -250,7 +276,7 @@
         <div class="max-w-4xl mx-auto px-8"><div class="h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div></div>
 
         <!-- ═══ MODULE 2: Compartimentalização OS ═══ -->
-        <section class="py-16 px-8" id="modulo-2">
+        <section class="py-16 px-8 bg-gradient-to-b from-[#090c15] to-[#1a2235]" id="modulo-2">
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-start gap-6 mb-10">
                     <div class="w-14 h-14 rounded-2xl bg-red-500/15 border border-red-500/25 flex items-center justify-center flex-shrink-0">
@@ -309,7 +335,7 @@
         <div class="max-w-4xl mx-auto px-8"><div class="h-px bg-gradient-to-r from-transparent via-outline-variant/20 to-transparent"></div></div>
 
         <!-- ═══ MODULE 3: OPSEC ═══ -->
-        <section class="py-16 px-8" id="modulo-3">
+        <section class="py-16 px-8 bg-gradient-to-b from-[#1a2235] to-[#090c15]" id="modulo-3">
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-start gap-6 mb-10">
                     <div class="w-14 h-14 rounded-2xl bg-orange-500/15 border border-orange-500/25 flex items-center justify-center flex-shrink-0">
@@ -386,7 +412,7 @@
         </section>
 
         <!-- Final CTA -->
-        <section class="py-20 px-8">
+        <section class="py-20 px-8 bg-gradient-to-b from-[#090c15] to-[#0e1322]">
             <div class="max-w-3xl mx-auto text-center">
                 <div id="final-banner" class="bg-surface-container rounded-3xl p-10 border border-outline-variant/10 relative overflow-hidden">
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-error/5 rounded-full blur-[80px] pointer-events-none"></div>
