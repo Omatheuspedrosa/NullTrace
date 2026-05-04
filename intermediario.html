@@ -185,7 +185,7 @@
             </div>
         </section>
 
-        <section class="intermediate-workspace bg-[#1a2235]" id="intermediate-workspace">
+        <section class="intermediate-workspace" id="intermediate-workspace">
             <div class="intermediate-workspace__inner max-w-7xl mx-auto px-8" id="intermediate-workspace-inner">
                 <div class="intermediate-progress-trigger" id="intermediate-progress-trigger" aria-hidden="true"></div>
 
@@ -698,6 +698,34 @@
             </div>
         </section>
 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Trigger & Shell -->
+        <div class="intermediate-progress-trigger-bottom" id="intermediate-progress-trigger-bottom" aria-hidden="true"></div>
+        <section class="intermediate-progress-inline-shell" id="intermediate-progress-inline-shell-bottom" aria-label="Progresso do nível intermediário">
+            <div class="intermediate-progress-inline-stage">
+                <div class="intermediate-progress-card intermediate-progress-card--inline bg-surface-container rounded-2xl p-6 border border-outline-variant/10" id="intermediate-progress-inline-card-bottom">
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <span class="material-symbols-outlined text-secondary">trending_up</span>
+                            <span class="text-white font-bold text-sm">Progresso Intermediário</span>
+                        </div>
+                        <span id="int-progress-pct-inline" class="text-secondary font-bold text-lg flex-shrink-0">0%</span>
+                    </div>
+                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                        <div id="int-progress-bar-inline" class="bg-gradient-to-r from-secondary to-primary h-full rounded-full transition-all duration-700 ease-out w-0 relative">
+                            <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
+                        </div>
+                    </div>
+                    <div class="intermediate-inline-meta">
+                        <p id="int-progress-msg-inline" class="text-on-surface-variant text-xs mt-3">Complete os módulos abaixo para avançar.</p>
+                        <div class="intermediate-inline-pills">
+                            <span class="intermediate-inline-pill" id="int-inline-active-label">Módulo atual: 01</span>
+                            <span class="intermediate-inline-pill" id="int-inline-completed-label">0/3 concluídos</span>
+                        </div>
                     </div>
                 </div>
             </div>

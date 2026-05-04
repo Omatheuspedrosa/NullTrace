@@ -112,6 +112,27 @@ footer div.text-slate-500 {
   box-shadow: 0 12px 32px rgba(255, 84, 73, 0.1);
 }
 
+.module-section :is(.bg-surface-container, .advanced-progress-card, .module-visual-shell, .info-card) {
+  border-radius: 1.75rem;
+  border-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.module-section :is(.bg-surface-container, .advanced-progress-card, .info-card) {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.022), rgba(255, 255, 255, 0.008)),
+    rgba(24, 30, 45, 0.26);
+}
+
+#final-banner {
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.024), rgba(255, 255, 255, 0.01)),
+    rgba(24, 30, 45, 0.3);
+  border-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
 /* ── Hardening Checklist ──────────────────────────────────────── */
 .hardening-item {
   transition: all var(--transition-fast);
@@ -170,9 +191,12 @@ footer div.text-slate-500 {
 
 .advanced-progress-inline-shell {
   overflow: hidden;
-  max-height: 220px;
+  max-height: 400px;
   opacity: 1;
-  margin-bottom: 0;
+  margin-top: -2.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
   transition:
     max-height 0.58s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 0.32s ease,
@@ -589,6 +613,11 @@ footer div.text-slate-500 {
   transform: translateY(0);
 }
 
+.module-section {
+  border-radius: 1.35rem;
+  overflow: hidden;
+}
+
 /* ── Progress bar shimmer ─────────────────────────────────────── */
 @keyframes adv-shimmer {
   0%   { transform: translateX(-100%); }
@@ -677,7 +706,7 @@ footer div.text-slate-500 {
   }
 
   .advanced-progress-inline-shell {
-    max-height: 220px !important;
+    max-height: 400px !important;
     opacity: 1 !important;
     transform: none !important;
   }

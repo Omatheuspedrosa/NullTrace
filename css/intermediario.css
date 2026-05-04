@@ -187,6 +187,11 @@ footer div.text-slate-500 {
   transform: translateY(0);
 }
 
+.module-section {
+  border-radius: 1.35rem;
+  overflow: hidden;
+}
+
 /* ── Progress Workspace ───────────────────────────────────────── */
 .intermediate-workspace {
   --int-sidebar-width: 0px;
@@ -209,9 +214,12 @@ footer div.text-slate-500 {
 
 .intermediate-progress-inline-shell {
   overflow: hidden;
-  max-height: 220px;
+  max-height: 400px;
   opacity: 1;
-  margin-bottom: 0;
+  margin-top: -2.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
   transition:
     max-height 0.58s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 0.32s ease,
@@ -589,12 +597,12 @@ footer div.text-slate-500 {
 
 .module-visual-shell {
   overflow: hidden;
-  border-radius: 1.4rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015)),
-    rgba(0, 0, 0, 0.18);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(20, 25, 37, 0.74);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
 }
 
 .module-visual-image {
@@ -618,6 +626,27 @@ footer div.text-slate-500 {
   max-width: 58rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+.module-section :is(.bg-surface-container, .intermediate-progress-card, .module-visual-shell, .browser-card, .identity-card, .dns-card) {
+  border-radius: 1.75rem;
+  border-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.module-section :is(.bg-surface-container, .intermediate-progress-card, .browser-card, .identity-card, .dns-card) {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.022), rgba(255, 255, 255, 0.008)),
+    rgba(24, 30, 45, 0.26);
+}
+
+#final-banner {
+  border-radius: 1.75rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.024), rgba(255, 255, 255, 0.01)),
+    rgba(24, 30, 45, 0.3);
+  border-color: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 .intermediate-progress-main {
@@ -708,7 +737,7 @@ footer div.text-slate-500 {
   }
 
   .intermediate-progress-inline-shell {
-    max-height: 220px !important;
+    max-height: 400px !important;
     opacity: 1 !important;
     transform: none !important;
   }

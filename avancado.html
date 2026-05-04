@@ -185,7 +185,7 @@
             </div>
         </section>
 
-        <section class="advanced-workspace bg-[#1a2235]" id="advanced-workspace">
+        <section class="advanced-workspace" id="advanced-workspace">
             <div class="advanced-workspace__inner max-w-7xl mx-auto px-8" id="advanced-workspace-inner">
                 <div class="advanced-progress-trigger" id="advanced-progress-trigger" aria-hidden="true"></div>
 
@@ -496,8 +496,36 @@
             </div>
         </section>
 
+        <!-- Bottom Trigger & Shell -->
+        <div class="advanced-progress-trigger-bottom" id="advanced-progress-trigger-bottom" aria-hidden="true"></div>
+        <section class="advanced-progress-inline-shell" id="advanced-progress-inline-shell-bottom" aria-label="Progresso do nível avançado">
+            <div class="advanced-progress-inline-stage">
+                <div class="advanced-progress-card advanced-progress-card--inline bg-surface-container rounded-2xl p-6 border border-outline-variant/10" id="advanced-progress-inline-card-bottom">
+                    <div class="flex items-center justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <span class="material-symbols-outlined text-error">trending_up</span>
+                            <span class="text-white font-bold text-sm">Progresso Avançado</span>
+                        </div>
+                        <span id="adv-progress-pct-inline" class="text-error font-bold text-lg flex-shrink-0">0%</span>
+                    </div>
+                    <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                        <div id="adv-progress-bar-inline" class="bg-gradient-to-r from-error to-red-500 h-full rounded-full transition-all duration-700 ease-out w-0 relative">
+                            <div class="absolute inset-0 bg-white/20 blur-[2px]"></div>
+                        </div>
+                    </div>
+                    <div class="advanced-inline-meta">
+                        <p id="adv-progress-msg-inline" class="text-on-surface-variant text-xs mt-3">Complete os módulos abaixo para avançar.</p>
+                        <div class="advanced-inline-pills">
+                            <span class="advanced-inline-pill" id="adv-inline-active-label">Módulo atual: 01</span>
+                            <span class="advanced-inline-pill" id="adv-inline-completed-label">0/3 concluídos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Final CTA -->
-        <section class="py-20 px-8 bg-gradient-to-b from-[#090c15] to-[#0e1322]">
+        <section class="py-20 px-8">
             <div class="max-w-3xl mx-auto text-center">
                 <div id="final-banner" class="bg-surface-container rounded-3xl p-10 border border-outline-variant/10 relative overflow-hidden">
                     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-error/5 rounded-full blur-[80px] pointer-events-none"></div>

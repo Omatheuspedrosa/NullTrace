@@ -57,14 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || { modules: [false, false, false] };
 
     // ── DOM refs ──────────────────────────────────────────────────
-    const progressBarInline = document.getElementById('int-progress-bar-inline');
-    const progressPctInline = document.getElementById('int-progress-pct-inline');
-    const progressMsgInline = document.getElementById('int-progress-msg-inline');
+    const progressBarsInline = document.querySelectorAll('[id="int-progress-bar-inline"]');
+    const progressPctsInline = document.querySelectorAll('[id="int-progress-pct-inline"]');
+    const progressMsgsInline = document.querySelectorAll('[id="int-progress-msg-inline"]');
     const progressBarDocked = document.getElementById('int-progress-bar-docked');
     const progressPctDocked = document.getElementById('int-progress-pct-docked');
     const progressMsgDocked = document.getElementById('int-progress-msg-docked');
-    const inlineActiveLabel = document.getElementById('int-inline-active-label');
-    const inlineCompletedLabel = document.getElementById('int-inline-completed-label');
+    const inlineActiveLabels = document.querySelectorAll('[id="int-inline-active-label"]');
+    const inlineCompletedLabels = document.querySelectorAll('[id="int-inline-completed-label"]');
     const moduleBtns  = document.querySelectorAll('.module-complete-btn');
     const moduleSections = Array.from(document.querySelectorAll('[data-module-section]'));
     const moduleNavLinks = Array.from(document.querySelectorAll('[data-module-nav]'));
@@ -167,8 +167,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const triggerRect = progressTrigger.getBoundingClientRect();
+        const bottomTrigger = document.getElementById('intermediate-progress-trigger-bottom');
+        const bottomRect = bottomTrigger ? bottomTrigger.getBoundingClientRect() : null;
+        
         const stickyTop = getStickyTopOffset();
-        const shouldDock = triggerRect.top <= stickyTop;
+        let shouldDock = triggerRect.top <= stickyTop;
+
+        if (bottomRect && bottomRect.top <= window.innerHeight * 0.85) {
+            shouldDock = false;
+        }
 
         setDockState(shouldDock);
     }
@@ -196,24 +203,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const done = state.modules.filter(Boolean).length;
         const pct  = Math.round((done / TOTAL_MODULES) * 100);
 
-        if (progressBarInline) progressBarInline.style.width = pct + '%';
-        if (progressPctInline) progressPctInline.textContent = pct + '%';
+        progressBarsInline.forEach(el => el.style.width = pct + '%');
+        progressPctsInline.forEach(el => el.textContent = pct + '%');
         if (progressBarDocked) progressBarDocked.style.height = pct + '%';
         if (progressPctDocked) progressPctDocked.textContent = pct + '%';
-        if (inlineActiveLabel) {
-            inlineActiveLabel.textContent = `Módulo atual: ${String(activeModuleIndex + 1).padStart(2, '0')}`;
-        }
-        if (inlineCompletedLabel) {
-            inlineCompletedLabel.textContent = `${done}/${TOTAL_MODULES} concluídos`;
-        }
+        
+        inlineActiveLabels.forEach(el => {
+            el.textContent = `Módulo atual: ${String(activeModuleIndex + 1).padStart(2, '0')}`;
+        });
+        inlineCompletedLabels.forEach(el => {
+            el.textContent = `${done}/${TOTAL_MODULES} concluídos`;
+        });
 
         // Shimmer effect
-        if (progressBarInline) {
-            progressBarInline.classList.remove('shimmer');
-            void progressBarInline.offsetWidth;
-            progressBarInline.classList.add('shimmer');
-            progressBarInline.addEventListener('animationend', () => progressBarInline.classList.remove('shimmer'), { once: true });
-        }
+        progressBarsInline.forEach(el => {
+            el.classList.remove('shimmer');
+            void el.offsetWidth;
+            el.classList.add('shimmer');
+            el.addEventListener('animationend', () => el.classList.remove('shimmer'), { once: true });
+        });
 
         let nextMessage = 'Complete os módulos abaixo para avançar.';
         let nextDockedMessage = `${done}/${TOTAL_MODULES} módulos concluídos`;
@@ -228,10 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
             nextDockedMessage = `${TOTAL_MODULES}/${TOTAL_MODULES} módulos concluídos`;
         }
 
-        if (progressMsgInline) {
-            progressMsgInline.textContent = nextMessage;
-            progressMsgInline.style.color = pct === 100 ? 'var(--color-secondary)' : '';
-        }
+        progressMsgsInline.forEach(el => {
+            el.textContent = nextMessage;
+            el.style.color = pct === 100 ? 'var(--color-secondary)' : '';
+        });
         if (progressMsgDocked) {
             progressMsgDocked.textContent = nextDockedMessage;
             progressMsgDocked.style.color = pct === 100 ? 'var(--color-secondary)' : '';
@@ -246,6 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
         moduleBtns.forEach(btn => {
             const idx = parseInt(btn.dataset.module);
             const textEl = btn.querySelector('.btn-text');
+            const moduleSection = moduleSections[idx];
             if (state.modules[idx]) {
                 btn.classList.add('completed');
                 textEl.textContent = 'Concluído ✓';
@@ -254,6 +263,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.classList.remove('completed');
                 textEl.textContent = 'Marcar módulo como concluído';
                 btn.setAttribute('aria-pressed', 'false');
+            }
+
+            if (moduleSection) {
+                moduleSection.querySelectorAll('.hardening-item').forEach(item => {
+                    item.classList.toggle('done', !!state.modules[idx]);
+                });
             }
         });
     }
