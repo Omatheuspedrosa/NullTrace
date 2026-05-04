@@ -77,11 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const progressInlineShell = document.getElementById('advanced-progress-inline-shell');
     const progressInlineCard = document.getElementById('advanced-progress-inline-card');
     const progressDockedCard = document.getElementById('advanced-progress-docked-card');
+    const finalCtaSection = document.getElementById('final-cta');
     const desktopDockMedia = window.matchMedia('(min-width: 1440px)');
 
     let isDocked = false;
     let dockCheckRaf = null;
     let activeModuleIndex = 0;
+    let finalCtaVisible = false;
+    let finalCtaScrollRaf = null;
 
     function syncModuleNavigation() {
         moduleNavLinks.forEach((link, index) => {
@@ -198,8 +201,48 @@ document.addEventListener('DOMContentLoaded', () => {
         setDockState(false, { immediate: true });
     }
 
+    function scrollToFinalCta() {
+        if (!finalCtaSection) return;
+
+        if (lenis) {
+            lenis.scrollTo(finalCtaSection, {
+                duration: 1.45,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            });
+            return;
+        }
+
+        finalCtaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function syncFinalCta(pct, { shouldScrollOnReveal = false } = {}) {
+        if (!finalCtaSection) return;
+
+        const shouldBeVisible = pct === 100;
+        const wasVisible = finalCtaVisible;
+        finalCtaVisible = shouldBeVisible;
+
+        finalCtaSection.classList.toggle('is-visible', shouldBeVisible);
+        finalCtaSection.setAttribute('aria-hidden', shouldBeVisible ? 'false' : 'true');
+
+        if (finalCtaScrollRaf) {
+            cancelAnimationFrame(finalCtaScrollRaf);
+            finalCtaScrollRaf = null;
+        }
+
+        if (!shouldBeVisible || wasVisible || !shouldScrollOnReveal) {
+            return;
+        }
+
+        finalCtaScrollRaf = requestAnimationFrame(() => {
+            finalCtaScrollRaf = requestAnimationFrame(() => {
+                scrollToFinalCta();
+            });
+        });
+    }
+
     // ── Progress update ──────────────────────────────────────────
-    function updateProgress() {
+    function updateProgress({ shouldScrollOnReveal = false } = {}) {
         const done = state.modules.filter(Boolean).length;
         const pct  = Math.round((done / TOTAL_MODULES) * 100);
 
@@ -246,6 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         syncModuleNavigation();
+        syncFinalCta(pct, { shouldScrollOnReveal });
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     }
 
@@ -284,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         syncButtons();
-        updateProgress();
+        updateProgress({ shouldScrollOnReveal: true });
     };
 
     // ── Scroll to module ─────────────────────────────────────────

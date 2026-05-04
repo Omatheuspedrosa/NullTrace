@@ -124,13 +124,47 @@ footer div.text-slate-500 {
     rgba(24, 30, 45, 0.26);
 }
 
-#final-banner {
+.final-cta {
+  display: none;
+}
+
+.final-cta.is-visible {
+  display: block;
+}
+
+.final-banner {
   border-radius: 1.75rem;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.024), rgba(255, 255, 255, 0.01)),
     rgba(24, 30, 45, 0.3);
   border-color: rgba(255, 255, 255, 0.04);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+  filter: blur(4px);
+  will-change: opacity, transform, filter;
+}
+
+@keyframes final-cta-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.01);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.final-cta.is-visible .final-banner {
+  animation: final-cta-enter 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* ── Hardening Checklist ──────────────────────────────────────── */
