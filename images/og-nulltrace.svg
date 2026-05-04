@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">NullTrace</title>
+  <desc id="desc">Guia de privacidade digital e seguranca online</desc>
+  <rect width="1200" height="630" fill="#0E1322"/>
+  <rect x="72" y="72" width="1056" height="486" rx="36" fill="url(#paint0_radial)" stroke="#7C90FF" stroke-opacity="0.18"/>
+  <path d="M102 522C238 406 352 392 486 430C612 466 706 482 834 430C950 384 1028 278 1098 194" stroke="#7C90FF" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"/>
+  <path d="M102 458C234 360 352 344 478 380C612 418 714 434 848 386C960 346 1046 258 1098 182" stroke="#5AC8FA" stroke-opacity="0.18" stroke-width="2" stroke-linecap="round" stroke-dasharray="10 12"/>
+  <circle cx="198" cy="166" r="44" fill="#7C90FF" fill-opacity="0.12" stroke="#7C90FF" stroke-opacity="0.35"/>
+  <path d="M180 166L198 146L216 166L198 186L180 166Z" fill="#7C90FF"/>
+  <path d="M198 132V200" stroke="#7C90FF" stroke-width="4" stroke-linecap="round"/>
+  <text x="198" y="314" fill="#B9C6FF" font-family="Space Grotesk, Inter, Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="0.28em">NULLTRACE</text>
+  <text x="198" y="414" fill="#FFFFFF" font-family="Space Grotesk, Inter, Arial, sans-serif" font-size="68" font-weight="700">Guia de privacidade</text>
+  <text x="198" y="486" fill="#FFFFFF" font-family="Space Grotesk, Inter, Arial, sans-serif" font-size="68" font-weight="700">digital e OPSEC</text>
+  <text x="198" y="544" fill="#A6AEC7" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="400">Jornada pratica do checklist ao nivel avancado</text>
+  <defs>
+    <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(600 315) rotate(90) scale(360 640)">
+      <stop stop-color="#2563EB" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#0E1322" stop-opacity="0.92"/>
+    </radialGradient>
+  </defs>
+</svg>

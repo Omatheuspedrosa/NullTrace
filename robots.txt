@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joaa0.github.io/NullTrace/sitemap.xml
